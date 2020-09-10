@@ -1,0 +1,50 @@
+@function breakpoint-infix($name) {
+	@return if($name== 'xs', '', '\\:' + $name);
+}
+
+@mixin breakpoint-up($name, $size) {
+	@if ($name == 'xs') {
+		@content;
+	} @else {
+		@media (#{$media-width}-width: $size) {
+			@content;
+		}
+	}
+}
+
+@mixin list-reset($m: 0, $p: 0) {
+  margin: $m;
+  padding: $p;
+  list-style: none;
+}
+
+@mixin button-reset {
+  outline: none;
+  border: none;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+@mixin font-face($name, $path, $weight: normal, $style: normal, $display: swap) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+    src: url("#{$font-path}#{$path}.woff2") format("woff2"), url("#{$font-path}#{$path}.woff") format("woff");
+  }
+}
+
+@mixin each-breakpoint($class){
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      .#{$class}#{$br-name} {
+        @content;
+      }
+    }
+  }
+}

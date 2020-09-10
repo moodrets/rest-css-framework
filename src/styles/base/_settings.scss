@@ -1,0 +1,90 @@
+$width-prefix-class: 'wd';
+$width-100-percent-class: '1';
+$width-50-percent-class: '2';
+$width-33-percent-class: '3';
+$width-25-percent-class: '4';
+$width-max-100-class: 'max-100';
+
+$position-prefix-class: 'pos';
+$position-relative-class: 'rel';
+$position-absolute-class: 'abs';
+$position-fixed-class: 'fx';
+$position-sticky-class: 'sti';
+$position-static-class: 'sta';
+$z-index-class: 'zi';
+$z-index-count: 10;
+
+$text-prefix-class: 'txt';
+$text-uppercase-class: 'upp';
+$text-lowercase-class: 'lwr';
+$text-capitalize-class: 'cap';
+$text-underline-class: 'du';
+$text-underline-none-class: 'dn';
+$text-throught-class: 'thl';
+
+$font-prefix-class: 'font';
+$font-base-class: 'base';
+$font-secondary-class: 'secondary';
+$font-thin-class: '100';
+$font-extra-light-class: '200';
+$font-light-class: '300';
+$font-normal-class: '400';
+$font-medium-class: '500';
+$font-semibold-class: '600';
+$font-bold-class: '700';
+$font-extra-bold-class: '800';
+$font-bolder-class: '900';
+$font-italic-class: 'itl';
+$font-size-class: 'sz';
+
+$line-height-prefix-class: 'lh';
+
+$display-prefix-class: 'd';
+$display-none-class: 'n';
+$display-block-class: 'b';
+$display-inline-block-class: 'ib';
+$display-grid-class: 'g';
+$display-flex-class: 'f';
+$display-inline-flex-class: 'if';
+$display-table-class: 'tb';
+$display-table-row-class: 'tr';
+$display-table-cell-class: 'td';
+
+$none-class: 'n';
+$inherit-class: 'inh';
+$normal-class: 'nr';
+$auto-class: 'a';
+$direction-left-class: 'l';
+$direction-center-class: 'c';
+$direction-middle-class: 'm';
+$direction-right-class: 'r';
+$direction-top-class: 't';
+$direction-bottom-class: 'b';
+$direction-vertical-class: 'y';
+$direction-horizontal-class: 'x';
+
+$margin-class: 'm';
+$margin-negative-class: 'neg';
+$padding-class: 'p';
+
+$grid-row-class: 'row';
+$grid-row-equal-height-class: 'equal-cols';
+$grid-row-columns-class: 'cols';
+$grid-column-class: 'col';
+$grid-column-auto-class: 'auto';
+$grid-column-offset-class: 'col-ofs';
+$grid-gap-class: 'gap';
+$grid-no-gap-class: 'no-gap';
+$grid-no-gap-bottom-class: 'no-gap-b';
+$grid-column-count: 12;
+$grid-gap: 20px;
+$grid-gap-sm: 10px;
+$grid-gap-md: 30px;
+$grid-gap-lg: 40px;
+$grid-gap-xl: 60px;
+
+$container-class: 'container';
+$clearfix-class: 'clearfix';
+$float-prefix-class: 'flt';
+$radius-prefix-class: 'rds';
+$border-prefix-class: 'bdr';

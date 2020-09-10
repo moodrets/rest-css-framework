@@ -1,0 +1,47 @@
+.#{$margin-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $spacing, $value in $spacings {
+        &-#{$spacing}#{$br-name} {margin: var(--spacing-#{$spacing})}
+        &#{$direction-top-class}-#{$spacing}#{$br-name} {margin-top: var(--spacing-#{$spacing})}
+        &#{$direction-right-class}-#{$spacing}#{$br-name} {margin-right: var(--spacing-#{$spacing})}
+        &#{$direction-left-class}-#{$spacing}#{$br-name} {margin-left: var(--spacing-#{$spacing})}
+        &#{$direction-bottom-class}-#{$spacing}#{$br-name} {margin-bottom: var(--spacing-#{$spacing})}
+        &#{$direction-vertical-class}-#{$spacing}#{$br-name} {margin-top: var(--spacing-#{$spacing}); margin-bottom: var(--spacing-#{$spacing})}
+        &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {margin-left: var(--spacing-#{$spacing}); margin-right: var(--spacing-#{$spacing})}
+        // negative
+        &#{$direction-top-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1)}
+        &#{$direction-right-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+        &#{$direction-left-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1)}
+        &#{$direction-bottom-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+        &#{$direction-vertical-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1); margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+        &#{$direction-horizontal-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1); margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+      }
+      // auto
+      &#{$direction-top-class}-#{$auto-class}#{$br-name} {margin-top: auto}
+      &#{$direction-right-class}-#{$auto-class}#{$br-name} {margin-right: auto}
+      &#{$direction-left-class}-#{$auto-class}#{$br-name} {margin-left: auto}
+      &#{$direction-bottom-class}-#{$auto-class}#{$br-name} {margin-bottom: auto}
+      &#{$direction-vertical-class}-#{$auto-class}#{$br-name} {margin-top: auto; margin-bottom: auto}
+      &#{$direction-horizontal-class}-#{$auto-class}#{$br-name} {margin-left: auto; margin-right: auto}
+    }
+  }
+}
+
+.#{$padding-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $spacing, $value in $spacings {
+        &-#{$spacing}#{$br-name} {padding: var(--spacing-#{$spacing})}
+        &#{$direction-top-class}-#{$spacing}#{$br-name} {padding-top: var(--spacing-#{$spacing})}
+        &#{$direction-right-class}-#{$spacing}#{$br-name} {padding-right: var(--spacing-#{$spacing})}
+        &#{$direction-left-class}-#{$spacing}#{$br-name} {padding-left: var(--spacing-#{$spacing})}
+        &#{$direction-bottom-class}-#{$spacing}#{$br-name} {padding-bottom: var(--spacing-#{$spacing})}
+        &#{$direction-vertical-class}-#{$spacing}#{$br-name} {padding-top: var(--spacing-#{$spacing}); padding-bottom: var(--spacing-#{$spacing})}
+        &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {padding-left: var(--spacing-#{$spacing}); padding-right: var(--spacing-#{$spacing})}
+      }
+    }
+  }
+}

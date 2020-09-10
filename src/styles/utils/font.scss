@@ -1,0 +1,25 @@
+.#{$font-prefix-class} {
+
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $fz, $fz-value in $font-sizes-list {
+        &-#{$font-size-class}-#{$fz}#{$br-name} {font-size: #{$fz-value};}
+      }
+      &-#{$inherit-class}#{$br-name} {font-size: inherit;}
+    }
+  }
+
+  &-#{$font-base-class} {font-family: var(--font-family-base);}
+  &-#{$font-secondary-class} {font-family: var(--font-family-secondary);}
+  &-#{$font-thin-class} {font-weight: 100;}
+  &-#{$font-extra-light-class} {font-weight: 200;}
+  &-#{$font-light-class} {font-weight: 300;}
+  &-#{$font-normal-class} {font-weight: 400;}
+  &-#{$font-medium-class} {font-weight: 500;}
+  &-#{$font-semibold-class} {font-weight: 600;}
+  &-#{$font-bold-class} {font-weight: 700;}
+  &-#{$font-extra-bold-class} {font-weight: 800;}
+  &-#{$font-bolder-class} {font-weight: 900;}
+  &-#{$font-italic-class} {font-weight: italic;}
+}

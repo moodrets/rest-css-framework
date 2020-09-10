@@ -1,0 +1,19 @@
+.#{$text-prefix-class} {
+
+  &-#{$text-uppercase-class} {text-transform: uppercase;}
+  &-#{$text-lowercase-class} {text-transform: lowercase;}
+  &-#{$text-capitalize-class} {text-transform: capitalize;}
+
+  &-#{$text-underline-class} {text-decoration: underline;}
+  &-#{$text-underline-none-class} {text-decoration: none;}
+  &-#{$text-throught-class} {text-decoration: line-through;}
+
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$direction-left-class}#{$br-name} {text-align: left;}
+      &-#{$direction-right-class}#{$br-name} {text-align: right;}
+      &-#{$direction-center-class}#{$br-name} {text-align: center;}
+    }
+  }
+}

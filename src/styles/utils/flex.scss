@@ -1,0 +1,14 @@
+@each $name, $size in $breakpoints {
+  @include breakpoint-up($name, $size) {
+    $br-name: breakpoint-infix($name);
+
+    .fd-r#{$br-name} {flex-direction: row;}
+    .fd-rr#{$br-name} {flex-direction: row-reverse;}
+    .fd-c#{$br-name} {flex-direction: column;}
+    .fd-cr#{$br-name} {flex-direction: column-reverse;}
+
+    .fw-wr#{$br-name} {flex-wrap: wrap;}
+    .fw-nw#{$br-name} {flex-wrap: nowrap;}
+    .fw-wrr#{$br-name} {flex-wrap: wrap-reverse;}
+  }
+}
