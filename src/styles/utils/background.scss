@@ -1,0 +1,15 @@
+.#{$background-prefix-class} {
+  @each $color, $value in $colors {
+    &-#{$color} {background-color: css-prop($color, $value);}
+    &-#{$color}-#{$hover-class}:hover {background-color: css-prop($color, $value);}
+    &-#{$color}-#{$focus-class}:focus {background-color: css-prop($color, $value);}
+  }
+
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$inherit-class}#{$br-name} {background-color: inherit;}
+      &-#{$none-class}#{$br-name} {background-color: transparent;}
+    }
+  }
+}

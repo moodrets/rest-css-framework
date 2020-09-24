@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const path = require('path');
 
 const mode = {
 	prod: false,
@@ -61,7 +62,10 @@ module.exports = {
     }
 	},
 	resolve: {
-		extensions: ['.js', '.sass', '.vue']
+    extensions: ['.js', '.sass', '.vue'],
+    alias: {
+      '@':  path.resolve(__dirname, 'src/js/'),
+    }
 	},
 	plugins: [
     new VueLoaderPlugin(),

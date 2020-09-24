@@ -39,7 +39,7 @@
         }
       }
 
-      .#{$grid-row-class}.#{$grid-gap-class}-sm#{$br-name} {
+      .#{$grid-row-class}.#{$grid-gap-class}-#{$size-small-class}#{$br-name} {
         margin-left: calc(#{$grid-gap-sm} * -1);
         > [class*='#{$grid-column-class}'] {
           padding-left: #{$grid-gap-sm};
@@ -47,7 +47,7 @@
         }
       }
 
-      .#{$grid-row-class}.#{$grid-gap-class}-md#{$br-name} {
+      .#{$grid-row-class}.#{$grid-gap-class}-#{$size-medium-class}#{$br-name} {
         margin-left: calc(#{$grid-gap-md} * -1);
         > [class*='#{$grid-column-class}'] {
           padding-left: #{$grid-gap-md};
@@ -55,7 +55,7 @@
         }
       }
 
-      .#{$grid-row-class}.#{$grid-gap-class}-lg#{$br-name} {
+      .#{$grid-row-class}.#{$grid-gap-class}-#{$size-large-class}#{$br-name} {
         margin-left: calc(#{$grid-gap-lg} * -1);
         > [class*='#{$grid-column-class}'] {
           padding-left: #{$grid-gap-lg};
@@ -63,7 +63,7 @@
         }
       }
 
-      .#{$grid-row-class}.#{$grid-gap-class}-xl#{$br-name} {
+      .#{$grid-row-class}.#{$grid-gap-class}-#{$size-extra-large-class}#{$br-name} {
         margin-left: calc(#{$grid-gap-xl} * -1);
         > [class*='#{$grid-column-class}'] {
           padding-left: #{$grid-gap-xl};

@@ -9,15 +9,17 @@
 
 body {
   position: relative;
-  font-family: var(--font-family-base);
+  font-family: css-prop(font-family-base, map-get($global, font-family-base));
 }
 
 .#{$container-class} {
-  max-width: var(--content-width);
+  max-width: css-prop(content-width, map-get($global, content-width));
   margin-left: auto;
   margin-right: auto;
+  padding-left: css-prop(spacing-6, map-get($spacings, spacing-6));
+  padding-right: css-prop(spacing-6, map-get($spacings, spacing-6));
 
   &--sm {
-    max-width: var(--content-width-sm);
+    max-width: css-prop(content-width-sm, map-get($global, content-width-sm));
   }
 }

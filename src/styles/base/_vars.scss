@@ -1,6 +1,9 @@
 $colors : (
-	dark: #000000,
+  dark: #000000,
 	light: #ffffff,
+  theme: #c7ad96,
+  theme-1: #988a7f,
+  theme-2: #635a53,
 	primary: #0A87C2,
 	secondary: #9194A1,
 	success: #3BAF18,
@@ -14,8 +17,8 @@ $colors : (
 	success-2: #167C0C,
 	warning-1: #FF8719,
 	warning-2: #C15A0D,
-	danger-1: #861708,
-	danger-2: #500E05,
+	danger-1: #BC200B,
+	danger-2: #861708,
 );
 
 $breakpoints: (
@@ -27,6 +30,8 @@ $breakpoints: (
 );
 
 $spacings: (
+  1em: 1em,
+  2em: 2em,
   1: 6px,
   2: 8px,
   3: 10px,
@@ -103,12 +108,42 @@ $line-height-list: (
   0: 0,
 );
 
+$radiuses: (
+  1: 4px,
+  2: 6px,
+  3: 8px,
+  4: 10px,
+  5: 12px,
+  6: 14px,
+  7: 16px,
+  8: 18px,
+  9: 20px,
+  10: 22px,
+  11: 24px,
+  12: 26px,
+  13: 28px,
+  14: 30px,
+  0: 0,
+);
+
+$shadows: (
+  1: 'rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px',
+  2: 'rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px',
+  3: 'rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px',
+  4: 'rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px',
+  in-1: 'inset rgba(50, 50, 93, 0.25) 0 2px 5px -1px, inset rgba(0, 0, 0, 0.3) 0 1px 3px -1px',
+  in-2: 'inset rgba(50, 50, 93, 0.25) 0 6px 12px -2px, inset rgba(0, 0, 0, 0.3) 0 3px 7px -3px',
+  in-3: 'inset rgba(50, 50, 93, 0.25) 0 13px 27px -5px, inset rgba(0, 0, 0, 0.3) 0 8px 16px -8px',
+  in-4: 'inset rgba(0, 0, 0, 0.19) 0 10px 20px, inset rgba(0, 0, 0, 0.23) 0 6px 6px',
+);
+
 $global: (
-  font-family-base: "'Roboto', Arial, sans-serif",
-  font-family-secondary: "'Montserrat', Arial, sans-serif",
+  font-family-base: 'Geneva, Arial, Helvetica, sans-serif',
+  font-family-secondary: 'Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif',
   content-width: 1320px,
   content-width-sm: 840px,
   mobile-first: true,
+  css-vars-properties: true,
 );
 
 $media-width: if(map-get($global, mobile-first), 'min', 'max');
@@ -126,6 +161,10 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoints, xl)})';
   @each $size, $value in $breakpoints {@if ($size != xs){--#{$size}: #{$value};}}
   // spacings
   @each $spacing, $value in $spacings {--spacing-#{$spacing}: #{$value};}
+  // radiuses
+  @each $radius, $value in $radiuses {--radius-#{$radius}: #{$value};}
+  // shadows
+  @each $shadow, $value in $shadows {--shadow-#{$shadow}: #{$value};}
   // other
   @each $var, $value in $global {--#{$var}: #{$value};}
 }

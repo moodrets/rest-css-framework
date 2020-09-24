@@ -1,3 +1,39 @@
+$none-class: 'n';
+$inherit-class: 'inh';
+$unset-class: 'un';
+$initial-class: 'int';
+$normal-class: 'nl';
+$auto-class: 'a';
+$transparent-class: 'trsp';
+$direction-start-class: 's';
+$direction-end-class: 'e';
+$direction-left-class: 'l';
+$direction-center-class: 'c';
+$direction-right-class: 'r';
+$direction-middle-class: 'm';
+$direction-top-class: 't';
+$direction-bottom-class: 'b';
+$direction-vertical-class: 'y';
+$direction-horizontal-class: 'x';
+
+$hover-class: 'h';
+$focus-class: 'f';
+
+$size-exstra-small-class: 'xs';
+$size-small-class: 'sm';
+$size-medium-class: 'md';
+$size-large-class: 'lg';
+$size-extra-large-class: 'xl';
+
+$button-prefix-class: 'button';
+$button-base-font-size: 14px;
+
+$radius-prefix-class: 'rds';
+$radius-round-class: 'round';
+$radius-pill-class: 'pill';
+
+$shadow-prefix-class: 'sh';
+
 $width-prefix-class: 'wd';
 $width-100-percent-class: '1';
 $width-50-percent-class: '2';
@@ -20,7 +56,8 @@ $text-lowercase-class: 'lwr';
 $text-capitalize-class: 'cap';
 $text-underline-class: 'du';
 $text-underline-none-class: 'dn';
-$text-throught-class: 'thl';
+$text-throught-class: 'lth';
+$text-justify-class: 'j';
 
 $font-prefix-class: 'font';
 $font-base-class: 'base';
@@ -39,29 +76,21 @@ $font-size-class: 'sz';
 
 $line-height-prefix-class: 'lh';
 
+$background-prefix-class: 'bg';
+$background-repeat-repeat-class: 'rp';
+$background-repeat-norepeat-class: 'nrp';
+
 $display-prefix-class: 'd';
 $display-none-class: 'n';
 $display-block-class: 'b';
 $display-inline-block-class: 'ib';
 $display-grid-class: 'g';
+$display-inline-grid-class: 'ig';
 $display-flex-class: 'f';
 $display-inline-flex-class: 'if';
 $display-table-class: 'tb';
 $display-table-row-class: 'tr';
 $display-table-cell-class: 'td';
-
-$none-class: 'n';
-$inherit-class: 'inh';
-$normal-class: 'nr';
-$auto-class: 'a';
-$direction-left-class: 'l';
-$direction-center-class: 'c';
-$direction-middle-class: 'm';
-$direction-right-class: 'r';
-$direction-top-class: 't';
-$direction-bottom-class: 'b';
-$direction-vertical-class: 'y';
-$direction-horizontal-class: 'x';
 
 $margin-class: 'm';
 $margin-negative-class: 'neg';
@@ -88,3 +117,57 @@ $clearfix-class: 'clearfix';
 $float-prefix-class: 'flt';
 $radius-prefix-class: 'rds';
 $border-prefix-class: 'bdr';
+
+// flex prefix classes
+$flex-direction-class: 'fd';
+$flex-justify-content-class: 'jc';
+$flex-justify-items-class: 'ji';
+$flex-justify-self-class: 'js';
+$flex-align-content-class: 'ac';
+$flex-align-items-class: 'ai';
+$flex-align-self-class: 'as';
+$flex-wrap-class: 'fw';
+$flex-place-content-class: 'plc';
+$flex-place-items-class: 'pli';
+$flex-place-self-class: 'pls';
+
+$flex-row-class: 'r';
+$flex-row-reverse-class: 'rr';
+$flex-column-class: 'c';
+$flex-column-reverse-class: 'cr';
+
+$flex-wrap-wrap-class: 'w';
+$flex-wrap-nowrap-class: 'nw';
+$flex-wrap-revers-class: 'wrr';
+
+$flex-center-class: 'c';
+$flex-start-class: 's';
+$flex-self-start-class: 'ss';
+$flex-self-end-class: 'se';
+$flex-end-class: 'e';
+$flex-flex-start-class: 'fs';
+$flex-flex-end-class: 'fe';
+$flex-left-class: 'l';
+$flex-right-class: 'r';
+$flex-baseline-class: 'b';
+$flex-first-baseline-class: 'fb';
+$flex-last-baseline-class: 'lb';
+$flex-space-between-class: 'sb';
+$flex-space-around-class: 'sa';
+$flex-space-evenly-class: 'se';
+$flex-stretch-class: 'st';
+$flex-safe-center-class: 'sc';
+$flex-unsafe-center-class: 'uc';
+
+$flex-fill-class: 'fl-1';
+$flex-none-class: 'fl-n';
+$flex-none-childs-class: 'fl-n-ch';
+$flex-grow-1-class: 'fl-g-1';
+$flex-grow-0-class: 'fl-g-0';
+$flex-shrink-1-class: 'fl-sh-1';
+$flex-shrink-0-class: 'fl-sh-0';
+
+$flex-order-class: 'or';
+$flex-order-count: 10;
+$flex-order-first-class: 'f';
+$flex-order-last-class: 'l';

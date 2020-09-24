@@ -8,12 +8,24 @@
   &-#{$text-underline-none-class} {text-decoration: none;}
   &-#{$text-throught-class} {text-decoration: line-through;}
 
+  @each $color, $value in $colors {
+    &-#{$color} {color: css-prop(#{$color}, $value);}
+  }
+
   @each $name, $size in $breakpoints {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       &-#{$direction-left-class}#{$br-name} {text-align: left;}
       &-#{$direction-right-class}#{$br-name} {text-align: right;}
       &-#{$direction-center-class}#{$br-name} {text-align: center;}
+      &-#{$direction-start-class}#{$br-name} {text-align: start;}
+      &-#{$direction-end-class}#{$br-name} {text-align: end;}
+      &-#{$text-justify-class}#{$br-name} {
+        text-align: justify;
+        -moz-text-align-last: justify;
+        text-align-last: justify;
+      }
+      &-#{$inherit-class}#{$br-name} {text-align: inherit;}
     }
   }
 }

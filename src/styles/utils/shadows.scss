@@ -1,0 +1,12 @@
+.#{$shadow-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $shadow, $value in $shadows {
+        &-#{$shadow}#{$br-name} {box-shadow: css-prop(shadow-#{$shadow}, $value);}
+      }
+      &-#{$none-class}#{$br-name} {box-shadow: none;}
+      &-#{$inherit-class}#{$br-name} {box-shadow: inherit;}
+    }
+  }
+}

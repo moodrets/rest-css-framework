@@ -1,0 +1,17 @@
+.#{$display-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$display-none-class}#{$br-name} {display: none;}
+      &-#{$display-block-class}#{$br-name} {display: block;}
+      &-#{$display-inline-block-class}#{$br-name} {display: inline-block;}
+      &-#{$display-flex-class}#{$br-name} {display: flex;}
+      &-#{$display-inline-flex-class}#{$br-name} {display: inline-flex;}
+      &-#{$display-grid-class}#{$br-name} {display: grid;}
+      &-#{$display-inline-grid-class}#{$br-name} {display: inline-grid;}
+      &-#{$display-table-class}#{$br-name} {display: table;}
+      &-#{$display-table-row-class}#{$br-name} {display: table-row;}
+      &-#{$display-table-cell-class}#{$br-name} {display: table-cell;}
+    }
+  }
+}

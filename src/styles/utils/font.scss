@@ -6,12 +6,11 @@
       @each $fz, $fz-value in $font-sizes-list {
         &-#{$font-size-class}-#{$fz}#{$br-name} {font-size: #{$fz-value};}
       }
-      &-#{$inherit-class}#{$br-name} {font-size: inherit;}
+      &-#{$inherit-class}-sz#{$br-name} {font-size: inherit;}
     }
   }
-
-  &-#{$font-base-class} {font-family: var(--font-family-base);}
-  &-#{$font-secondary-class} {font-family: var(--font-family-secondary);}
+  &-#{$font-base-class} {font-family: css-prop(font-family-base, map-get($global, font-family-base));}
+  &-#{$font-secondary-class} {font-family: css-prop(font-family-secondary, map-get($global, font-family-secondary));}
   &-#{$font-thin-class} {font-weight: 100;}
   &-#{$font-extra-light-class} {font-weight: 200;}
   &-#{$font-light-class} {font-weight: 300;}

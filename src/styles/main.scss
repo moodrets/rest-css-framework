@@ -1,14 +1,24 @@
 // base
 @import 'base/vars';
+@import 'base/functions';
 @import 'base/mixins';
 @import 'base/settings';
 @import 'base/normalize';
 @import 'base/defaults';
 
+// elements
+@import 'elements/button';
+@import 'elements/svg-icon';
+
 // utils
+@import 'utils/display';
+@import 'utils/background';
 @import 'utils/text';
 @import 'utils/font';
 @import 'utils/line-height';
-@import 'utils/grid';
 @import 'utils/spacings';
+@import 'utils/width';
+@import 'utils/radius';
+@import 'utils/shadows';
+@import 'utils/grid';
 @import 'utils/flex';
