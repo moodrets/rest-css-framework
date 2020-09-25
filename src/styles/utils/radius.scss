@@ -4,9 +4,11 @@
       $br-name: breakpoint-infix($name);
       @each $radius, $value in $radiuses {
         &-#{$radius}#{$br-name} {border-radius: var(--radius-#{$radius});}
+        &-#{$direction-top-class}#{$direction-left-class}-#{$radius}#{$br-name} {border-top-left-radius: var(--radius-#{$radius});}
+        &-#{$direction-top-class}#{$direction-right-class}-#{$radius}#{$br-name} {border-top-right-radius: var(--radius-#{$radius});}
+        &-#{$direction-bottom-class}#{$direction-left-class}-#{$radius}#{$br-name} {border-bottom-left-radius: var(--radius-#{$radius});}
+        &-#{$direction-bottom-class}#{$direction-right-class}-#{$radius}#{$br-name} {border-bottom-right-radius: var(--radius-#{$radius});}
       }
-      &-#{$radius-round-class}#{$br-name} {border-radius: 50%;}
-      &-#{$radius-pill-class}#{$br-name} {border-radius: 50rem;}
       &-#{$inherit-class}#{$br-name} {border-radius: inherit;}
     }
   }

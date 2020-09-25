@@ -1,3 +1,6 @@
+import './helpers/inject-files'
+import './helpers/svg-sprite'
+
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
 import router from './router'
@@ -13,7 +16,13 @@ Vue.use(VueCompositionAPI)
 
 // filters
 import {cssVarValue} from '@/filters/index.js'
+import {cssVarName} from '@/filters/index.js'
 Vue.filter('cssVarValue', cssVarValue)
+Vue.filter('cssVarName', cssVarName)
+
+// directives
+import {rsSelect} from '@/directives/index.js'
+Vue.directive('rs-select', rsSelect)
 
 new Vue({
   router,

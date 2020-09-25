@@ -1,19 +1,17 @@
 <template>
   <div class="rs-breakpoints">
     <h1 class="mt-0">Breakpoints</h1>
-    <div v-for="breakpoint in breakpointVars" :key="breakpoint">
-      <p><strong>{{breakpoint.replace('--', '')}}:</strong> <mark>{{breakpoint|cssVarValue}}</mark> - <i>var({{breakpoint}})</i></p>
+    <div class="p-5 sh-1 mb-3" v-for="breakpoint in breakpointsVars" :key="breakpoint">
+      <strong>{{breakpoint.replace('--', '')}}:</strong> <mark>{{breakpoint|cssVarValue}}</mark> - var({{breakpoint}})
     </div>
   </div>
 </template>
 
 <script>
 
-  import { mapGetters } from 'vuex'
+  import breakpoints from '@/mixins/breakpoints.js'
 
   export default {
-    computed:{
-      ...mapGetters(['breakpointVars'])
-    }
+    mixins: [breakpoints]
   }
 </script>

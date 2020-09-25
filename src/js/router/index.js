@@ -8,6 +8,8 @@ import Flex from '@/pages/Flex'
 import Breakpoints from '@/pages/Breakpoints'
 import Colors from '@/pages/Colors'
 import Spacings from '@/pages/Spacings'
+import Border from '@/pages/Border'
+import Icons from '@/pages/Icons'
 
 export const routes = [
   {
@@ -21,6 +23,11 @@ export const routes = [
     component: Colors
   },
   {
+    path: '/icons',
+    name: 'Icons',
+    component: Icons
+  },
+  {
     path: '/spacings',
     name: 'Spacings',
     component: Spacings
@@ -29,6 +36,11 @@ export const routes = [
     path: '/breakpoints',
     name: 'Breakpoints',
     component: Breakpoints
+  },
+  {
+    path: '/border',
+    name: 'Border',
+    component: Border
   },
   {
     path: '/flex',

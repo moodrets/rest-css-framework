@@ -1,8 +1,9 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const path = require('path');
 
 const mode = {
 	prod: false,
@@ -41,11 +42,17 @@ const paths = {
 		],
   },
   svg: {
+    spriteConfig: {
+      spriteAttrs: {
+        id: 'svg-sprite',
+        style: 'position:absolute; left: -20000px; top: -20000px;',
+        plainSprite: false
+      }
+    },
     output: {
-      esModule: false,
-      extract: true,
-      runtimeCompat: true,
-      spriteFilename: "svg/sprite.svg"
+      publicPath: '/',
+      outputPath: '../sprite-svg/',
+      spriteFilename: "sprite.svg"
     }
   }
 }
@@ -70,8 +77,15 @@ module.exports = {
 	plugins: [
     new VueLoaderPlugin(),
 		new CleanWebpackPlugin(),
+    new CopyPlugin(paths.copy),
 		new MiniCssExtractPlugin(paths.css.output),
-		new CopyPlugin(paths.copy),
+    new SpriteLoaderPlugin({
+      spriteAttrs: {
+        id: 'svg-sprite',
+        style: 'position:absolute; left: -20000px; top: -20000px;',
+        plainSprite: true
+      }
+    }),
 	],
 	module: {
 		rules: [
@@ -107,6 +121,19 @@ module.exports = {
             },
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require('postcss-sort-media-queries')({
+                    sort: 'mobile-first',
+                  }),
+                ],
+              },
+              sourceMap: mode.dev,
+            }
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: mode.dev,
@@ -116,11 +143,18 @@ module.exports = {
       },
       // svg sprite
       {
-        test: /(icons).*\.svg$/,
+        test: /\.svg$/,
         use: [
           {
             loader: "svg-sprite-loader",
-            options: paths.svg.output,
+            options: {
+              esModule: false,
+              extract: true,
+              runtimeCompat: true,
+              // publicPath: '/',
+              // outputPath: '../',
+              spriteFilename: 'svg/sprite.svg'
+            },
           },
           {
             loader: 'svgo-loader',

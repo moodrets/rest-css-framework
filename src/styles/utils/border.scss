@@ -1,0 +1,136 @@
+.#{$border-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      &#{$br-name} {
+        border-style: solid;
+        border-width: 1px;
+      }
+
+      &-#{$border-dotted-class}#{$br-name} {
+        border-style: dotted;
+      }
+      &-#{$border-dashed-class}#{$br-name} {
+        border-style: dashed;
+      }
+      &-#{$border-solid-class}#{$br-name} {
+        border-style: solid;
+      }
+
+      // top
+      &-#{$direction-top-class}#{$br-name} {
+        border-top-width: 1px;
+        border-top-style: solid;
+      }
+      &-#{$direction-top-class}-#{$border-dotted-class}#{$br-name} {
+        border-top-style: dotted;
+      }
+      &-#{$direction-top-class}-#{$border-dashed-class}#{$br-name} {
+        border-top-style: dashed;
+      }
+      &-#{$direction-top-class}-#{$border-solid-class}#{$br-name} {
+        border-top-style: solid;
+      }
+
+      // right
+      &-#{$direction-right-class}#{$br-name} {
+        border-right-width: 1px;
+        border-right-style: solid;
+      }
+      &-#{$direction-right-class}-#{$border-dotted-class}#{$br-name} {
+        border-right-style: dotted;
+      }
+      &-#{$direction-right-class}-#{$border-dashed-class}#{$br-name} {
+        border-right-style: dashed;
+      }
+      &-#{$direction-right-class}-#{$border-solid-class}#{$br-name} {
+        border-right-style: solid;
+      }
+
+      // bottom
+      &-#{$direction-bottom-class}#{$br-name} {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+      &-#{$direction-bottom-class}-#{$border-dotted-class}#{$br-name} {
+        border-bottom-style: dotted;
+      }
+      &-#{$direction-bottom-class}-#{$border-dashed-class}#{$br-name} {
+        border-bottom-style: dashed;
+      }
+      &-#{$direction-bottom-class}-#{$border-solid-class}#{$br-name} {
+        border-bottom-style: solid;
+      }
+
+      // left
+      &-#{$direction-left-class}#{$br-name} {
+        border-left-width: 1px;
+        border-left-style: solid;
+      }
+      &-#{$direction-left-class}-#{$border-dotted-class}#{$br-name} {
+        border-left-style: dotted;
+      }
+      &-#{$direction-left-class}-#{$border-dashed-class}#{$br-name} {
+        border-left-style: dashed;
+      }
+      &-#{$direction-left-class}-#{$border-solid-class}#{$br-name} {
+        border-left-style: solid;
+      }
+
+      // horizontal
+      &-#{$direction-horizontal-class}#{$br-name} {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+      }
+
+      // vertical
+      &-#{$direction-vertical-class}#{$br-name} {
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-left-style: solid;
+        border-right-style: solid;
+      }
+
+      // none
+      &-#{$direction-horizontal-class}-#{$none-class}#{$br-name} {
+        border-top: none;
+        border-bottom: none;
+      }
+      &-#{$direction-vertical-class}-#{$none-class}#{$br-name} {
+        border-left: none;
+        border-right: none;
+      }
+      &-#{$direction-top-class}-#{$none-class}#{$br-name} {
+        border-top: none;
+      }
+      &-#{$direction-bottom-class}-#{$none-class}#{$br-name} {
+        border-bottom: none;
+      }
+      &-#{$direction-right-class}-#{$none-class}#{$br-name} {
+        border-right: none;
+      }
+      &-#{$direction-left-class}-#{$none-class}#{$br-name} {
+        border-left: none;
+      }
+      &-#{$none-class}#{$br-name} {
+        border: none;
+      }
+
+      @for $w from 2 through $border-width-count {
+        &-#{$border-width-class}-#{$w}#{$br-name} {
+          border-width: #{$w}px;
+        }
+      }
+    }
+  }
+
+  @each $color, $value in $colors {
+    &-#{$color} {border-color: var(--color-#{$color});}
+    &-#{$color}\:#{$hover-class}:hover {border-color: var(--color-#{$color});}
+    &-#{$color}\:#{$focus-class}:focus {border-color: var(--color-#{$color});}
+    &-#{$color}\:#{$active-class}:active {border-color: var(--color-#{$color});}
+  }
+}

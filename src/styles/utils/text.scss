@@ -10,6 +10,9 @@
 
   @each $color, $value in $colors {
     &-#{$color} {color: var(--color-#{$color});}
+    &-#{$color}\:#{$hover-class}:hover {color: var(--color-#{$color});}
+    &-#{$color}\:#{$focus-class}:focus {color: var(--color-#{$color});}
+    &-#{$color}\:#{$active-class}:active {color: var(--color-#{$color});}
   }
 
   @each $name, $size in $breakpoints {
@@ -25,7 +28,6 @@
         -moz-text-align-last: justify;
         text-align-last: justify;
       }
-      &-#{$inherit-class}#{$br-name} {text-align: inherit;}
     }
   }
 }

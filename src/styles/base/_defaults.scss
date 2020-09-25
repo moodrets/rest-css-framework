@@ -12,15 +12,3 @@ body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
 }
-
-.#{$container-class} {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-6);
-  padding-right: var(--spacing-6);
-
-  &--sm {
-    max-width: var(--content-width-sm);
-  }
-}

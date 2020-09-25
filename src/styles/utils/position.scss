@@ -1,0 +1,38 @@
+.#{$position-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$position-relative-class}#{$br-name} {position: relative;}
+      &-#{$position-absolute-class}#{$br-name} {position: absolute;}
+      &-#{$position-fixed-class}#{$br-name} {position: fixed;}
+      &-#{$position-sticky-class}#{$br-name} {position: sticky;}
+      &-#{$position-static-class}#{$br-name} {position: static;}
+      &-#{$inherit-class}#{$br-name} {position: inherit;}
+      &-#{$position-cover-class}#{$br-name} {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      @each $spacing, $value in $spacings {
+        &-#{$direction-top-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing});}
+        &-#{$direction-right-class}-#{$spacing}#{$br-name} {right: var(--spacing-#{$spacing});}
+        &-#{$direction-bottom-class}-#{$spacing}#{$br-name} {bottom: var(--spacing-#{$spacing});}
+        &-#{$direction-left-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing});}
+      }
+    }
+  }
+}
+
+.#{$z-index-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @for $z from 1 through $z-index-count {
+        &-#{$z}#{$br-name} {z-index: #{$z};}
+        &-#{$z}-#{$z-index-negative-class}#{$br-name} {z-index: -#{$z};}
+      }
+      &-#{$z-index-over-class}#{$br-name} {z-index: #{$z-index-over-value};}
+    }
+  }
+}
