@@ -3,7 +3,7 @@
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       @each $radius, $value in $radiuses {
-        &-#{$radius}#{$br-name} {border-radius: css-prop(radius-#{$radius}, $value);}
+        &-#{$radius}#{$br-name} {border-radius: var(--radius-#{$radius});}
       }
       &-#{$radius-round-class}#{$br-name} {border-radius: 50%;}
       &-#{$radius-pill-class}#{$br-name} {border-radius: 50rem;}

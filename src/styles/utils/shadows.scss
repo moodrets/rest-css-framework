@@ -3,7 +3,7 @@
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       @each $shadow, $value in $shadows {
-        &-#{$shadow}#{$br-name} {box-shadow: css-prop(shadow-#{$shadow}, $value);}
+        &-#{$shadow}#{$br-name} {box-shadow: var(--shadow-#{$shadow});}
       }
       &-#{$none-class}#{$br-name} {box-shadow: none;}
       &-#{$inherit-class}#{$br-name} {box-shadow: inherit;}

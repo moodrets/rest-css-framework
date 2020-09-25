@@ -6,7 +6,7 @@
   margin: 0;
   background: none;
   text-decoration: none;
-  font-size: $button-base-font-size;
+  font-size: var(--button-font-size-base);
 
   &:hover,
   &:focus {
@@ -14,77 +14,77 @@
   }
 
   &--primary {
-    background: css-prop(primary, map-get($colors, primary));
-    color: css-prop(light, map-get($colors, light));
+    background: var(--primary);
+    color: var(--light);
 
     &:hover,
     &:focus {
-      background: css-prop(primary-1, map-get($colors, primary-1));
-      color: css-prop(light, map-get($colors, light));
+      background: var(--primary-1);
+      color: var(--light);
     }
 
     &:active {
-      background: css-prop(primary-2, map-get($colors, primary-2));
+      background: var(--primary-2);
     }
   }
 
   &--secondary {
-    background: css-prop(secondary, map-get($colors, secondary));
-    color: css-prop(light, map-get($colors, light));
+    background: var(--secondary);
+    color: var(--light);
 
     &:hover,
     &:focus {
-      background: css-prop(secondary-1, map-get($colors, secondary-1));
-      color: css-prop(light, map-get($colors, light));
+      background: var(--secondary-1);
+      color: var(--light);
     }
 
     &:active {
-      background: css-prop(secondary-2, map-get($colors, secondary-2));
+      background: var(--secondary-2);
     }
   }
 
   &--warning {
-    background: css-prop(warning, map-get($colors, warning));
-    color: css-prop(light, map-get($colors, light));
+    background: var(--warning);
+    color: var(--light);
 
     &:hover,
     &:focus {
-      background: css-prop(warning-1, map-get($colors, warning-1));
-      color: css-prop(light, map-get($colors, light));
+      background: var(--warning-1);
+      color: var(--light);
     }
 
     &:active {
-      background: css-prop(warning-2, map-get($colors, warning-2));
+      background: var(--warning-2);
     }
   }
 
   &--success {
-    background: css-prop(success, map-get($colors, success));
-    color: css-prop(light, map-get($colors, light));
+    background: var(--success);
+    color: var(--light);
 
     &:hover,
     &:focus {
-      background: css-prop(success-1, map-get($colors, success-1));
-      color: css-prop(light, map-get($colors, light));
+      background: var(--success-1);
+      color: var(--light);
     }
 
     &:active {
-      background: css-prop(success-2, map-get($colors, success-2));
+      background: var(--success-2);
     }
   }
 
   &--danger {
-    background: css-prop(danger, map-get($colors, danger));
-    color: css-prop(light, map-get($colors, light));
+    background: var(--danger);
+    color: var(--light);
 
     &:hover,
     &:focus {
-      background: css-prop(danger-1, map-get($colors, danger-1));
-      color: css-prop(light, map-get($colors, light));
+      background: var(--danger-2);
+      color: var(--light);
     }
 
     &:active {
-      background: css-prop(danger-2, map-get($colors, danger-2));
+      background: var(--danger-3);
     }
   }
 

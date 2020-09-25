@@ -9,7 +9,7 @@
   &-#{$text-throught-class} {text-decoration: line-through;}
 
   @each $color, $value in $colors {
-    &-#{$color} {color: css-prop(#{$color}, $value);}
+    &-#{$color} {color: var(--color-#{$color});}
   }
 
   @each $name, $size in $breakpoints {

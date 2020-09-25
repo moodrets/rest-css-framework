@@ -140,10 +140,11 @@ $shadows: (
 $global: (
   font-family-base: 'Geneva, Arial, Helvetica, sans-serif',
   font-family-secondary: 'Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif',
+  font-size-base: 14px,
+  button-font-size-base: 14px,
   content-width: 1320px,
   content-width-sm: 840px,
   mobile-first: true,
-  css-vars-properties: true,
 );
 
 $media-width: if(map-get($global, mobile-first), 'min', 'max');
@@ -156,9 +157,9 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoints, xl)})';
 
 :root {
 	// colors
-	@each $color, $value in $colors {--#{$color}: #{$value};}
+	@each $color, $value in $colors {--color-#{$color}: #{$value};}
 	// breakpoints
-  @each $size, $value in $breakpoints {@if ($size != xs){--#{$size}: #{$value};}}
+  @each $size, $value in $breakpoints {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
   // spacings
   @each $spacing, $value in $spacings {--spacing-#{$spacing}: #{$value};}
   // radiuses

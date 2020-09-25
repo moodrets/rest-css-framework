@@ -7,6 +7,7 @@ import Home from '@/pages/Home'
 import Flex from '@/pages/Flex'
 import Breakpoints from '@/pages/Breakpoints'
 import Colors from '@/pages/Colors'
+import Spacings from '@/pages/Spacings'
 
 export const routes = [
   {
@@ -18,6 +19,11 @@ export const routes = [
     path: '/colors',
     name: 'Colors',
     component: Colors
+  },
+  {
+    path: '/spacings',
+    name: 'Spacings',
+    component: Spacings
   },
   {
     path: '/breakpoints',

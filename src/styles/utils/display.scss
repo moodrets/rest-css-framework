@@ -12,6 +12,7 @@
       &-#{$display-table-class}#{$br-name} {display: table;}
       &-#{$display-table-row-class}#{$br-name} {display: table-row;}
       &-#{$display-table-cell-class}#{$br-name} {display: table-cell;}
+      &-#{$display-table-caption-class}#{$br-name} {display: table-caption;}
     }
   }
 }

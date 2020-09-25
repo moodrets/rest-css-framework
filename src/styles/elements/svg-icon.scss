@@ -1,0 +1,21 @@
+.svg-icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  color: inherit;
+
+  svg {
+    fill: inherit;
+    width: inherit;
+    height: inherit;
+  }
+
+  &--stroke {
+    fill: none;
+    stroke: currentColor;
+  }
+
+  &--nofill {
+    fill: none;
+  }
+}

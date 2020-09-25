@@ -4,7 +4,7 @@
     <main class="rs-main mt-7 mt-9:lg font-sz-17">
       <div class="container">
         <div class="row gap-md no-gap-b">
-          <div class="col col-12 col-3:lg">
+          <div class="col col-12 col-3:lg d-n d-b:lg">
             <Aside></Aside>
           </div>
           <div class="col col-12 col-9:lg">
@@ -18,6 +18,8 @@
 
 <script>
 
+import { mapMutations } from 'vuex'
+
 import Aside from '@/components/Aside'
 import Header from '@/components/Header'
 
@@ -26,6 +28,22 @@ export default {
   components: {
     Aside,
     Header,
+  },
+  methods: {
+    ...mapMutations(['PUSH_CSS_VARS'])
+  },
+  mounted(){
+
+    const cssVars = [...document.styleSheets]
+      .filter(sheet => sheet.href === null || sheet.href.includes('main.css'))
+      .reduce((acc, sheet) => (acc = [
+            ...acc,
+            ...[...sheet.cssRules].reduce((def, rule) => (def = rule.selectorText === ':root' ? [...def, ...[...rule.style].filter(name => name.startsWith("--"))]: def), [])
+          ]),
+        []
+      );
+
+    this.PUSH_CSS_VARS(cssVars)
   }
 }
 </script>
