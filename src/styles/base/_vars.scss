@@ -1,7 +1,7 @@
 $colors : (
   dark: #000000,
 	light: #ffffff,
-  theme: #c7ad96,
+  theme: #e2c6ad,
   theme-1: #988a7f,
   theme-2: #635a53,
 	primary: #0A87C2,
@@ -49,6 +49,7 @@ $spacings: (
   12: 60px,
   13: 80px,
   0: 0,
+  inh: inherit
 );
 
 $font-sizes-list: (
@@ -129,7 +130,23 @@ $radiuses: (
   14: 30px,
   round: 50%,
   pill: 50rem,
+  inh: inherit,
   0: 0,
+);
+
+$sizes: (
+  1: 16px,
+  2: 20px,
+  3: 24px,
+  4: 30px,
+  5: 32px,
+  6: 36px,
+  7: 42px,
+  8: 48px,
+  9: 52px,
+  10: 64px,
+  11: 72px,
+  inh: inherit,
 );
 
 $shadows: (
@@ -144,9 +161,10 @@ $shadows: (
 );
 
 $global: (
-  font-family-base: 'Geneva, Arial, Helvetica, sans-serif',
-  font-family-secondary: 'Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif',
+  font-family-base: 'Roboto, Arial, Helvetica, sans-serif',
+  font-family-secondary: 'Montserrat, Tahoma, sans-serif',
   font-size-base: 14px,
+  base-color: #000,
   button-font-size-base: 14px,
   content-width: 1320px,
   content-width-sm: 840px,
@@ -170,6 +188,8 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoints, xl)})';
   @each $spacing, $value in $spacings {--spacing-#{$spacing}: #{$value};}
   // radiuses
   @each $radius, $value in $radiuses {--radius-#{$radius}: #{$value};}
+  // sizes
+  @each $size, $value in $sizes {--size-#{$size}: #{$value};}
   // shadows
   @each $shadow, $value in $shadows {--shadow-#{$shadow}: #{$value};}
   // other

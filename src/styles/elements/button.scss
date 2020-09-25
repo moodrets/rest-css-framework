@@ -1,4 +1,6 @@
 .#{$button-prefix-class} {
+  display: inline-flex;
+  align-items: center;
   outline: none;
   border: none;
   cursor: pointer;

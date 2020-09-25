@@ -1,0 +1,16 @@
+.#{$height-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$height-100-percent-class}#{$br-name} {height: 100%;}
+      &-#{$height-50-percent-class}#{$br-name} {height: 50%;}
+      &-#{$height-33-percent-class}#{$br-name} {height: 33.3%;}
+      &-#{$height-25-percent-class}#{$br-name} {height: 25%;}
+      &-#{$height-max-100-class}#{$br-name} {max-height: 100%;}
+
+      @each $size, $value in $sizes {
+        &-#{$size-class}-#{$size}#{$br-name} {height: var(--size-#{$size});}
+      }
+    }
+  }
+}

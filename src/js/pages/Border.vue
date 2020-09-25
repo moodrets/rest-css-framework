@@ -3,73 +3,73 @@
     <h1 class="mt-0">Borders</h1>
     <div class="row cols-1 cols-2:md cols-4:lg">
       <div class="col">
-        <h3 class="mt-0">Border width</h3>
+        <h4 class="mt-0">Border width</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderWidth">
             <option :value="iter" v-for="iter in 10" :key="iter">{{iter}}px</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h3 class="mt-0">Border color</h3>
+        <h4 class="mt-0">Border color</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderColor">
             <option :value="color.replace('--color-', '')" v-for="color in colorVars" :key="color">var({{color}})</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h3 class="mt-0">Border style</h3>
+        <h4 class="mt-0">Border style</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderStyle">
             <option :value="style.value" v-for="style in borderStyleValues" :key="style.value">{{style.text}}</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h3 class="mt-0">Border none</h3>
+        <h4 class="mt-0">Border none</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderNone">
             <option :value="item.value" v-for="item in borderNoneValues" :key="item.value">{{item.text}}</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col col-6:lg">
-        <h3 class="mt-0">Border radius</h3>
+        <h4 class="mt-0">Border radius</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderRadius">
             <option :value="item.replace('--radius-', '')" v-for="item in radiusVars" :key="item">var({{item}})</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col col-6:lg">
-        <h3 class="mt-0">Border class and breakpoints</h3>
+        <h4 class="mt-0">Border class and breakpoints</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderBreakpoints">
             <option :value="item.value" v-for="item in borderBreakpointsValues" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-5 pr-10 bdr bdr-theme bdr-wd-2 rds-4 txt-theme-2">
-            <svg-icon name="arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+            <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
         <div class="col"><strong>Element</strong></div>
       </div>
       <div class="row ai-c no-gap cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
-        <div class="col txt-primary">{{item.className}}</div>
+        <div class="col txt-primary font-500">{{item.className}}</div>
         <div class="col"><div class="p-6 mt-4 mt-0:md" :class="item.className.replace(/\./g,'')"></div></div>
       </div>
     </div>
@@ -243,7 +243,7 @@
     mounted(){
       setTimeout(()=>{
         this.colorVars.map(color => {
-          this.borderClassList.push({className: `.bdr .bdr-wd-2 .bdr-${color.replace('--color-', '')}`})
+          this.borderClassList.push({className: `.bdr .bdr-${color.replace('--color-', '')}`})
         })
       }, 0)
     }

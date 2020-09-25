@@ -25,7 +25,6 @@
       &#{$direction-bottom-class}-#{$auto-class}#{$br-name} {margin-bottom: auto}
       &#{$direction-vertical-class}-#{$auto-class}#{$br-name} {margin-top: auto; margin-bottom: auto}
       &#{$direction-horizontal-class}-#{$auto-class}#{$br-name} {margin-left: auto; margin-right: auto}
-      &-#{$inherit-class}#{$br-name} {margin: inherit}
     }
   }
 }
@@ -43,7 +42,6 @@
         &#{$direction-vertical-class}-#{$spacing}#{$br-name} {padding-top: var(--spacing-#{$spacing}); padding-bottom: var(--spacing-#{$spacing})}
         &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {padding-left: var(--spacing-#{$spacing}); padding-right: var(--spacing-#{$spacing})}
       }
-      &-#{$inherit-class}#{$br-name} {padding: inherit}
     }
   }
 }

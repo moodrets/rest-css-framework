@@ -10,6 +10,7 @@ import Colors from '@/pages/Colors'
 import Spacings from '@/pages/Spacings'
 import Border from '@/pages/Border'
 import Icons from '@/pages/Icons'
+import Buttons from '@/pages/Buttons'
 
 export const routes = [
   {
@@ -18,24 +19,31 @@ export const routes = [
     component: Home
   },
   {
-    path: '/colors',
-    name: 'Colors',
-    component: Colors
+    path: '/breakpoints',
+    name: 'Breakpoints',
+    component: Breakpoints
   },
   {
     path: '/icons',
     name: 'Icons',
-    component: Icons
+    component: Icons,
+    header: 'Elements'
+  },
+  {
+    path: '/buttons',
+    name: 'Buttons',
+    component: Buttons,
+  },
+  {
+    path: '/colors',
+    name: 'Colors',
+    component: Colors,
+    header: 'Utils'
   },
   {
     path: '/spacings',
     name: 'Spacings',
     component: Spacings
-  },
-  {
-    path: '/breakpoints',
-    name: 'Breakpoints',
-    component: Breakpoints
   },
   {
     path: '/border',

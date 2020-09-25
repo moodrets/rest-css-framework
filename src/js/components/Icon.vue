@@ -1,5 +1,8 @@
 <template>
-  <div :class="['svg-icon', `svg-icon--${name}`, addClass]">
+  <a v-if="href" :target="target" :href="href" :class="['svg-icon', `svg-icon--${name}`, addClass]">
+    <svg><use :xlink:href="`#${name}`"></use></svg>
+  </a>
+  <div v-else :class="['svg-icon', `svg-icon--${name}`, addClass]">
     <svg><use :xlink:href="`#${name}`"></use></svg>
   </div>
 </template>
@@ -13,6 +16,12 @@
       },
       addClass: {
         type: String,
+      },
+      href: {
+        type: String
+      },
+      target: {
+        type: String
       }
     },
   }
