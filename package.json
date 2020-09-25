@@ -8,7 +8,7 @@
     "start": "webpack --mode development --watch",
     "prod": "webpack --mode production",
     "predeploy": "webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/moodrets/rest-frontend-framework/issues"
   },
-  "homepage": "https://github.com/moodrets/rest-frontend-framework#readme",
+  "homepage": "https://moodrets.github.io/rest-css-framework/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
