@@ -46,8 +46,8 @@ export const routes = [
     component: Spacings
   },
   {
-    path: '/border',
-    name: 'Border',
+    path: '/borders',
+    name: 'Borders',
     component: Border
   },
   {

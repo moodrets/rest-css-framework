@@ -124,6 +124,10 @@
           border-width: #{$w}px;
         }
       }
+
+      &-#{$inherit-class}#{$br-name} {border: inherit;}
+      &-#{$current-color-class}#{$br-name} {border-color: currentColor;}
+      &-#{$transparent-class}#{$br-name} {border-color: transparent;}
     }
   }
 

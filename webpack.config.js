@@ -1,14 +1,19 @@
 const path = require('path');
+const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const mode = {
 	prod: false,
 	dev: false
 };
+
+const PAGES_DIR = `./src/`;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 process.argv.forEach(flag => {
 	if ( flag === 'development' ) {
@@ -36,7 +41,7 @@ const paths = {
 	copy: {
 		patterns: [
 			{
-				from: 'src/index.html',
+				from: 'src/favicon.ico',
 				to: ''
 			},
 		],
@@ -83,9 +88,13 @@ module.exports = {
       spriteAttrs: {
         id: 'svg-sprite',
         style: 'position:absolute; left: -20000px; top: -20000px;',
-        plainSprite: true
+        plainSprite: false
       }
     }),
+    ...PAGES.map(page => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/${page}`,
+      filename: `./${page.replace(/\.pug/,'.html')}`,
+    })),
 	],
 	module: {
 		rules: [
@@ -105,6 +114,15 @@ module.exports = {
         test: /\.vue$/,
         exclude: /(node_modules)/,
         loader: 'vue-loader'
+      },
+      // pug pages
+      {
+        test: /\.pug$/,
+        exclude: /(node_modules)/,
+        loader: 'pug-loader',
+        query: {
+          pretty: true,
+        }
       },
       // scss
       {
@@ -151,9 +169,7 @@ module.exports = {
               esModule: false,
               extract: true,
               runtimeCompat: true,
-              // publicPath: '/',
-              // outputPath: '../',
-              spriteFilename: 'svg/sprite.svg'
+              spriteFilename: '../src/svg/sprite.svg'
             },
           },
           {

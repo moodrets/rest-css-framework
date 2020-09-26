@@ -1,42 +1,51 @@
-.#{$component-prefix-class} {
-  &-select {
+// custom select
+.#{$component-prefix-class}-#{$select-class} {
+  position: relative;
+
+  select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+
+    &:focus ~ * {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__value {
+    pointer-events: none;
     position: relative;
+    min-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
-    select {
+    &:before {
+      content: attr(data-value);
+    }
+
+    .#{$svg-icon-class} {
+      width: 16px;
+      height: 16px;
+      right: 16px;
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-
-      &:focus ~ * {
-        border-color: var(--color-primary);
-      }
+      top: 50%;
+      transform: translateY(-50%);
     }
+  }
+}
 
-    &__value {
-      pointer-events: none;
-      min-height: 20px;
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+// input textarea
+.#{$component-prefix-class}-#{$form-control} {
+  outline: none;
+  width: 100%;
 
-      &:before {
-        content: attr(data-value);
-      }
-
-      .svg-icon {
-        width: 16px;
-        height: 16px;
-        right: 16px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
+  &:focus {
+    border-color: var(--color-primary);
   }
 }

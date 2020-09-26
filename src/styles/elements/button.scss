@@ -9,89 +9,105 @@
   background: none;
   text-decoration: none;
   font-size: var(--button-font-size-base);
+  vertical-align: top;
 
   &:hover,
   &:focus {
     text-decoration: none;
   }
 
-  &--primary {
-    background: var(--primary);
-    color: var(--light);
+  &-primary {
+    background: var(--color-primary);
+    color: var(--color-light);
 
     &:hover,
     &:focus {
-      background: var(--primary-1);
-      color: var(--light);
+      background: var(--color-primary-1);
+      color: var(--color-light);
     }
 
     &:active {
-      background: var(--primary-2);
+      background: var(--color-primary-2);
     }
   }
 
-  &--secondary {
-    background: var(--secondary);
-    color: var(--light);
+  &-secondary {
+    background: var(--color-secondary);
 
     &:hover,
     &:focus {
-      background: var(--secondary-1);
-      color: var(--light);
+      background: var(--color-secondary-1);
+      color: var(--color-light);
     }
 
     &:active {
-      background: var(--secondary-2);
+      background: var(--color-secondary-2);
     }
   }
 
-  &--warning {
-    background: var(--warning);
-    color: var(--light);
+  &-warning {
+    background: var(--color-warning);
+    color: var(--color-light);
 
     &:hover,
     &:focus {
-      background: var(--warning-1);
-      color: var(--light);
+      background: var(--color-warning-1);
+      color: var(--color-light);
     }
 
     &:active {
-      background: var(--warning-2);
+      background: var(--color-warning-2);
     }
   }
 
-  &--success {
-    background: var(--success);
-    color: var(--light);
+  &-success {
+    background: var(--color-success);
+    color: var(--color-light);
 
     &:hover,
     &:focus {
-      background: var(--success-1);
-      color: var(--light);
+      background: var(--color-success-1);
+      color: var(--color-light);
     }
 
     &:active {
-      background: var(--success-2);
+      background: var(--color-success-2);
     }
   }
 
-  &--danger {
-    background: var(--danger);
-    color: var(--light);
+  &-info {
+    background: var(--color-info);
+    color: var(--color-light);
 
     &:hover,
     &:focus {
-      background: var(--danger-2);
-      color: var(--light);
+      background: var(--color-info-1);
+      color: var(--color-light);
     }
 
     &:active {
-      background: var(--danger-3);
+      background: var(--color-info-2);
+    }
+  }
+
+  &-danger {
+    background: var(--color-danger);
+    color: var(--color-light);
+
+    &:hover,
+    &:focus {
+      background: var(--color-danger-1);
+      color: var(--color-light);
+    }
+
+    &:active {
+      background: var(--color-danger-2);
     }
   }
 
   &[disabled],
-  &.disabled {
-    cursor: disabled;
+  &-disabled {
+    pointer-events: none;
+    cursor: default;
   }
 }

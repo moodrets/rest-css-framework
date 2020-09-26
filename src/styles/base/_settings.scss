@@ -6,6 +6,7 @@ $initial-class: 'int';
 $normal-class: 'nl';
 $auto-class: 'a';
 $transparent-class: 'trsp';
+$current-color-class: 'current';
 $direction-start-class: 's';
 $direction-end-class: 'e';
 $direction-left-class: 'l';
@@ -193,3 +194,10 @@ $flex-order-class: 'or';
 $flex-order-count: 10;
 $flex-order-first-class: 'f';
 $flex-order-last-class: 'l';
+
+$svg-icon-class: 'svg-icon';
+
+// forms
+// prefix will be added $component-prefix-class
+$select-class: 'select';
+$form-control: 'form-control'; // input textarea

@@ -5,4 +5,12 @@
     &-#{$color}\:#{$focus-class}:focus {background-color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {background-color: var(--color-#{$color});}
   }
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$inherit-class}#{$br-name} {background-color: inherit;}
+      &-#{$current-color-class}#{$br-name} {background-color: currentColor;}
+      &-#{$transparent-class}#{$br-name} {background-color: transparent;}
+    }
+  }
 }

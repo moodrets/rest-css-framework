@@ -28,6 +28,9 @@
         -moz-text-align-last: justify;
         text-align-last: justify;
       }
+      &-#{$inherit-class}#{$br-name} {color: inherit;}
+      &-#{$current-color-class}#{$br-name} {color: currentColor;}
+      &-#{$transparent-class}#{$br-name} {color: transparent;}
     }
   }
 }

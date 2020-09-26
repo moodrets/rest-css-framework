@@ -1,74 +1,74 @@
 <template>
-  <div class="rs-border">
+  <div class="rs-border" v-cloak>
     <h1 class="mt-0">Borders</h1>
     <div class="row cols-1 cols-2:md cols-4:lg">
       <div class="col">
-        <h4 class="mt-0">Border width</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border width</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderWidth">
             <option :value="iter" v-for="iter in 10" :key="iter">{{iter}}px</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0">Border color</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border color</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderColor">
             <option :value="color.replace('--color-', '')" v-for="color in colorVars" :key="color">var({{color}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0">Border style</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border style</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderStyle">
             <option :value="style.value" v-for="style in borderStyleValues" :key="style.value">{{style.text}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0">Border none</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border none</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderNone">
             <option :value="item.value" v-for="item in borderNoneValues" :key="item.value">{{item.text}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col col-6:lg">
-        <h4 class="mt-0">Border radius</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border radius</h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderRadius">
             <option :value="item.replace('--radius-', '')" v-for="item in radiusVars" :key="item">var({{item}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col col-6:lg">
-        <h4 class="mt-0">Border class and breakpoints</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Border class and breakpoints <span class="txt-danger">(higher priority)</span></h4>
         <div class="rs-select">
           <select v-rs-select v-model="borderBreakpoints">
             <option :value="item.value" v-for="item in borderBreakpointsValues" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary bdr-wd-1 rds-4 txt-theme-2">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary font-500 rds-4">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
@@ -82,8 +82,8 @@
 
     <div class="mt-10">
       <div class="d-n d-f:md row no-gap cols-1 cols-2:md p-5 sh-1 mb-3">
-        <div class="col"><strong>Class</strong></div>
-        <div class="col"><strong>Element</strong></div>
+        <div class="col"><strong>class</strong></div>
+        <div class="col"><strong>element</strong></div>
       </div>
       <div class="row ai-c no-gap cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
         <div class="col txt-primary font-500">{{item.className}}</div>
@@ -232,6 +232,21 @@
           {className: '.bdr .bdr-wd-8'},
           {className: '.bdr .bdr-wd-9'},
           {className: '.bdr .bdr-wd-10'},
+          {className: '.bdr .bdr-inh'},
+          {className: '.bdr .bdr-inh:sm'},
+          {className: '.bdr .bdr-inh:md'},
+          {className: '.bdr .bdr-inh:lg'},
+          {className: '.bdr .bdr-inh:xl'},
+          {className: '.bdr .bdr-current'},
+          {className: '.bdr .bdr-current:sm'},
+          {className: '.bdr .bdr-current:md'},
+          {className: '.bdr .bdr-current:lg'},
+          {className: '.bdr .bdr-current:xl'},
+          {className: '.bdr .bdr-trsp'},
+          {className: '.bdr .bdr-trsp:sm'},
+          {className: '.bdr .bdr-trsp:md'},
+          {className: '.bdr .bdr-trsp:lg'},
+          {className: '.bdr .bdr-trsp:xl'},
         ]
       }
     },

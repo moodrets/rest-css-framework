@@ -19,7 +19,6 @@
 <script>
 
 import { mapMutations } from 'vuex'
-
 import Aside from '@/components/Aside'
 import Header from '@/components/Header'
 
@@ -44,14 +43,11 @@ export default {
 
     this.PUSH_CSS_VARS(cssVars)
 
-    setTimeout(()=>{
-      const sprite = document.querySelector('#svg-sprite')
-      if (sprite) {
-        const icons = [...sprite.querySelectorAll('symbol')].map(icon => icon.getAttribute('id'))
-        this.PUSH_SVG_ICON(icons)
-      }
-    }, 50)
-
+    const sprite = document.querySelector('#svg-sprite')
+    if (sprite) {
+      const icons = [...sprite.querySelectorAll('symbol')].map(icon => icon.getAttribute('id'))
+      this.PUSH_SVG_ICON(icons)
+    }
   }
 }
 </script>

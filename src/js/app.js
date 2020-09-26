@@ -1,5 +1,4 @@
 import './helpers/inject-files'
-import './helpers/svg-sprite'
 
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
