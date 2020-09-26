@@ -29,13 +29,13 @@ const paths = {
 		'./src/js/app.js'
 	],
 	output: {
-		filename: 'js/[name].js',
+		filename: 'js/[name].[contenthash].js',
 		path: `${__dirname}/dist/`
 	},
 	css: {
 		output: {
-			filename: 'css/[name].css',
-			chunkFilename: 'css/[name].css',
+			filename: 'css/[name].[contenthash].css',
+			chunkFilename: 'css/[name].[contenthash].css',
 		}
 	},
 	copy: {
@@ -64,7 +64,6 @@ const paths = {
 
 module.exports = {
 	mode: mode.dev ? 'development' : 'production',
-	devtool: mode.dev ? 'source-map' : 'none',
 	devtool: 'source-map',
 	entry: paths.entry,
 	output: paths.output,

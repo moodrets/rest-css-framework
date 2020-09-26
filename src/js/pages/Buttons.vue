@@ -88,7 +88,7 @@
       </div>
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Text color</h4>
+        <h4 class="mt-0 txt-theme-2 font-500">Text color (<router-link to="/colors">colors utility</router-link>)</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonTextColor">
             <option value="">Text color</option>

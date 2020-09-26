@@ -78,8 +78,5 @@
         }
       }
     },
-    mounted(){
-      console.log(this.$refs['state-select'].options[this.$refs['state-select'].selectedIndex].innerText)
-    }
   }
 </script>
