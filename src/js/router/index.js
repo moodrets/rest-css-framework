@@ -38,7 +38,7 @@ export const routes = [
     path: '/colors',
     name: 'Colors',
     component: Colors,
-    header: 'Utils'
+    header: 'Utilities'
   },
   {
     path: '/spacings',

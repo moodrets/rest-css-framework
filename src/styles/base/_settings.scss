@@ -1,4 +1,4 @@
-$component-prefix-class: 'rs';
+// global classes
 $none-class: 'n';
 $inherit-class: 'inh';
 $unset-class: 'un';
@@ -18,11 +18,13 @@ $direction-bottom-class: 'b';
 $direction-vertical-class: 'y';
 $direction-horizontal-class: 'x';
 
+// action classes
 $hover-class: 'h';
 $focus-class: 'f';
 $focus-within-class: 'fw';
 $active-class: 'a';
 
+// sizes classes
 $size-class: 'sz';
 $size-exstra-small-class: 'xs';
 $size-small-class: 'sm';
@@ -30,29 +32,37 @@ $size-medium-class: 'md';
 $size-large-class: 'lg';
 $size-extra-large-class: 'xl';
 
+// button classes
 $button-prefix-class: 'button';
 $button-base-font-size: 14px;
 
+// border radius classes
 $radius-prefix-class: 'rds';
-$radius-round-class: 'round';
-$radius-pill-class: 'pill';
 
+// shadow classes
 $shadow-prefix-class: 'sh';
 
+// width classes
 $width-prefix-class: 'wd';
-$width-100-percent-class: '1';
-$width-50-percent-class: '2';
-$width-33-percent-class: '3';
-$width-25-percent-class: '4';
+$width-100-percent-class: '100';
+$width-75-percent-class: '75';
+$width-50-percent-class: '50';
+$width-33-percent-class: '33';
+$width-25-percent-class: '25';
 $width-max-100-class: 'max-100';
+$width-max-none-class: 'max-n';
 
+// height classes
 $height-prefix-class: 'he';
-$height-100-percent-class: '1';
-$height-50-percent-class: '2';
-$height-33-percent-class: '3';
-$height-25-percent-class: '4';
+$height-100-percent-class: '100';
+$height-75-percent-class: '75';
+$height-50-percent-class: '50';
+$height-33-percent-class: '33';
+$height-25-percent-class: '25';
 $height-max-100-class: 'max-100';
+$height-max-none-class: 'max-n';
 
+// position classes
 $position-prefix-class: 'pos';
 $position-relative-class: 'rel';
 $position-absolute-class: 'abs';
@@ -61,11 +71,12 @@ $position-sticky-class: 'sti';
 $position-static-class: 'sta';
 $position-cover-class: 'cover';
 $z-index-class: 'zi';
-$z-index-over-class: 'over';
-$z-index-negative-class: 'neg';
-$z-index-over-value: 2000;
 $z-index-count: 10;
+$z-index-negative-class: 'neg';
+$z-index-over-class: 'over';
+$z-index-over-value: 2000;
 
+// text classes
 $text-prefix-class: 'txt';
 $text-uppercase-class: 'upp';
 $text-lowercase-class: 'lwr';
@@ -75,6 +86,7 @@ $text-underline-none-class: 'dn';
 $text-throught-class: 'lth';
 $text-justify-class: 'j';
 
+// font classes
 $font-prefix-class: 'font';
 $font-base-class: 'base';
 $font-secondary-class: 'secondary';
@@ -90,12 +102,15 @@ $font-bolder-class: '900';
 $font-italic-class: 'itl';
 $font-size-class: 'sz';
 
+// line height classes
 $line-height-prefix-class: 'lh';
 
+// background classes
 $background-prefix-class: 'bg';
 $background-repeat-repeat-class: 'rp';
 $background-repeat-norepeat-class: 'nrp';
 
+// display classes
 $display-prefix-class: 'd';
 $display-none-class: 'n';
 $display-block-class: 'b';
@@ -108,11 +123,22 @@ $display-table-class: 'tb';
 $display-table-row-class: 'tr';
 $display-table-cell-class: 'tc';
 $display-table-caption-class: 'tcp';
+$display-contents-class: 'cn';
 
+// spacing classes
 $margin-class: 'm';
 $margin-negative-class: 'neg';
 $padding-class: 'p';
 
+// border classes
+$border-prefix-class: 'bdr';
+$border-width-class: 'wd';
+$border-dotted-class: 'dt';
+$border-dashed-class: 'dsh';
+$border-solid-class: 'sl';
+$border-width-count: 10;
+
+// grid classes
 $grid-row-class: 'row';
 $grid-row-equal-height-class: 'equal-cols';
 $grid-row-columns-class: 'cols';
@@ -129,18 +155,7 @@ $grid-gap-md: 30px;
 $grid-gap-lg: 40px;
 $grid-gap-xl: 60px;
 
-$container-class: 'container';
-$clearfix-class: 'clearfix';
-$float-prefix-class: 'flt';
-$radius-prefix-class: 'rds';
-
-$border-prefix-class: 'bdr';
-$border-width-class: 'wd';
-$border-dotted-class: 'dt';
-$border-dashed-class: 'dsh';
-$border-solid-class: 'sl';
-$border-width-count: 10;
-
+// flex classes
 // flex prefix classes
 $flex-direction-class: 'fd';
 $flex-justify-content-class: 'jc';
@@ -182,7 +197,7 @@ $flex-stretch-class: 'st';
 $flex-safe-center-class: 'sc';
 $flex-unsafe-center-class: 'uc';
 
-$flex-fill-class: 'fl-1';
+$flex-fill-class: 'fl-f';
 $flex-none-class: 'fl-n';
 $flex-none-childs-class: 'fl-n-ch';
 $flex-grow-1-class: 'fl-g-1';
@@ -195,9 +210,35 @@ $flex-order-count: 10;
 $flex-order-first-class: 'f';
 $flex-order-last-class: 'l';
 
+// svg icon classes
 $svg-icon-class: 'svg-icon';
+$svg-icon-stroke-class: 'stroke';
+$svg-icon-nofill-class: 'nofill';
+
+// component prefix class
+$component-prefix-class: 'rs';
 
 // forms
 // prefix will be added $component-prefix-class
 $select-class: 'select';
 $form-control: 'form-control'; // input textarea
+
+// other classes
+$container-class: 'container';
+$clearfix-class: 'clearfix';
+$float-prefix-class: 'flt';
+$radius-prefix-class: 'rds';
+
+// $utilities: (
+//   'opacity': (
+//     property: opacity,
+//     class: op,
+//     responsive: true,
+//     values: (
+//       0: 0,
+//       25: .25,
+//       50: .5,
+//       100: 1,
+//     )
+//   )
+// );

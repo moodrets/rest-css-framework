@@ -159,13 +159,13 @@
         buttonRadius: 'rds-1',
         buttonsList: [
           {className: '.button'},
-          {className: '.button button-primary'},
-          {className: '.button button-secondary'},
-          {className: '.button button-success'},
-          {className: '.button button-danger'},
-          {className: '.button button-info'},
-          {className: '.button button-warning'},
-          {className: '.button button-disabled'},
+          {className: '.button .button-primary'},
+          {className: '.button .button-secondary'},
+          {className: '.button .button-success'},
+          {className: '.button .button-danger'},
+          {className: '.button .button-info'},
+          {className: '.button .button-warning'},
+          {className: '.button .button-disabled'},
         ]
       }
     },

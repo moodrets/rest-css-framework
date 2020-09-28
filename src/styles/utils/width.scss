@@ -3,10 +3,14 @@
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       &-#{$width-100-percent-class}#{$br-name} {width: 100%;}
+      &-#{$width-75-percent-class}#{$br-name} {width: 75%;}
       &-#{$width-50-percent-class}#{$br-name} {width: 50%;}
       &-#{$width-33-percent-class}#{$br-name} {width: 33.3%;}
       &-#{$width-25-percent-class}#{$br-name} {width: 25%;}
+      &-#{$auto-class}#{$br-name} {width: auto;}
+
       &-#{$width-max-100-class}#{$br-name} {max-width: 100%;}
+      &-#{$width-max-none-class}#{$br-name} {max-width: none;}
 
       @each $size, $value in $sizes {
         &-#{$size-class}-#{$size}#{$br-name} {width: var(--size-#{$size});}

@@ -13,6 +13,7 @@
       &-#{$display-table-row-class}#{$br-name} {display: table-row;}
       &-#{$display-table-cell-class}#{$br-name} {display: table-cell;}
       &-#{$display-table-caption-class}#{$br-name} {display: table-caption;}
+      &-#{$display-contents-class}#{$br-name} {display: contents;}
     }
   }
 }

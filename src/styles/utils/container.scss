@@ -4,7 +4,7 @@
   margin-right: auto;
   width: 100%;
 
-  &--sm {
+  &-#{$size-small-class} {
     max-width: var(--content-width-sm);
   }
 }

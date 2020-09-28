@@ -1,10 +1,11 @@
-.svg-icon {
+.#{$svg-icon-class} {
   width: 20px;
   height: 20px;
   fill: currentColor;
   color: inherit;
 
   svg {
+    display: block;
     fill: inherit;
     width: inherit;
     height: inherit;
