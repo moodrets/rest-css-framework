@@ -4,7 +4,7 @@
     <div class="row cols-1 cols-2:md cols-3:lg">
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Button base type</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Button base type</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonColor">
             <option value="">default</option>
@@ -16,14 +16,14 @@
             <option value="button-info">info</option>
             <option value="disabled">disabled</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Button border (<router-link to="/borders">border utility</router-link>)</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Button border (<router-link to="/borders">border utility</router-link>)</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonBorder">
             <option value="">Border none</option>
@@ -38,39 +38,38 @@
             <option value="bdr bdr-wd-2 bdr-warning">Border warning 2px</option>
             <option value="bdr bdr-wd-2 bdr-danger">Border danger 2px</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Button padding (<router-link to="/spacings">spacing utility</router-link>)</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Button padding (<router-link to="/spacings">spacing utility</router-link>)</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonPadding">
             <option :value="spacing.replace('--spacing-', 'p-')" v-for="spacing in spacingsVars" :key="spacing">var({{spacing}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <!-- (<router-link to="/radius">radius utility</router-link>) -->
-        <h4 class="mt-0 txt-theme-2 font-500">Button radius</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Button radius (<router-link to="/radius">radius utility</router-link>)</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonRadius">
             <option :value="radius.replace('--radius-', 'rds-')" v-for="radius in radiusVars" :key="radius">var({{radius}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Background hover color</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Background <span class="txt-warning">:hover</span> color</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonBgColor">
             <option value="">Background color</option>
@@ -81,14 +80,14 @@
             <option value="bg-theme-1:h">Background theme 1</option>
             <option value="bg-theme-2:h">Background theme 2</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <h4 class="mt-0 txt-theme-2 font-500">Text color (<router-link to="/colors">colors utility</router-link>)</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Text color (<router-link to="/colors">colors utility</router-link>)</h4>
         <div class="rs-select">
           <select v-rs-select v-model="buttonTextColor">
             <option value="">Text color</option>
@@ -99,15 +98,15 @@
             <option value="txt-theme-1">Text theme 1</option>
             <option value="txt-theme-2">Text theme 2</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-secondary rds-4 font-500">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
             <svg-icon name="rs-arrow-down"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="col col-12:md">
-        <h4 class="mt-0 txt-theme-2 font-500">Button text</h4>
-        <input class="rs-form-control p-4 bdr bdr-secondary rds-4" type="text" v-model="buttonText">
+        <h4 class="mt-0 mb-4 txt-info-2 font-500">Button text</h4>
+        <input class="rs-form-control p-4 bdr bdr-wd-2 bdr-secondary rds-4" type="text" v-model="buttonText">
       </div>
 
     </div>
@@ -134,7 +133,7 @@
       </div>
       <div class="row ai-c no-gap cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
         <div class="col txt-primary font-500">{{item.className}}</div>
-        <div class="col"><buton class="font-sz-15 font-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</buton></div>
+        <div class="col"><button class="font-sz-15 font-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
       </div>
     </div>
 

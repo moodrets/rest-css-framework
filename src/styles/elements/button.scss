@@ -10,6 +10,7 @@
   text-decoration: none;
   font-size: var(--button-font-size-base);
   vertical-align: top;
+  line-height: normal;
 
   &:hover,
   &:focus {
@@ -37,7 +38,6 @@
     &:hover,
     &:focus {
       background: var(--color-secondary-1);
-      color: var(--color-light);
     }
 
     &:active {

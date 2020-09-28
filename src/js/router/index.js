@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Home from '@/pages/Home'
+import Main from '@/pages/Main'
 import Flex from '@/pages/Flex'
 import Breakpoints from '@/pages/Breakpoints'
 import Colors from '@/pages/Colors'
@@ -11,12 +11,13 @@ import Spacings from '@/pages/Spacings'
 import Border from '@/pages/Border'
 import Icons from '@/pages/Icons'
 import Buttons from '@/pages/Buttons'
+import Radius from '@/pages/Radius'
 
 export const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Main',
+    component: Main
   },
   {
     path: '/breakpoints',
@@ -49,6 +50,11 @@ export const routes = [
     path: '/borders',
     name: 'Borders',
     component: Border
+  },
+  {
+    path: '/radius',
+    name: 'Radius',
+    component: Radius
   },
   {
     path: '/flex',

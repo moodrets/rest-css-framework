@@ -16,6 +16,7 @@
       <ul class="txt-danger-1 font-500">
         <li class="lh-1-5">Dirty html</li>
         <li class="lh-1-5">large weight of the compiled .css file</li>
+        <li class="lh-1-5">No JavaScript</li>
       </ul>
     </div>
   </div>

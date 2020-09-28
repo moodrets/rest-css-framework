@@ -5,7 +5,7 @@
       <router-link
         class="button bg-theme font-500 rds-3 py-3 px-6 d-b txt-l wd-100 font-sz-18"
         active-class="bg-theme-2 txt-light"
-        :exact="route.name === 'Home'"
+        :exact="route.name === 'Main'"
         tag="button"
         :to="route.path"
       >{{route.name}}</router-link>
