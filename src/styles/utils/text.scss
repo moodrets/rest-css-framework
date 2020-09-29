@@ -28,9 +28,19 @@
         -moz-text-align-last: justify;
         text-align-last: justify;
       }
-      &-#{$inherit-class}#{$br-name} {color: inherit;}
-      &-#{$current-color-class}#{$br-name} {color: currentColor;}
-      &-#{$transparent-class}#{$br-name} {color: transparent;}
+      &-#{$text-truncate-class}#{$br-name} {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &-#{$text-truncate-reset-class}#{$br-name} {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+      }
+      &-#{$text-color-class}-#{$inherit-class}#{$br-name} {color: inherit;}
+      &-#{$text-color-class}-#{$current-color-class}#{$br-name} {color: currentColor;}
+      &-#{$text-color-class}-#{$transparent-class}#{$br-name} {color: transparent;}
     }
   }
 }

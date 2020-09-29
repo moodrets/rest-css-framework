@@ -10,21 +10,26 @@
         &#{$direction-bottom-class}-#{$spacing}#{$br-name} {margin-bottom: var(--spacing-#{$spacing})}
         &#{$direction-vertical-class}-#{$spacing}#{$br-name} {margin-top: var(--spacing-#{$spacing}); margin-bottom: var(--spacing-#{$spacing})}
         &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {margin-left: var(--spacing-#{$spacing}); margin-right: var(--spacing-#{$spacing})}
-        // negative
-        &#{$direction-top-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1)}
-        &#{$direction-right-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-right: calc(var(--spacing-#{$spacing}) * -1)}
-        &#{$direction-left-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1)}
-        &#{$direction-bottom-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
-        &#{$direction-vertical-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1); margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
-        &#{$direction-horizontal-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1); margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+
+        @if ($spacing != 0) {
+          // negative
+          &#{$direction-top-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-right-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-left-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-bottom-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-vertical-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1); margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-horizontal-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1); margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+        }
       }
       // auto
+      &-#{$auto-class}#{$br-name} {margin: auto}
       &#{$direction-top-class}-#{$auto-class}#{$br-name} {margin-top: auto}
       &#{$direction-right-class}-#{$auto-class}#{$br-name} {margin-right: auto}
       &#{$direction-left-class}-#{$auto-class}#{$br-name} {margin-left: auto}
       &#{$direction-bottom-class}-#{$auto-class}#{$br-name} {margin-bottom: auto}
       &#{$direction-vertical-class}-#{$auto-class}#{$br-name} {margin-top: auto; margin-bottom: auto}
       &#{$direction-horizontal-class}-#{$auto-class}#{$br-name} {margin-left: auto; margin-right: auto}
+      &-#{$inherit-class}#{$br-name} {margin: inherit;}
     }
   }
 }
@@ -42,6 +47,7 @@
         &#{$direction-vertical-class}-#{$spacing}#{$br-name} {padding-top: var(--spacing-#{$spacing}); padding-bottom: var(--spacing-#{$spacing})}
         &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {padding-left: var(--spacing-#{$spacing}); padding-right: var(--spacing-#{$spacing})}
       }
+      &-#{$inherit-class}#{$br-name} {padding: inherit}
     }
   }
 }

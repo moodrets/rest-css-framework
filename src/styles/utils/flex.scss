@@ -6,10 +6,12 @@
     .#{$flex-direction-class}-#{$flex-row-reverse-class}#{$br-name} {flex-direction: row-reverse;}
     .#{$flex-direction-class}-#{$flex-column-class}#{$br-name} {flex-direction: column;}
     .#{$flex-direction-class}-#{$flex-column-reverse-class}#{$br-name} {flex-direction: column-reverse;}
+    .#{$flex-direction-class}-#{$inherit-class}#{$br-name} {flex-direction: inherit;}
 
     .#{$flex-wrap-class}-#{$flex-wrap-wrap-class}#{$br-name} {flex-wrap: wrap;}
     .#{$flex-wrap-class}-#{$flex-wrap-nowrap-class}#{$br-name} {flex-wrap: nowrap;}
     .#{$flex-wrap-class}-#{$flex-wrap-revers-class}#{$br-name} {flex-wrap: wrap-reverse;}
+    .#{$flex-wrap-class}-#{$inherit-class}#{$br-name} {flex-wrap: inherit;}
 
     .#{$flex-justify-content-class}-#{$flex-stretch-class}#{$br-name} {justify-content: stretch;}
     .#{$flex-justify-content-class}-#{$flex-center-class}#{$br-name} {justify-content: center;}
@@ -114,48 +116,50 @@
     .#{$flex-align-self-class}-#{$flex-unsafe-center-class}#{$br-name} {align-self: unsafe center;}
     .#{$flex-align-self-class}-#{$inherit-class}#{$br-name} {align-self: inherit;}
 
-    .#{$flex-place-content-class}-#{$flex-stretch-class}#{$br-name} {place-content: stretch;}
-    .#{$flex-place-content-class}-#{$flex-center-class}#{$br-name} {place-content: center;}
-    .#{$flex-place-content-class}-#{$flex-left-class}#{$br-name} {place-content: left;}
-    .#{$flex-place-content-class}-#{$flex-right-class}#{$br-name} {place-content: right;}
-    .#{$flex-place-content-class}-#{$flex-start-class}#{$br-name} {place-content: start;}
-    .#{$flex-place-content-class}-#{$flex-end-class}#{$br-name} {place-content: end;}
-    .#{$flex-place-content-class}-#{$flex-flex-start-class}#{$br-name} {place-content: flex-start;}
-    .#{$flex-place-content-class}-#{$flex-flex-end-class}#{$br-name} {place-content: flex-end;}
-    .#{$flex-place-content-class}-#{$flex-baseline-class}#{$br-name} {place-content: baseline;}
-    .#{$flex-place-content-class}-#{$flex-first-baseline-class}#{$br-name} {place-content: first baseline;}
-    .#{$flex-place-content-class}-#{$flex-last-baseline-class}#{$br-name} {place-content: last baseline;}
-    .#{$flex-place-content-class}-#{$flex-space-between-class}#{$br-name} {place-content: space-between;}
-    .#{$flex-place-content-class}-#{$flex-space-around-class}#{$br-name} {place-content: space-around;}
-    .#{$flex-place-content-class}-#{$flex-space-evenly-class}#{$br-name} {place-content: space-evenly;}
-    .#{$flex-place-content-class}-#{$inherit-class}#{$br-name} {place-content: inherit;}
+    @if ($flex-place-props) {
+      .#{$flex-place-content-class}-#{$flex-stretch-class}#{$br-name} {place-content: stretch;}
+      .#{$flex-place-content-class}-#{$flex-center-class}#{$br-name} {place-content: center;}
+      .#{$flex-place-content-class}-#{$flex-left-class}#{$br-name} {place-content: left;}
+      .#{$flex-place-content-class}-#{$flex-right-class}#{$br-name} {place-content: right;}
+      .#{$flex-place-content-class}-#{$flex-start-class}#{$br-name} {place-content: start;}
+      .#{$flex-place-content-class}-#{$flex-end-class}#{$br-name} {place-content: end;}
+      .#{$flex-place-content-class}-#{$flex-flex-start-class}#{$br-name} {place-content: flex-start;}
+      .#{$flex-place-content-class}-#{$flex-flex-end-class}#{$br-name} {place-content: flex-end;}
+      .#{$flex-place-content-class}-#{$flex-baseline-class}#{$br-name} {place-content: baseline;}
+      .#{$flex-place-content-class}-#{$flex-first-baseline-class}#{$br-name} {place-content: first baseline;}
+      .#{$flex-place-content-class}-#{$flex-last-baseline-class}#{$br-name} {place-content: last baseline;}
+      .#{$flex-place-content-class}-#{$flex-space-between-class}#{$br-name} {place-content: space-between;}
+      .#{$flex-place-content-class}-#{$flex-space-around-class}#{$br-name} {place-content: space-around;}
+      .#{$flex-place-content-class}-#{$flex-space-evenly-class}#{$br-name} {place-content: space-evenly;}
+      .#{$flex-place-content-class}-#{$inherit-class}#{$br-name} {place-content: inherit;}
 
-    .#{$flex-place-items-class}-#{$normal-class}#{$br-name} {place-items: normal;}
-    .#{$flex-place-items-class}-#{$flex-stretch-class}#{$br-name} {place-items: stretch;}
-    .#{$flex-place-items-class}-#{$flex-center-class}#{$br-name} {place-items: center;}
-    .#{$flex-place-items-class}-#{$flex-start-class}#{$br-name} {place-items: start;}
-    .#{$flex-place-items-class}-#{$flex-end-class}#{$br-name} {place-items: end;}
-    .#{$flex-place-items-class}-#{$flex-left-class}#{$br-name} {place-items: left;}
-    .#{$flex-place-items-class}-#{$flex-right-class}#{$br-name} {place-items: right;}
-    .#{$flex-place-items-class}-#{$flex-flex-start-class}#{$br-name} {place-items: flex-start;}
-    .#{$flex-place-items-class}-#{$flex-flex-end-class}#{$br-name} {place-items: flex-end;}
-    .#{$flex-place-items-class}-#{$flex-self-start-class}#{$br-name} {place-items: self-start;}
-    .#{$flex-place-items-class}-#{$flex-self-end-class}#{$br-name} {place-items: self-end;}
-    .#{$flex-place-items-class}-#{$flex-baseline-class}#{$br-name} {place-items: baseline;}
-    .#{$flex-place-items-class}-#{$flex-first-baseline-class}#{$br-name} {place-items: first baseline;}
-    .#{$flex-place-items-class}-#{$flex-last-baseline-class}#{$br-name} {place-items: last baseline;}
-    .#{$flex-place-items-class}-#{$inherit-class}#{$br-name} {place-items: inherit;}
+      .#{$flex-place-items-class}-#{$normal-class}#{$br-name} {place-items: normal;}
+      .#{$flex-place-items-class}-#{$flex-stretch-class}#{$br-name} {place-items: stretch;}
+      .#{$flex-place-items-class}-#{$flex-center-class}#{$br-name} {place-items: center;}
+      .#{$flex-place-items-class}-#{$flex-start-class}#{$br-name} {place-items: start;}
+      .#{$flex-place-items-class}-#{$flex-end-class}#{$br-name} {place-items: end;}
+      .#{$flex-place-items-class}-#{$flex-left-class}#{$br-name} {place-items: left;}
+      .#{$flex-place-items-class}-#{$flex-right-class}#{$br-name} {place-items: right;}
+      .#{$flex-place-items-class}-#{$flex-flex-start-class}#{$br-name} {place-items: flex-start;}
+      .#{$flex-place-items-class}-#{$flex-flex-end-class}#{$br-name} {place-items: flex-end;}
+      .#{$flex-place-items-class}-#{$flex-self-start-class}#{$br-name} {place-items: self-start;}
+      .#{$flex-place-items-class}-#{$flex-self-end-class}#{$br-name} {place-items: self-end;}
+      .#{$flex-place-items-class}-#{$flex-baseline-class}#{$br-name} {place-items: baseline;}
+      .#{$flex-place-items-class}-#{$flex-first-baseline-class}#{$br-name} {place-items: first baseline;}
+      .#{$flex-place-items-class}-#{$flex-last-baseline-class}#{$br-name} {place-items: last baseline;}
+      .#{$flex-place-items-class}-#{$inherit-class}#{$br-name} {place-items: inherit;}
 
-    .#{$flex-place-self-class}-#{$flex-stretch-class}#{$br-name} {place-self: stretch;}
-    .#{$flex-place-self-class}-#{$flex-start-class}#{$br-name} {place-self: normal;}
-    .#{$flex-place-self-class}-#{$flex-self-start-class}#{$br-name} {place-self: self-start;}
-    .#{$flex-place-self-class}-#{$flex-self-end-class}#{$br-name} {place-self: self-end;}
-    .#{$flex-place-self-class}-#{$flex-flex-start-class}#{$br-name} {place-self: flex-start;}
-    .#{$flex-place-self-class}-#{$flex-flex-end-class}#{$br-name} {place-self: flex-end;}
-    .#{$flex-place-self-class}-#{$flex-baseline-class}#{$br-name} {place-self: baseline;}
-    .#{$flex-place-self-class}-#{$flex-first-baseline-class}#{$br-name} {place-self: first baseline;}
-    .#{$flex-place-self-class}-#{$flex-last-baseline-class}#{$br-name} {place-self: last baseline;}
-    .#{$flex-place-self-class}-#{$inherit-class}#{$br-name} {place-self: inherit;}
+      .#{$flex-place-self-class}-#{$flex-stretch-class}#{$br-name} {place-self: stretch;}
+      .#{$flex-place-self-class}-#{$flex-start-class}#{$br-name} {place-self: normal;}
+      .#{$flex-place-self-class}-#{$flex-self-start-class}#{$br-name} {place-self: self-start;}
+      .#{$flex-place-self-class}-#{$flex-self-end-class}#{$br-name} {place-self: self-end;}
+      .#{$flex-place-self-class}-#{$flex-flex-start-class}#{$br-name} {place-self: flex-start;}
+      .#{$flex-place-self-class}-#{$flex-flex-end-class}#{$br-name} {place-self: flex-end;}
+      .#{$flex-place-self-class}-#{$flex-baseline-class}#{$br-name} {place-self: baseline;}
+      .#{$flex-place-self-class}-#{$flex-first-baseline-class}#{$br-name} {place-self: first baseline;}
+      .#{$flex-place-self-class}-#{$flex-last-baseline-class}#{$br-name} {place-self: last baseline;}
+      .#{$flex-place-self-class}-#{$inherit-class}#{$br-name} {place-self: inherit;}
+    }
 
     .#{$flex-fill-class}#{$br-name} {flex: 1 1 auto;}
     .#{$flex-none-class}#{$br-name} {flex: none;}

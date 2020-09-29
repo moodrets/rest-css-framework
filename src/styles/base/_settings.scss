@@ -41,6 +41,10 @@ $radius-prefix-class: 'rds';
 
 // shadow classes
 $shadow-prefix-class: 'sh';
+$shadow-horizontal: '0'; // for $colors values
+$shadow-vertical: '0'; // for $colors values
+$shadow-width: '2px'; // for $colors values
+$shadow-scattering: '2px'; // for $colors values
 
 // width classes
 $width-prefix-class: 'wd';
@@ -78,13 +82,17 @@ $z-index-over-value: 2000;
 
 // text classes
 $text-prefix-class: 'txt';
+$text-color-class: 'clr';
 $text-uppercase-class: 'upp';
 $text-lowercase-class: 'lwr';
 $text-capitalize-class: 'cap';
+$text-transform-class: 'trf';
 $text-underline-class: 'du';
 $text-underline-none-class: 'dn';
 $text-throught-class: 'lth';
 $text-justify-class: 'j';
+$text-truncate-class: 'trnc';
+$text-truncate-reset-class: 'trnc-res';
 
 // font classes
 $font-prefix-class: 'font';
@@ -143,7 +151,7 @@ $grid-row-class: 'row';
 $grid-row-equal-height-class: 'equal-cols';
 $grid-row-columns-class: 'cols';
 $grid-column-class: 'col';
-$grid-column-auto-class: 'auto';
+$grid-column-auto-class: 'a';
 $grid-column-offset-class: 'col-ofs';
 $grid-gap-class: 'gap';
 $grid-no-gap-class: 'no-gap';
@@ -209,19 +217,12 @@ $flex-order-class: 'or';
 $flex-order-count: 10;
 $flex-order-first-class: 'f';
 $flex-order-last-class: 'l';
+$flex-place-props: true;
 
 // svg icon classes
 $svg-icon-class: 'svg-icon';
 $svg-icon-stroke-class: 'stroke';
 $svg-icon-nofill-class: 'nofill';
-
-// component prefix class
-$component-prefix-class: 'rs';
-
-// forms
-// prefix will be added $component-prefix-class
-$select-class: 'select';
-$form-control: 'form-control'; // input textarea
 
 // other classes
 $container-class: 'container';
@@ -229,16 +230,29 @@ $clearfix-class: 'clearfix';
 $float-prefix-class: 'flt';
 $radius-prefix-class: 'rds';
 
-// $utilities: (
-//   'opacity': (
-//     property: opacity,
-//     class: op,
-//     responsive: true,
-//     values: (
-//       0: 0,
-//       25: .25,
-//       50: .5,
-//       100: 1,
-//     )
-//   )
-// );
+// mute
+$mute-class: 'mute';
+$mute-opacity: '.5';
+
+// user select
+$user-select-prefix-class: 'us';
+$user-select-all-class: 'all';
+
+// pointer events class
+$pointer-events-prefix-class: 'pe';
+
+// overflow classes
+$overflow-prefix-class: 'ov';
+$overflow-hidden-class: 'h';
+$overflow-visible-class: 'v';
+$overflow-scroll-class: 'sc';
+
+// forms
+$select-class: 'rs-select';
+$form-control-class: 'rs-form-control'; // input textarea
+
+// spinner classes
+$spinner-prefix-class: 'rs-spinner';
+$spinner-base-width: 30px;
+$spinner-base-height: 30px;
+$spinner-base-border-width: 2px;

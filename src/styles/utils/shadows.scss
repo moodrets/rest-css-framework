@@ -5,6 +5,12 @@
       @each $shadow, $value in $shadows {
         &-#{$shadow}#{$br-name} {box-shadow: var(--shadow-#{$shadow});}
       }
+      @each $color, $value in $colors {
+        &-#{$color}#{$br-name} {box-shadow: #{$shadow-horizontal} #{$shadow-vertical} #{$shadow-scattering} #{$shadow-width} var(--color-#{$color});}
+        &-#{$color}#{$br-name}\:#{$hover-class}:hover {box-shadow: #{$shadow-horizontal} #{$shadow-vertical} #{$shadow-scattering} #{$shadow-width} var(--color-#{$color});}
+        &-#{$color}#{$br-name}\:#{$focus-class}:focus {box-shadow: #{$shadow-horizontal} #{$shadow-vertical} #{$shadow-scattering} #{$shadow-width} var(--color-#{$color});}
+        &-#{$color}#{$br-name}\:#{$active-class}:active {box-shadow: #{$shadow-horizontal} #{$shadow-vertical} #{$shadow-scattering} #{$shadow-width} var(--color-#{$color});}
+      }
       &-#{$none-class}#{$br-name} {box-shadow: none;}
       &-#{$inherit-class}#{$br-name} {box-shadow: inherit;}
     }

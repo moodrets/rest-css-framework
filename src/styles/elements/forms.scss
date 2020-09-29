@@ -1,5 +1,5 @@
 // custom select
-.#{$component-prefix-class}-#{$select-class} {
+.#{$select-class} {
   position: relative;
 
   select {
@@ -41,7 +41,7 @@
 }
 
 // input textarea
-.#{$component-prefix-class}-#{$form-control} {
+.#{$form-control-class} {
   outline: none;
   width: 100%;
 

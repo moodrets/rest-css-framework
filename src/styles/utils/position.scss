@@ -19,6 +19,8 @@
         &-#{$direction-right-class}-#{$spacing}#{$br-name} {right: var(--spacing-#{$spacing});}
         &-#{$direction-bottom-class}-#{$spacing}#{$br-name} {bottom: var(--spacing-#{$spacing});}
         &-#{$direction-left-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing});}
+        &-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing}); right: var(--spacing-#{$spacing});}
+        &-#{$direction-vertical-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing}); bottom: var(--spacing-#{$spacing});}
       }
     }
   }

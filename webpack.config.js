@@ -29,13 +29,13 @@ const paths = {
 		'./src/js/app.js'
 	],
 	output: {
-		filename: 'js/[name].[contenthash].js',
+		filename: mode.dev ? 'js/[name].js' : 'js/[name].[contenthash].js',
 		path: `${__dirname}/dist/`
 	},
 	css: {
 		output: {
-			filename: 'css/[name].[contenthash].css',
-			chunkFilename: 'css/[name].[contenthash].css',
+			filename: mode.dev ? 'css/[name].css' : 'css/[name].[contenthash].css',
+			chunkFilename: mode.dev ? 'css/[name].css' : 'css/[name].[contenthash].css',
 		}
 	},
 	copy: {

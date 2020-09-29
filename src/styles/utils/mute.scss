@@ -1,0 +1,4 @@
+.#{$mute-class} {
+  opacity: #{$mute-opacity};
+  pointer-events: none;
+}

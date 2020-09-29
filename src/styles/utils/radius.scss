@@ -9,6 +9,7 @@
         &-#{$direction-bottom-class}#{$direction-left-class}-#{$radius}#{$br-name} {border-bottom-left-radius: var(--radius-#{$radius});}
         &-#{$direction-bottom-class}#{$direction-right-class}-#{$radius}#{$br-name} {border-bottom-right-radius: var(--radius-#{$radius});}
       }
+      &-#{$inherit-class}#{$br-name} {border-radius: inherit;}
     }
   }
 }

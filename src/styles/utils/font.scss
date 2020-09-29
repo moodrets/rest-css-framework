@@ -5,7 +5,7 @@
       @each $fz, $fz-value in $font-sizes-list {
         &-#{$font-size-class}-#{$fz}#{$br-name} {font-size: #{$fz-value};}
       }
-      &-#{$inherit-class}-sz#{$br-name} {font-size: inherit;}
+      &-#{$font-size-class}-#{$inherit-class}#{$br-name} {font-size: inherit;}
     }
   }
   &-#{$font-base-class} {font-family: var(--font-family-base);}

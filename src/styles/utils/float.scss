@@ -1,0 +1,11 @@
+.#{$float-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$direction-left-class}#{$br-name} {float: left;}
+      &-#{$direction-right-class}#{$br-name} {float: right;}
+      &-#{$none-class}#{$br-name} {float: none;}
+      &-#{$inherit-class}#{$br-name} {float: inherit;}
+    }
+  }
+}

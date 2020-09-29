@@ -1,0 +1,7 @@
+.#{$spinner-prefix-class} {
+  width: $spinner-base-width;
+  height: $spinner-base-height;
+  border: #{$spinner-base-border-width} solid currentColor;
+  border-top-color: transparent;
+  border-radius: 100%;
+}

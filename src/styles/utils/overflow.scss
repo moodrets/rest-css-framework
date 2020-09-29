@@ -1,0 +1,22 @@
+.#{$overflow-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$overflow-hidden-class}#{$br-name} {overflow: hidden;}
+      &-#{$overflow-visible-class}#{$br-name} {overflow: visible;}
+      &-#{$overflow-scroll-class}#{$br-name} {overflow: scroll;}
+      &-#{$auto-class}#{$br-name} {overflow: auto;}
+
+      &-#{$direction-horizontal-class}-#{$overflow-hidden-class}#{$br-name} {overflow-x: hidden;}
+      &-#{$direction-horizontal-class}-#{$overflow-visible-class}#{$br-name} {overflow-x: visible;}
+      &-#{$direction-horizontal-class}-#{$overflow-scroll-class}#{$br-name} {overflow-x: scroll;}
+      &-#{$direction-horizontal-class}-#{$auto-class}#{$br-name} {overflow-x: auto;}
+
+      &-#{$direction-vertical-class}-#{$overflow-hidden-class}#{$br-name} {overflow-y: hidden;}
+      &-#{$direction-vertical-class}-#{$overflow-visible-class}#{$br-name} {overflow-y: visible;}
+      &-#{$direction-vertical-class}-#{$overflow-scroll-class}#{$br-name} {overflow-y: scroll;}
+      &-#{$direction-vertical-class}-#{$auto-class}#{$br-name} {overflow-y: auto;}
+      &-#{$inherit-class}#{$br-name} {overflow: inherit;}
+    }
+  }
+}
