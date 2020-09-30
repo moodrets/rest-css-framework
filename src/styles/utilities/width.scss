@@ -4,14 +4,9 @@
       $br-name: breakpoint-infix($name);
 
       @each $size, $value in $sizes {
-        &-#{$size-class}-#{$size}#{$br-name} {width: var(--size-#{$size});}
+        &-#{$size}#{$br-name} {width: var(--size-#{$size});}
       }
 
-      &-#{$width-100-percent-class}#{$br-name} {width: 100%;}
-      &-#{$width-75-percent-class}#{$br-name} {width: 75%;}
-      &-#{$width-50-percent-class}#{$br-name} {width: 50%;}
-      &-#{$width-33-percent-class}#{$br-name} {width: 33.3%;}
-      &-#{$width-25-percent-class}#{$br-name} {width: 25%;}
       &-#{$auto-class}#{$br-name} {width: auto;}
       &-#{$inherit-class}#{$br-name} {width: inherit;}
 

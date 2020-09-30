@@ -1,7 +1,7 @@
 <template>
   <div class="rs-border" v-cloak>
     <h1 class="mt-0">Borders</h1>
-    <div class="row cols-1 cols-2:md cols-4:lg">
+    <div class="row gap-7 cols-1 cols-2:md cols-4:lg">
       <div class="col">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border width</h4>
         <div class="rs-select">
@@ -81,11 +81,11 @@
     <code class="my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2">class="{{borderClass}}"</code>
 
     <div class="mt-10">
-      <div class="d-n d-f:md row no-gap cols-1 cols-2:md p-5 sh-1 mb-3">
+      <div class="d-n d-f:md row cols-1 cols-2:md p-5 sh-1 mb-3">
         <div class="col"><strong>class</strong></div>
         <div class="col"><strong>element</strong></div>
       </div>
-      <div class="row ai-c no-gap cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
+      <div class="row ai-c cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
         <div class="col txt-primary-2 font-500">{{item.className}}</div>
         <div class="col"><div class="p-6 mt-4 mt-0:md" :class="item.className.replace(/\./g,'')"></div></div>
       </div>

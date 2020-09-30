@@ -1,0 +1,13 @@
+.#{$size-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $sz, $value in $sizes {
+        &-#{$sz}#{$br-name} {
+          width: var(--size-#{$sz});
+          height: var(--size-#{$sz});
+        }
+      }
+    }
+  }
+}

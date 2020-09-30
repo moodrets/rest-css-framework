@@ -1,7 +1,7 @@
 <template>
   <div class="rs-buttons" v-cloak>
     <h1 class="mt-0">Buttons</h1>
-    <div class="row cols-1 cols-2:md cols-3:lg">
+    <div class="row gap-7 cols-1 cols-2:md cols-3:lg">
 
       <div class="col">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button base type</h4>
@@ -127,11 +127,11 @@
 
 
     <div class="mt-10">
-      <div class="d-n d-f:md row no-gap cols-1 cols-2:md p-5 sh-1 mb-3">
+      <div class="d-n d-f:md row cols-1 cols-2:md p-5 sh-1 mb-3">
         <div class="col"><strong>class</strong></div>
         <div class="col"><strong>element</strong></div>
       </div>
-      <div class="row ai-c no-gap cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
+      <div class="row ai-c cols-1 cols-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
         <div class="col txt-primary font-500">{{item.className}}</div>
         <div class="col"><button class="font-sz-15 font-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
       </div>

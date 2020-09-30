@@ -2,7 +2,7 @@
   <div class="rs-flex">
     <h1 class="mt-0">Flex</h1>
 
-    <div class="row cols-1 cols-2:md cols-3:lg">
+    <div class="row gap-7 cols-1 cols-2:md cols-3:lg">
 
       <div class="col">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex container height</h4>

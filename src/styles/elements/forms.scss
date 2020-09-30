@@ -1,5 +1,5 @@
 // custom select
-.#{$select-class} {
+.#{$form-select-class} {
   position: relative;
 
   select {
@@ -13,7 +13,7 @@
     height: 100%;
 
     &:focus ~ * {
-      border-color: var(--color-primary);
+      border-color: #{$form-focus-color};
     }
   }
 
@@ -46,6 +46,6 @@
   width: 100%;
 
   &:focus {
-    border-color: var(--color-primary);
+    border-color: #{$form-focus-color};
   }
 }

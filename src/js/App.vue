@@ -3,7 +3,7 @@
     <Header></Header>
     <main class="rs-main mt-7 mt-9:lg font-sz-17">
       <div class="container px-5 px-7:md">
-        <div class="row gap-md no-gap-b">
+        <div class="row gap-9:lg">
           <div class="col col-12 col-3:lg d-n d-b:lg">
             <Aside></Aside>
           </div>

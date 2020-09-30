@@ -3,11 +3,11 @@
     <div class="container d-f ai-c jc-sb px-5 px-7:md">
       <div class="rs-logo">
         <router-link to="/" class="d-ib txt-dark">
-          <svg-icon add-class="wd-sz-5 he-sz-5" name="rs-logo"></svg-icon>
+          <svg-icon add-class="wd-5 he-5" name="rs-logo"></svg-icon>
         </router-link>
       </div>
       <div class="d-f ai-c">
-        <svg-icon add-class="wd-sz-5 he-sz-5" name="rs-github" target="_blank" href="https://github.com/moodrets/rest-css-framework"></svg-icon>
+        <svg-icon add-class="wd-5 he-5" name="rs-github" target="_blank" href="https://github.com/moodrets/rest-css-framework"></svg-icon>
       </div>
     </div>
   </header>
