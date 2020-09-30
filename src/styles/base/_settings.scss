@@ -15,13 +15,14 @@ $direction-right-class: 'r';
 $direction-middle-class: 'm';
 $direction-top-class: 't';
 $direction-bottom-class: 'b';
+$direction-baseline-class: 'bs';
 $direction-vertical-class: 'y';
 $direction-horizontal-class: 'x';
 
 // action classes
 $hover-class: 'h';
 $focus-class: 'f';
-$focus-within-class: 'fw';
+$focus-within-class: 'fcw';
 $active-class: 'a';
 
 // sizes classes
@@ -31,6 +32,7 @@ $size-small-class: 'sm';
 $size-medium-class: 'md';
 $size-large-class: 'lg';
 $size-extra-large-class: 'xl';
+$size-very-extra-large-class: 'xxl';
 
 // button classes
 $button-prefix-class: 'button';
@@ -48,21 +50,11 @@ $shadow-scattering: '2px'; // for $colors values
 
 // width classes
 $width-prefix-class: 'wd';
-$width-100-percent-class: '100';
-$width-75-percent-class: '75';
-$width-50-percent-class: '50';
-$width-33-percent-class: '33';
-$width-25-percent-class: '25';
 $width-max-100-class: 'max-100';
 $width-max-none-class: 'max-n';
 
 // height classes
 $height-prefix-class: 'he';
-$height-100-percent-class: '100';
-$height-75-percent-class: '75';
-$height-50-percent-class: '50';
-$height-33-percent-class: '33';
-$height-25-percent-class: '25';
 $height-max-100-class: 'max-100';
 $height-max-none-class: 'max-n';
 
@@ -154,14 +146,7 @@ $grid-column-class: 'col';
 $grid-column-auto-class: 'a';
 $grid-column-offset-class: 'col-ofs';
 $grid-gap-class: 'gap';
-$grid-no-gap-class: 'no-gap';
-$grid-no-gap-bottom-class: 'no-gap-b';
 $grid-column-count: 12;
-$grid-gap: 20px;
-$grid-gap-sm: 10px;
-$grid-gap-md: 30px;
-$grid-gap-lg: 40px;
-$grid-gap-xl: 60px;
 
 // flex classes
 // flex prefix classes
@@ -195,9 +180,9 @@ $flex-flex-start-class: 'fs';
 $flex-flex-end-class: 'fe';
 $flex-left-class: 'l';
 $flex-right-class: 'r';
-$flex-baseline-class: 'b';
-$flex-first-baseline-class: 'fb';
-$flex-last-baseline-class: 'lb';
+$flex-baseline-class: 'bs';
+$flex-first-baseline-class: 'fbs';
+$flex-last-baseline-class: 'lbs';
 $flex-space-between-class: 'sb';
 $flex-space-around-class: 'sa';
 $flex-space-evenly-class: 'sev';
@@ -224,15 +209,12 @@ $svg-icon-class: 'svg-icon';
 $svg-icon-stroke-class: 'stroke';
 $svg-icon-nofill-class: 'nofill';
 
-// other classes
-$container-class: 'container';
-$clearfix-class: 'clearfix';
-$float-prefix-class: 'flt';
-$radius-prefix-class: 'rds';
-
 // mute
 $mute-class: 'mute';
 $mute-opacity: '.5';
+
+// opacity classes
+$opacity-prefix-class: 'op';
 
 // user select
 $user-select-prefix-class: 'us';
@@ -248,11 +230,33 @@ $overflow-visible-class: 'v';
 $overflow-scroll-class: 'sc';
 
 // forms
-$select-class: 'rs-select';
+$form-focus-color: var(--color-primary);
+$form-select-class: 'rs-select';
 $form-control-class: 'rs-form-control'; // input textarea
+$form-checkbox-class: 'rs-checkbox';
+$form-radio-class: 'rs-radio';
+$form-switch-class: 'rs-switch';
 
 // spinner classes
 $spinner-prefix-class: 'rs-spinner';
-$spinner-base-width: 30px;
-$spinner-base-height: 30px;
+$spinner-base-width: 32px;
+$spinner-base-height: 32px;
 $spinner-base-border-width: 2px;
+
+// animations classes
+$animation-prefix-class: 'anim';
+
+// transitions classes
+$transition-prefix-class: 'trs';
+
+// alignment classes
+$align-prefix-class: 'va';
+$align-child-class: 'ch';
+$align-text-top-class: 'tt';
+$align-text-bottom-class: 'tb';
+
+// other classes
+$container-class: 'container';
+$clearfix-class: 'clearfix';
+$float-prefix-class: 'flt';
+$radius-prefix-class: 'rds';

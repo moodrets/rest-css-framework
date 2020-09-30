@@ -7,6 +7,7 @@
 @import 'base/defaults';
 
 // elements
+@import 'elements/container';
 @import 'elements/spinner';
 @import 'elements/button';
 @import 'elements/svg-icon';
@@ -14,13 +15,17 @@
 
 // utils
 @import 'utils/mute';
+@import 'utils/animations';
+@import 'utils/transitions';
+@import 'utils/mute';
+@import 'utils/opacity';
 @import 'utils/interactions';
 @import 'utils/clearfix';
 @import 'utils/float';
 @import 'utils/overflow';
-@import 'utils/container';
 @import 'utils/background';
 @import 'utils/text';
+@import 'utils/alignment';
 @import 'utils/font';
 @import 'utils/line-height';
 @import 'utils/spacings';
@@ -30,6 +35,7 @@
 @import 'utils/shadows';
 @import 'utils/width';
 @import 'utils/height';
+@import 'utils/sizes';
 @import 'utils/grid';
 @import 'utils/flex';
 @import 'utils/display';

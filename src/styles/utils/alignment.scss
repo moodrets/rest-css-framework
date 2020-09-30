@@ -1,0 +1,20 @@
+.#{$align-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$align-text-top-class}#{$br-name} {vertical-align: text-top;}
+      &-#{$align-text-bottom-class}#{$br-name} {vertical-align: text-bottom;}
+      &-#{$direction-top-class}#{$br-name} {vertical-align: top;}
+      &-#{$direction-middle-class}#{$br-name} {vertical-align: middle;}
+      &-#{$direction-bottom-class}#{$br-name} {vertical-align: bottom;}
+      &-#{$direction-baseline-class}#{$br-name} {vertical-align: baseline;}
+      &-#{$inherit-class}#{$br-name} {vertical-align: inherit;}
+
+      // for childs
+      &-#{$align-child-class}-#{$direction-top-class}#{$br-name} * {vertical-align: top;}
+      &-#{$align-child-class}-#{$direction-middle-class}#{$br-name} * {vertical-align: middle;}
+      &-#{$align-child-class}-#{$direction-bottom-class}#{$br-name} * {vertical-align: bottom;}
+      &-#{$align-child-class}-#{$direction-baseline-class}#{$br-name} * {vertical-align: baseline;}
+    }
+  }
+}
