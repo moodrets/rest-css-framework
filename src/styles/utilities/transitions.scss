@@ -1,3 +1,5 @@
 .#{$transition-prefix-class} {
-
+  @each $time, $value in $times {
+    &-#{$time} {transition: all #{$value};}
+  }
 }

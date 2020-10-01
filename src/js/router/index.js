@@ -12,6 +12,7 @@ import Border from '@/pages/Border'
 import Icons from '@/pages/Icons'
 import Buttons from '@/pages/Buttons'
 import Radius from '@/pages/Radius'
+import Modal from '@/pages/Modal'
 
 export const routes = [
   {
@@ -60,6 +61,12 @@ export const routes = [
     path: '/flex',
     name: 'Flex',
     component: Flex
+  },
+  {
+    path: '/modal',
+    name: 'Modal',
+    component: Modal,
+    header: 'Examples'
   },
 ]
 

@@ -11,12 +11,12 @@
     height: inherit;
   }
 
-  &--stroke {
+  &-#{$svg-icon-stroke-class} {
     fill: none;
     stroke: currentColor;
   }
 
-  &--nofill {
+  &-#{$svg-icon-nofill-class} {
     fill: none;
   }
 }

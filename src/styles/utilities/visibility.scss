@@ -1,0 +1,9 @@
+.#{$visibility-prefix-class} {
+  @each $name, $size in $breakpoints {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$visibility-visible-class}#{$br-name} {visibility: visible;}
+      &-#{$visibility-hidden-class}#{$br-name} {visibility: hidden;}
+    }
+  }
+}

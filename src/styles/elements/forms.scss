@@ -1,5 +1,5 @@
 // custom select
-.#{$form-select-class} {
+.#{$form-custom-select-class} {
   position: relative;
 
   select {
@@ -17,7 +17,7 @@
     }
   }
 
-  &__value {
+  &#{$form-custom-select-value-class} {
     pointer-events: none;
     position: relative;
     min-height: 20px;

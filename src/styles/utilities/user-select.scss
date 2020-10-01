@@ -3,8 +3,3 @@
   &-#{$auto-class} {user-select: auto;}
   &-#{$user-select-all-class} {user-select: all;}
 }
-
-.#{$pointer-events-prefix-class} {
-  &-#{$none-class} {pointer-events: none;}
-  &-#{$auto-class} {pointer-events: auto;}
-}

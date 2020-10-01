@@ -3,7 +3,7 @@
     <h1 class="mt-0">Icons</h1>
     <div class="mt-10 d-f fw-w">
       <div class="d-f ai-c mb-7 mr-7" v-for="icon in svgIcons" :key="icon">
-        <svg-icon add-class="wd-3 he-3 mr-4" :name="icon"></svg-icon>
+        <svg-icon add-class="sz-3 mr-4" :name="icon"></svg-icon>
         <div class="font-300">{{icon}}</div>
       </div>
     </div>

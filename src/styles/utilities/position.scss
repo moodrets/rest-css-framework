@@ -8,12 +8,21 @@
       &-#{$position-sticky-class}#{$br-name} {position: sticky;}
       &-#{$position-static-class}#{$br-name} {position: static;}
       &-#{$inherit-class}#{$br-name} {position: inherit;}
-      &-#{$position-cover-class}#{$br-name} {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+      &-#{$position-cover-class}#{$br-name} {left: 0; right: 0; top: 0; bottom: 0;}
+      &-#{$position-center-class}#{$br-name} {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
+      &-#{$position-center-horizontal-class}#{$br-name} {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-#{$position-center-vertical-class}#{$br-name} {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
       @each $spacing, $value in $spacings {
         &-#{$direction-top-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing});}
         &-#{$direction-right-class}-#{$spacing}#{$br-name} {right: var(--spacing-#{$spacing});}
@@ -22,19 +31,13 @@
         &-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing}); right: var(--spacing-#{$spacing});}
         &-#{$direction-vertical-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing}); bottom: var(--spacing-#{$spacing});}
       }
-    }
-  }
-}
 
-.#{$z-index-class} {
-  @each $name, $size in $breakpoints {
-    @include breakpoint-up($name, $size) {
-      $br-name: breakpoint-infix($name);
-      @for $z from 1 through $z-index-count {
-        &-#{$z}#{$br-name} {z-index: #{$z};}
-        &-#{$z}-#{$z-index-negative-class}#{$br-name} {z-index: -#{$z};}
-      }
-      &-#{$z-index-over-class}#{$br-name} {z-index: #{$z-index-over-value};}
+      &-#{$direction-top-class}-#{$auto-class}#{$br-name} {top: auto;}
+      &-#{$direction-right-class}-#{$auto-class}#{$br-name} {right: auto;}
+      &-#{$direction-bottom-class}-#{$auto-class}#{$br-name} {bottom: auto;}
+      &-#{$direction-left-class}-#{$auto-class}#{$br-name} {left: auto;}
+      &-#{$direction-horizontal-class}-#{$auto-class}#{$br-name} {left: auto; right: auto;}
+      &-#{$direction-vertical-class}-#{$auto-class}#{$br-name} {top: auto; bottom: auto;}
     }
   }
 }
