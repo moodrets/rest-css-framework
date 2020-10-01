@@ -1,112 +1,101 @@
-@mixin create-grid(
-  $grid-row-class: $grid-row-class,
-  $grid-row-equal-height-class: $grid-row-equal-height-class,
-  $grid-row-columns-class: $grid-row-columns-class,
-  $grid-column-class: $grid-column-class,
-  $grid-column-auto-class: $grid-column-auto-class,
-  $grid-column-offset-class: $grid-column-offset-class,
-  $grid-gap-class: $grid-gap-class,
-  $grid-column-count: $grid-column-count,
-) {
-  .#{$grid-row-class} {
-    display: flex;
-    flex-wrap: wrap;
-  }
+// columns
+.#{$grid-column-prefix-class} {
+  max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
 
-  .#{$grid-column-class} {
-    max-width: 100%;
-    flex-basis: 0;
-    flex-grow: 1;
-  }
-
-  @each $name, $size in $breakpoints {
+  @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
 
-      .#{$grid-row-class}.#{$grid-row-equal-height-class}#{$br-name} {
-        > [class*='#{$grid-column-class}'] > * {
-          height: 100%;
-        }
-      }
-
-      @each $spacing, $value in $spacings {
-        .#{$grid-row-class}.#{$grid-gap-class}-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {
-          @if ($spacing == 0) {
-            margin-left: 0;
-            > [class*='#{$grid-column-class}'] {
-              padding-left: 0;
-              padding-bottom: 0;
-            }
-          } @else {
-            margin-left: calc(var(--spacing-#{$spacing}) * -1);
-            > [class*='#{$grid-column-class}'] {
-              padding-left: var(--spacing-#{$spacing});
-            }
-          }
-        }
-
-        .#{$grid-row-class}.#{$grid-gap-class}-#{$direction-vertical-class}-#{$spacing}#{$br-name} {
-          @if ($spacing == 0) {
-            > [class*='#{$grid-column-class}'] {
-              padding-bottom: 0;
-            }
-          } @else {
-            > [class*='#{$grid-column-class}'] {
-              padding-bottom: var(--spacing-#{$spacing});
-            }
-          }
-        }
-
-        .#{$grid-row-class}.#{$grid-gap-class}-#{$spacing}#{$br-name} {
-          @if ($spacing == 0) {
-            margin-left: 0;
-            > [class*='#{$grid-column-class}'] {
-              padding-left: 0;
-              padding-bottom: 0;
-            }
-          } @else {
-            margin-left: calc(var(--spacing-#{$spacing}) * -1);
-            > [class*='#{$grid-column-class}'] {
-              padding-left: var(--spacing-#{$spacing});
-              padding-bottom: var(--spacing-#{$spacing});
-            }
-          }
-        }
-      }
-
       @for $i from 1 through $grid-column-count {
-        .#{$grid-row-class}.#{$grid-row-columns-class}-#{$i}#{$br-name} {
-          > [class*='#{$grid-column-class}'] {
-            flex-basis: calc(100% / #{$i});
-            max-width: calc(100% / #{$i});
-          }
-        }
-      }
-
-      @for $i from 1 through $grid-column-count {
-        .#{$grid-column-class}-#{$i}#{$br-name} {
+        &-#{$i}#{$br-name} {
           flex-basis: calc(100% * #{$i} / #{$grid-column-count}) !important;
           max-width: calc(100% * #{$i} / #{$grid-column-count}) !important;
         }
-      }
-
-      .#{$grid-column-class}-#{$grid-column-auto-class}#{$br-name} {
-        flex-basis: 0 !important;
-        flex-grow: 1 !important;
-        max-width: 100% !important;
-      }
-
-      @for $i from 1 through $grid-column-count {
-        .#{$grid-column-offset-class}-#{$i}#{$br-name} {
+        &-#{$auto-class}#{$br-name} {
+          flex-basis: 0 !important;
+          flex-grow: 1 !important;
+          max-width: 100% !important;
+        }
+        &-#{$grid-column-offset-class}-#{$i}#{$br-name} {
           margin-left: calc(100% * #{$i} / #{$grid-column-count});
         }
       }
-
-      .#{$grid-column-offset-class}-0#{$br-name} {
+      &-#{$grid-column-offset-class}-0#{$br-name} {
         margin-left: 0;
       }
     }
   }
 }
 
-@include create-grid();
+// row
+.#{$grid-row-prefix-class} {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      &-#{$grid-row-equal-height-class}#{$br-name} {
+        > [class*='#{$grid-column-prefix-class}'] > * {
+          height: 100%;
+        }
+      }
+
+      @each $spacing, $value in $spacing-list {
+        &-#{$grid-row-gap-class}-#{$spacing}#{$br-name} {
+          @if ($spacing == 0) {
+            margin-left: 0;
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-left: 0;
+              padding-bottom: 0;
+            }
+          } @else {
+            margin-left: calc(var(--spacing-#{$spacing}) * -1);
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-left: var(--spacing-#{$spacing});
+              padding-bottom: var(--spacing-#{$spacing});
+            }
+          }
+        }
+
+        &-#{$grid-row-gap-class}-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {
+          @if ($spacing == 0) {
+            margin-left: 0;
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-left: 0;
+            }
+          } @else {
+            margin-left: calc(var(--spacing-#{$spacing}) * -1);
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-left: var(--spacing-#{$spacing});
+            }
+          }
+        }
+
+        &-#{$grid-row-gap-class}-#{$direction-vertical-class}-#{$spacing}#{$br-name} {
+          @if ($spacing == 0) {
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-bottom: 0;
+            }
+          } @else {
+            > [class*='#{$grid-column-prefix-class}'] {
+              padding-bottom: var(--spacing-#{$spacing});
+            }
+          }
+        }
+      }
+
+      @for $i from 1 through $grid-column-count {
+        &-#{$grid-row-columns-class}-#{$i}#{$br-name} {
+          > [class*='#{$grid-column-prefix-class}'] {
+            flex-basis: calc(100% / #{$i});
+            max-width: calc(100% / #{$i});
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 .#{$font-prefix-class} {
-  @each $name, $size in $breakpoints {
+  @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       @each $fz, $fz-value in $font-sizes-list {

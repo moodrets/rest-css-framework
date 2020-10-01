@@ -1,5 +1,5 @@
 .#{$z-index-class} {
-  @each $name, $size in $breakpoints {
+  @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       @each $z, $value in $z-index-list {

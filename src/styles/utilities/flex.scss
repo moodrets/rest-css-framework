@@ -1,4 +1,4 @@
-@each $name, $size in $breakpoints {
+@each $name, $size in $breakpoint-list {
   @include breakpoint-up($name, $size) {
     $br-name: breakpoint-infix($name);
 
@@ -169,10 +169,8 @@
     .#{$flex-shrink-1-class}#{$br-name} {flex-shrink: 1;}
     .#{$flex-shrink-0-class}#{$br-name} {flex-shrink: 0;}
 
-    .#{$flex-order-class}-#{$flex-order-first-class}#{$br-name} {order: 0;}
-    @for $o from 1 through $flex-order-count {
-      .#{$flex-order-class}-#{$o}#{$br-name} {order: #{$o}}
+    @each $key, $value in $flex-order-list {
+      .#{$flex-order-class}-#{$key}#{$br-name} {order: $value;}
     }
-    .#{$flex-order-class}-#{$flex-order-last-class}#{$br-name} {order: 13;}
   }
 }

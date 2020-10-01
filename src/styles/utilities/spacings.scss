@@ -1,8 +1,8 @@
 .#{$margin-class} {
-  @each $name, $size in $breakpoints {
+  @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
-      @each $spacing, $value in $spacings {
+      @each $spacing, $value in $spacing-list {
         &-#{$spacing}#{$br-name} {margin: var(--spacing-#{$spacing})}
         &#{$direction-top-class}-#{$spacing}#{$br-name} {margin-top: var(--spacing-#{$spacing})}
         &#{$direction-right-class}-#{$spacing}#{$br-name} {margin-right: var(--spacing-#{$spacing})}
@@ -35,10 +35,10 @@
 }
 
 .#{$padding-class} {
-  @each $name, $size in $breakpoints {
+  @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
-      @each $spacing, $value in $spacings {
+      @each $spacing, $value in $spacing-list {
         &-#{$spacing}#{$br-name} {padding: var(--spacing-#{$spacing})}
         &#{$direction-top-class}-#{$spacing}#{$br-name} {padding-top: var(--spacing-#{$spacing})}
         &#{$direction-right-class}-#{$spacing}#{$br-name} {padding-right: var(--spacing-#{$spacing})}

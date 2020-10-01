@@ -1,0 +1,9 @@
+.#{$word-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$normal-class}#{$br-name} {word-wrap: break-word;}
+      &-#{$word-wrap-break-class}#{$br-name} {word-wrap: normal;}
+    }
+  }
+}

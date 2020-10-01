@@ -1,10 +1,10 @@
 .#{$container-class} {
-  max-width: var(--content-width);
+  max-width: #{$container-width};
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 
   &-#{$size-small-class} {
-    max-width: var(--content-width-sm);
+    max-width: #{$container-width-small};
   }
 }

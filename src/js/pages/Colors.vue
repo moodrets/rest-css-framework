@@ -3,18 +3,18 @@
     <h1 class="mt-0">Colors</h1>
     <p>These colors are used for background-color, text, svg icon and border classes</p>
 
-    <div class="row gap-7">
+    <div class="row row-gap-7">
       <div class="col col-12 col-6:md">
         <h3 class="mt-0 mb-4 txt-info-2 font-500">State</h3>
-        <div class="rs-select">
-          <select ref="state-select" v-rs-select v-model="colorsState">
+        <div class="rs-select pos-rel">
+          <select class="op-0 pos-abs pos-cover sz-100" ref="state-select" v-rs-select v-model="colorsState">
             <option value="">Default</option>
             <option value=":h">Hover</option>
             <option value=":f">Focus</option>
             <option value=":a">Active</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4 txt-theme-3">
-            <svg-icon name="rs-arrow-down"></svg-icon>
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pe-n pos-r-7 sz-1 pos-cn-y"></svg-icon>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="col col-4"><strong>background-color</strong></div>
         <div class="col col-4"><strong>variable</strong></div>
       </div>
-      <div class="row cols-1 cols-3:md ai-c p-3 sh-1 mb-3" v-for="(color, index) in colorVars" :key="index">
+      <div class="row row-cols-1 row-cols-3:md ai-c p-3 sh-1 mb-3" v-for="(color, index) in colorVars" :key="index">
         <div class="col">
           <div
             tabindex="0"

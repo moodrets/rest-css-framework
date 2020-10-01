@@ -5,6 +5,7 @@ $unset-class: 'un';
 $initial-class: 'int';
 $normal-class: 'nl';
 $auto-class: 'a';
+$all-class: 'all';
 $transparent-class: 'trsp';
 $current-color-class: 'current';
 $direction-start-class: 's';
@@ -19,7 +20,7 @@ $direction-baseline-class: 'bs';
 $direction-vertical-class: 'y';
 $direction-horizontal-class: 'x';
 
-// action
+// actions
 $hover-class: 'h';
 $focus-class: 'f';
 $focus-within-class: 'fcw';
@@ -33,7 +34,7 @@ $size-medium-class: 'md';
 $size-large-class: 'lg';
 $size-extra-large-class: 'xl';
 $size-very-extra-large-class: 'xxl';
-$sizes: (
+$size-list: ( // use for width, height and size utilities
   1: 16px,
   2: 20px,
   3: 24px,
@@ -50,6 +51,16 @@ $sizes: (
   50: 50%,
   33: 33.33%,
   25: 25%,
+  100vh: 100vh,
+  75vh: 75vh,
+  50vh: 50vh,
+  33vh: 33.33vh,
+  25vh: 25vh,
+  100vw: 100vw,
+  75vw: 75vw,
+  50vw: 50vw,
+  33vw: 33.33vw,
+  25vw: 25vw,
   280: 280px,
   320: 320px,
   480: 480px,
@@ -62,11 +73,11 @@ $button-base-font-size: 14px;
 
 // shadow
 $shadow-prefix-class: 'sh';
-$shadow-horizontal: '0'; // for $colors values
-$shadow-vertical: '0'; // for $colors values
-$shadow-width: '2px'; // for $colors values
-$shadow-scattering: '2px'; // for $colors values
-$shadows: (
+$shadow-horizontal: '0'; // for $color-list values
+$shadow-vertical: '0'; // for $color-list values
+$shadow-width: '2px'; // for $color-list values
+$shadow-scattering: '2px'; // for $color-list values
+$shadow-list: (
   1: 'rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px',
   2: 'rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px',
   3: 'rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px',
@@ -102,7 +113,7 @@ $position-center-horizontal-class: 'cn-x';
 $position-center-vertical-class: 'cn-y';
 
 // z-index
-$z-index-class: 'zi';
+$z-index-class: 'z';
 $z-index-list: (
   1: 1,
   2: 2,
@@ -132,17 +143,25 @@ $z-index-list: (
 
 // text
 $text-prefix-class: 'txt';
-$text-color-class: 'clr';
-$text-uppercase-class: 'upp';
-$text-lowercase-class: 'lwr';
-$text-capitalize-class: 'cap';
-$text-transform-class: 'trf';
-$text-underline-class: 'du';
-$text-underline-none-class: 'dn';
-$text-throught-class: 'lth';
 $text-justify-class: 'j';
 $text-truncate-class: 'trnc';
 $text-truncate-reset-class: 'trnc-res';
+
+// text decoration
+$text-decoration-prefix-class: 'td';
+$text-decoration-undeline-class: 'u';
+$text-decoration-overline-class: 'o';
+$text-decoration-strike-class: 'lt';
+
+// text transform
+$text-transform-prefix-class: 'tt';
+$text-transform-uppercase-class: 'u';
+$text-transform-lowercase-class: 'l';
+$text-transform-capitalize-class: 'c';
+
+// word break
+$word-prefix-class: 'wr';
+$word-wrap-break-class: 'bw';
 
 // font
 $font-prefix-class: 'font';
@@ -246,7 +265,7 @@ $display-contents-class: 'cn';
 $margin-class: 'm';
 $margin-negative-class: 'neg';
 $padding-class: 'p';
-$spacings: (
+$spacing-list: (
   1em: 1em,
   2em: 2em,
   1: 6px,
@@ -271,17 +290,37 @@ $border-width-class: 'wd';
 $border-dotted-class: 'dt';
 $border-dashed-class: 'dsh';
 $border-solid-class: 'sl';
-$border-width-count: 10;
+$border-width-list: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+
+// outline
+$outline-prefix-class: 'out';
 
 // grid
-$grid-row-class: 'row';
-$grid-row-equal-height-class: 'equal-cols';
+$grid-row-prefix-class: 'row';
+$grid-row-equal-height-class: 'eq-cols';
 $grid-row-columns-class: 'cols';
-$grid-column-class: 'col';
+$grid-row-gap-class: 'gap';
+$grid-column-prefix-class: 'col';
 $grid-column-auto-class: 'a';
-$grid-column-offset-class: 'col-ofs';
-$grid-gap-class: 'gap';
+$grid-column-offset-class: 'ofs';
 $grid-column-count: 12;
+
+// column
+$column-prefix-class: 'clm';
+$column-gap-class: 'gap';
+$column-span-class: 'sp';
+$column-count: 12;
 
 // flex
 // flex prefix
@@ -293,6 +332,8 @@ $flex-align-content-class: 'ac';
 $flex-align-items-class: 'ai';
 $flex-align-self-class: 'as';
 $flex-wrap-class: 'fw';
+
+$flex-place-props: true;
 $flex-place-content-class: 'plc';
 $flex-place-items-class: 'pli';
 $flex-place-self-class: 'pls';
@@ -334,13 +375,23 @@ $flex-shrink-1-class: 'fl-sh-1';
 $flex-shrink-0-class: 'fl-sh-0';
 
 $flex-order-class: 'or';
-$flex-order-count: 10;
-$flex-order-first-class: 'f';
-$flex-order-last-class: 'l';
-$flex-place-props: true;
+$flex-order-list: (
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10,
+  f: -1,
+  l: 13
+);
 
 // svg icon
-$svg-icon-class: 'svg-icon';
+$svg-icon-prefix-class: 'svg-icon';
 $svg-icon-stroke-class: 'stroke';
 $svg-icon-nofill-class: 'nofill';
 
@@ -383,10 +434,6 @@ $visibility-hidden-class: 'h';
 $visibility-visible-class: 'v';
 
 // forms
-$form-focus-color: var(--color-primary);
-$form-custom-select-class: 'rs-select';
-$form-custom-select-value-class: '__value';
-$form-control-class: 'rs-form-control'; // input textarea
 $form-checkbox-class: 'rs-checkbox';
 $form-radio-class: 'rs-radio';
 $form-switch-class: 'rs-switch';
@@ -416,14 +463,20 @@ $align-child-class: 'ch';
 $align-text-top-class: 'tt';
 $align-text-bottom-class: 'tb';
 
-// other
+// container
 $container-class: 'container';
-$clearfix-class: 'clearfix';
+$container-width: 1320px;
+$container-width-small: 840px;
+
+// clearfix
+$clearfix-prefix-class: 'clearfix';
+
+// float
 $float-prefix-class: 'flt';
 
 // border radius
 $radius-prefix-class: 'rds';
-$radiuses: (
+$radius-list: (
   1: 4px,
   2: 6px,
   3: 8px,
@@ -451,8 +504,8 @@ $cursor-text-class: 't';
 $cursor-help-class: 'h';
 $cursor-default-class: 'd';
 
-// colors
-$colors : (
+// color list
+$color-list : (
   disabled: #ccc,
   dark:#000000,
 	light:#ffffff,
@@ -479,7 +532,7 @@ $colors : (
   danger-2:#cd3333,
 );
 
-$breakpoints: (
+$breakpoint-list: (
 	xs: 0, // mandatory
 	sm: 420px,
 	md: 768px,
@@ -494,32 +547,30 @@ $global: (
   font-size-base: 14px,
   base-color: #000,
   button-font-size-base: 14px,
-  content-width: 1320px,
-  content-width-sm: 840px,
   mobile-first: true,
 );
 
 $media-width: if(map-get($global, mobile-first), 'min', 'max');
 
 // use this vars in media query @media($sm) {...}
-$sm: '#{$media-width}-width: (#{map-get($breakpoints, sm)})';
-$md: '#{$media-width}-width: (#{map-get($breakpoints, md)})';
-$lg: '#{$media-width}-width: (#{map-get($breakpoints, lg)})';
-$xl: '#{$media-width}-width: (#{map-get($breakpoints, xl)})';
+$sm: '#{$media-width}-width: (#{map-get($breakpoint-list, sm)})';
+$md: '#{$media-width}-width: (#{map-get($breakpoint-list, md)})';
+$lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
+$xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
 
 :root {
-	// colors
-  @each $color, $value in $colors {--color-#{$color}: #{$value};}
-	// breakpoints
-  @each $size, $value in $breakpoints {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
-  // spacings
-  @each $spacing, $value in $spacings {--spacing-#{$spacing}: #{$value};}
-  // radiuses
-  @each $radius, $value in $radiuses {--radius-#{$radius}: #{$value};}
-  // sizes
-  @each $size, $value in $sizes {--size-#{$size}: #{$value};}
-  // shadows
-  @each $shadow, $value in $shadows {--shadow-#{$shadow}: #{$value};}
-  // other
+	// color list
+  @each $color, $value in $color-list {--color-#{$color}: #{$value};}
+	// breakpoint list
+  @each $size, $value in $breakpoint-list {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
+  // spacing list
+  @each $spacing, $value in $spacing-list {--spacing-#{$spacing}: #{$value};}
+  // radius list
+  @each $radius, $value in $radius-list {--radius-#{$radius}: #{$value};}
+  // size list
+  @each $size, $value in $size-list {--size-#{$size}: #{$value};}
+  // shadow list
+  @each $shadow, $value in $shadow-list {--shadow-#{$shadow}: #{$value};}
+  // global list
   @each $var, $value in $global {--#{$var}: #{$value};}
 }

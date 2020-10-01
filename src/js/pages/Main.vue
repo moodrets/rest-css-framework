@@ -2,40 +2,36 @@
   <div class="rs-home">
     <h1 class="mt-0">Rest Css Framework</h1>
     <p>Low-level framework for almost all occasions</p>
-    <div class="my-7 rs-home-advantages">
-      <h2 class="txt-success">+ Advantages</h2>
-      <ul class="txt-success-1 font-500">
-        <li class="lh-1-5">Easily customizable classes, variables, sizes for you project</li>
-        <!-- <li class="lh-1-5">Dynamic documentation <span class="txt-info-2">(unless you change class names)</span></li> -->
-        <li class="lh-1-5">Easily customizable elements and components</li>
-        <li class="lh-1-5">Rest from CSS code</li>
-      </ul>
-    </div>
-    <div class="my-7 rs-home-minuses">
-      <h2 class="txt-danger">- Limitations</h2>
-      <ul class="txt-danger-1 font-500">
-        <li class="lh-1-5">Dirty html</li>
-        <li class="lh-1-5">large weight of the compiled .css file</li>
-        <li class="lh-1-5">No JavaScript</li>
-      </ul>
+
+    <div class="my-10 p-7 sh-2 rds-4 txt-c txt-success-1">
+      <h2 class="mt-0 tt-u">Advantages</h2>
+      <div class="row row-gap-6 row-cols-1 row-cols-3:md font-sz-18">
+        <div class="col">
+          <div>Easily customizable classes, variables, sizes for you project</div>
+        </div>
+        <div class="col">
+          <div>Easily customizable elements and components</div>
+        </div>
+        <div class="col">
+          <div>Rest from CSS code</div>
+        </div>
+      </div>
     </div>
 
-    <!-- <div class="some-offcanvas wd-280 pos-fx pos-l-0 pos-t-0 pos-b-0 ov-y-a bg-light zi-100 sh-2 p-5">
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-      <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item</button>
-    </div> -->
+    <div class="my-10 p-7 sh-2 rds-4 txt-c txt-danger-1">
+      <h2 class="mt-0 tt-u">Limitations</h2>
+      <div class="row row-gap-6 row-cols-1 row-cols-3:md font-sz-18">
+        <div class="col">
+          <div>Dirty html</div>
+        </div>
+        <div class="col">
+          <div>Large weight of the compiled .css file</div>
+        </div>
+        <div class="col">
+          <div>No JavaScript</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>

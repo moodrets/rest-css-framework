@@ -1,4 +1,4 @@
-.#{$clearfix-class} {
+.#{$clearfix-prefix-class} {
   &:before {
     content: '';
     display: block;

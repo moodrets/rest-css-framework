@@ -16,18 +16,13 @@
 <script>
 
   import { routes } from '@/router/index.js'
-  import { reactive } from '@vue/composition-api'
-
   const routesList = routes
 
   export default {
-    setup(){
-
-      const routes = reactive(routesList)
-
+    data(){
       return {
-        routes
+        routes: routesList
       }
-    },
+    }
   }
 </script>

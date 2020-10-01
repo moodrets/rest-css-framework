@@ -13,6 +13,7 @@ import Icons from '@/pages/Icons'
 import Buttons from '@/pages/Buttons'
 import Radius from '@/pages/Radius'
 import Modal from '@/pages/Modal'
+import Offcanvas from '@/pages/Offcanvas'
 
 export const routes = [
   {
@@ -67,6 +68,11 @@ export const routes = [
     name: 'Modal',
     component: Modal,
     header: 'Examples'
+  },
+  {
+    path: '/offcanvas',
+    name: 'Offcanvas',
+    component: Offcanvas,
   },
 ]
 
