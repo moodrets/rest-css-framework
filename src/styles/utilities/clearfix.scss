@@ -1,9 +1,4 @@
 .#{$clearfix-prefix-class} {
-  &:before {
-    content: '';
-    display: block;
-    clear: both;
-  }
   &:after {
     content: '';
     display: block;

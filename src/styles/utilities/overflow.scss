@@ -17,6 +17,9 @@
       &-#{$direction-vertical-class}-#{$overflow-scroll-class}#{$br-name} {overflow-y: scroll;}
       &-#{$direction-vertical-class}-#{$auto-class}#{$br-name} {overflow-y: auto;}
       &-#{$inherit-class}#{$br-name} {overflow: inherit;}
+
+      &-#{$overflow-touch-class}#{$br-name} {-webkit-overflow-scrolling: touch;}
+      &-#{$overflow-touch-class}-#{$none-class}#{$br-name} {-webkit-overflow-scrolling: none;}
     }
   }
 }

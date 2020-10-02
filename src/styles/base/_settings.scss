@@ -1,3 +1,31 @@
+// color list
+$color-list : (
+  disabled: #ccc,
+  dark:#000000,
+	light:#ffffff,
+  theme:#eed5b7,
+  theme-1:#cdb79e,
+  theme-2:#cdb38b,
+	primary:#00bfff,
+	primary-1:#00b2ee,
+	primary-2:#009acd,
+	secondary:#e0e0e0,
+	secondary-1:#d8d8d8,
+	secondary-2:#a0a0a0,
+	success:#00BF32,
+	success-1:#269610,
+	success-2:#167C0C,
+	warning:#FFAF2D,
+	warning-1:#FF8719,
+  warning-2:#C15A0D,
+  info:#87ceff,
+	info-1:#7ec0ee,
+	info-2:#6ca6cd,
+	danger:#ff4040,
+	danger-1:#e03939,
+  danger-2:#cd3333,
+);
+
 // global classes
 $none-class: 'n';
 $inherit-class: 'inh';
@@ -20,14 +48,17 @@ $direction-baseline-class: 'bs';
 $direction-vertical-class: 'y';
 $direction-horizontal-class: 'x';
 
-// actions
+// pseudo
 $hover-class: 'h';
 $focus-class: 'f';
 $focus-within-class: 'fcw';
 $active-class: 'a';
+$placeholder-class: 'pl';
 
 // size
-$size-class: 'sz';
+$size-prefix-class: 'sz';
+$size-max-class: 'max';
+$size-min-class: 'min';
 $size-exstra-small-class: 'xs';
 $size-small-class: 'sm';
 $size-medium-class: 'md';
@@ -46,7 +77,11 @@ $size-list: ( // use for width, height and size utilities
   9: 52px,
   10: 64px,
   11: 72px,
+  280: 280px,
+  320: 320px,
+  480: 480px,
   100: 100%,
+  // mandatory
   75: 75%,
   50: 50%,
   33: 33.33%,
@@ -61,15 +96,113 @@ $size-list: ( // use for width, height and size utilities
   50vw: 50vw,
   33vw: 33.33vw,
   25vw: 25vw,
-  280: 280px,
-  320: 320px,
-  480: 480px,
   0: 0,
 );
 
 // button
 $button-prefix-class: 'button';
 $button-base-font-size: 14px;
+$button-types: (
+  primary: (
+    default: (
+      background: var(--color-primary),
+      color: var(--color-light),
+    ),
+    hover: (
+      background: var(--color-primary-1),
+      color: var(--color-light),
+    ),
+    focus: (
+      background: var(--color-primary-1),
+      color: var(--color-light),
+    ),
+    active: (
+      background: var(--color-primary-2),
+    ),
+  ),
+  secondary: (
+    default: (
+      background: var(--color-secondary),
+    ),
+    hover: (
+      background: var(--color-secondary-1),
+    ),
+    focus: (
+      background: var(--color-secondary-1),
+    ),
+    active: (
+      background: var(--color-secondary-2),
+    ),
+  ),
+  warning: (
+    default: (
+      background: var(--color-warning),
+      color: var(--color-light),
+    ),
+    hover: (
+      background: var(--color-warning-1),
+      color: var(--color-light),
+    ),
+    focus: (
+      background: var(--color-warning-1),
+      color: var(--color-light),
+    ),
+    active: (
+      background: var(--color-warning-2),
+    ),
+  ),
+  success: (
+    default: (
+      background: var(--color-success),
+      color: var(--color-light),
+    ),
+    hover: (
+      background: var(--color-success-1),
+      color: var(--color-light),
+    ),
+    focus: (
+      background: var(--color-success-1),
+      color: var(--color-light),
+    ),
+    active: (
+      background: var(--color-success-2),
+    ),
+  ),
+  info: (
+    default: (
+      background: var(--color-info),
+      color: var(--color-light),
+    ),
+    hover: (
+      background: var(--color-info-1),
+      color: var(--color-light),
+    ),
+    focus: (
+      background: var(--color-info-1),
+      color: var(--color-light),
+    ),
+    active: (
+      background: var(--color-info-2),
+    ),
+  ),
+  danger: (
+    default: (
+      background: var(--color-danger),
+      color: var(--color-light),
+    ),
+    hover: (
+      background: var(--color-danger-1),
+      color: var(--color-light),
+    ),
+    focus: (
+      background: var(--color-danger-1),
+      color: var(--color-light),
+    ),
+    active: (
+      background: var(--color-danger-2),
+    ),
+  ),
+);
 
 // shadow
 $shadow-prefix-class: 'sh';
@@ -88,16 +221,19 @@ $shadow-list: (
   in-4: 'inset rgba(0, 0, 0, 0.19) 0 10px 20px, inset rgba(0, 0, 0, 0.23) 0 6px 6px',
 );
 
+// box sizing
+$box-sizing-prefix-class: 'bx';
+$box-sizing-border-class: 'bb';
+$box-sizing-content-class: 'cb';
+
 // width
 $width-prefix-class: 'wd';
-$width-max-100-class: 'max-100';
-$width-max-none-class: 'max-n';
+$width-max-class: 'max';
 $width-min-class: 'min';
 
 // height
 $height-prefix-class: 'he';
-$height-max-100-class: 'max-100';
-$height-max-none-class: 'max-n';
+$height-max-class: 'max';
 $height-min-class: 'min';
 
 // position
@@ -163,6 +299,14 @@ $text-transform-capitalize-class: 'c';
 $word-prefix-class: 'wr';
 $word-wrap-break-class: 'bw';
 
+// white space
+$white-space-prefix-class: 'wh';
+$white-space-nowrap-class: 'nw';
+$white-space-pre-class: 'pre';
+$white-space-pre-wrap-class: 'prew';
+$white-space-pre-line-class: 'prel';
+$white-space-break-spaces-class: 'brs';
+
 // font
 $font-prefix-class: 'font';
 $font-base-class: 'base';
@@ -178,7 +322,7 @@ $font-extra-bold-class: '800';
 $font-bolder-class: '900';
 $font-italic-class: 'itl';
 $font-size-class: 'sz';
-$font-sizes-list: (
+$font-size-list: (
   10: 10px,
   11: 11px,
   12: 12px,
@@ -243,8 +387,35 @@ $line-height-list: (
 
 // background
 $background-prefix-class: 'bg';
-$background-repeat-repeat-class: 'rp';
-$background-repeat-norepeat-class: 'nrp';
+$background-repeat-class: 'rp';
+$background-norepeat-class: 'nrp';
+$background-position-class: 'pos';
+$background-attachment-fixed-class: 'fx';
+$background-attachment-scroll-class: 'sc';
+$background-attachment-local-class: 'lc';
+$background-size-cover-class: 'cover';
+$background-size-contain-class: 'con';
+$background-size-auto-class: 'a';
+$background-clip-border-class: 'cb';
+$background-clip-padding-class: 'cp';
+$background-clip-content-class: 'cc';
+$background-clip-text-class: 'ct';
+$background-gradient-class: 'gr';
+$background-gradient-list: (
+  primary : 'linear-gradient(#00bfff, #009acd)',
+  secondary : 'linear-gradient(#e0e0e0, #a0a0a0)',
+  success : 'linear-gradient(#00BF32, #167C0C)',
+  warning : 'linear-gradient(#FFAF2D, #C15A0D)',
+  info : 'linear-gradient(#87ceff, #6ca6cd)',
+  danger : 'linear-gradient(#ff4040, #cd3333)',
+);
+
+// object fit
+$object-fit-prefix-class: 'obf';
+$object-fit-contain-class: 'con';
+$object-fit-fill-class: 'fill';
+$object-fit-cover-class: 'cover';
+$object-fit-scale-down-class: 'scd';
 
 // display
 $display-prefix-class: 'd';
@@ -263,8 +434,8 @@ $display-contents-class: 'cn';
 
 // spacing
 $margin-class: 'm';
-$margin-negative-class: 'neg';
 $padding-class: 'p';
+$margin-negative-class: 'neg';
 $spacing-list: (
   1em: 1em,
   2em: 2em,
@@ -281,6 +452,11 @@ $spacing-list: (
   11: 50px,
   12: 60px,
   13: 80px,
+  // mandatory
+  100: 100%,
+  50: 50%,
+  33: 33%,
+  25: 25%,
   0: 0,
 );
 
@@ -306,15 +482,15 @@ $border-width-list: (
 // outline
 $outline-prefix-class: 'out';
 
-// grid
-$grid-row-prefix-class: 'row';
-$grid-row-equal-height-class: 'eq-cols';
-$grid-row-columns-class: 'cols';
-$grid-row-gap-class: 'gap';
-$grid-column-prefix-class: 'col';
-$grid-column-auto-class: 'a';
-$grid-column-offset-class: 'ofs';
-$grid-column-count: 12;
+// row
+$row-prefix-class: 'row';
+$row-equal-height-class: 'eq-cols';
+$row-columns-class: 'cols';
+$row-gap-class: 'gap';
+$row-column-prefix-class: 'col';
+$row-column-auto-class: 'a';
+$row-column-offset-class: 'ofs';
+$row-column-count: 12;
 
 // column
 $column-prefix-class: 'clm';
@@ -395,10 +571,6 @@ $svg-icon-prefix-class: 'svg-icon';
 $svg-icon-stroke-class: 'stroke';
 $svg-icon-nofill-class: 'nofill';
 
-// mute
-$mute-class: 'mute';
-$mute-opacity: '.5';
-
 // opacity
 $opacity-prefix-class: 'op';
 $opacity: (
@@ -418,6 +590,7 @@ $opacity: (
 // user select
 $user-select-prefix-class: 'us';
 $user-select-all-class: 'all';
+$user-select-text-class: 'txt';
 
 // pointer events class
 $pointer-events-prefix-class: 'pe';
@@ -427,6 +600,7 @@ $overflow-prefix-class: 'ov';
 $overflow-hidden-class: 'h';
 $overflow-visible-class: 'v';
 $overflow-scroll-class: 'sc';
+$overflow-touch-class: 't';
 
 // visibilitys
 $visibility-prefix-class: 'vs';
@@ -464,9 +638,11 @@ $align-text-top-class: 'tt';
 $align-text-bottom-class: 'tb';
 
 // container
-$container-class: 'container';
+$container-prefix-class: 'container';
 $container-width: 1320px;
-$container-width-small: 840px;
+$container-width-fixed: (
+  sm: 840px,
+);
 
 // clearfix
 $clearfix-prefix-class: 'clearfix';
@@ -504,34 +680,6 @@ $cursor-text-class: 't';
 $cursor-help-class: 'h';
 $cursor-default-class: 'd';
 
-// color list
-$color-list : (
-  disabled: #ccc,
-  dark:#000000,
-	light:#ffffff,
-  theme:#eed5b7,
-  theme-1:#cdb79e,
-  theme-2:#cdb38b,
-	primary:#00bfff,
-	primary-1:#00b2ee,
-	primary-2:#009acd,
-	secondary:#e0e0e0,
-	secondary-1:#d8d8d8,
-	secondary-2:#a0a0a0,
-	success:#00BF32,
-	success-1:#269610,
-	success-2:#167C0C,
-	warning:#FFAF2D,
-	warning-1:#FF8719,
-  warning-2:#C15A0D,
-  info:#87ceff,
-	info-1:#7ec0ee,
-	info-2:#6ca6cd,
-	danger:#ff4040,
-	danger-1:#e03939,
-  danger-2:#cd3333,
-);
-
 $breakpoint-list: (
 	xs: 0, // mandatory
 	sm: 420px,
@@ -561,6 +709,8 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
 :root {
 	// color list
   @each $color, $value in $color-list {--color-#{$color}: #{$value};}
+  // gradient list
+  @each $color, $value in $background-gradient-list {--gradient-#{$color}: #{$value};}
 	// breakpoint list
   @each $size, $value in $breakpoint-list {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
   // spacing list

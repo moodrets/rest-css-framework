@@ -9,7 +9,7 @@
             <option :value="iter" v-for="iter in 10" :key="iter">{{iter}}px</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
             <option :value="color.replace('--color-', '')" v-for="color in colorVars" :key="color">var({{color}})</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
             <option :value="style.value" v-for="style in borderStyleValues" :key="style.value">{{style.text}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
             <option :value="item.value" v-for="item in borderNoneValues" :key="item.value">{{item.text}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
             <option :value="item.replace('--radius-', '')" v-for="item in radiusVars" :key="item">var({{item}})</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
             <option :value="item.value" v-for="item in borderBreakpointsValues" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-cn-y pe-n"></svg-icon>
           </div>
         </div>
       </div>

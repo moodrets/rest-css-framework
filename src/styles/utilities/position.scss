@@ -9,6 +9,7 @@
       &-#{$position-static-class}#{$br-name} {position: static;}
       &-#{$inherit-class}#{$br-name} {position: inherit;}
       &-#{$position-cover-class}#{$br-name} {left: 0; right: 0; top: 0; bottom: 0;}
+      &-#{$auto-class}#{$br-name} {left: auto; right: auto; top: auto; bottom: auto;}
       &-#{$position-center-class}#{$br-name} {
         left: 50%;
         top: 50%;

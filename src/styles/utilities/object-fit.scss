@@ -1,0 +1,24 @@
+.#{$object-fit-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$object-fit-contain-class}#{$br-name} {object-fit: contain;}
+      &-#{$object-fit-cover-class}#{$br-name} {object-fit: cover;}
+      &-#{$object-fit-fill-class}#{$br-name} {object-fit: fill;}
+      &-#{$object-fit-scale-down-class}#{$br-name} {object-fit: scale-down;}
+      &-#{$none-class}#{$br-name} {object-fit: none;}
+
+      &-#{$direction-left-class}#{$br-name} {object-position: left;}
+      &-#{$direction-right-class}#{$br-name} {object-position: right;}
+      &-#{$direction-top-class}#{$br-name} {object-position: top;}
+      &-#{$direction-bottom-class}#{$br-name} {object-position: bottom;}
+      &-#{$direction-center-class}#{$br-name} {object-position: center;}
+
+
+      &-#{$direction-left-class}-#{$direction-bottom-class}#{$br-name} {object-position: left bottom;}
+      &-#{$direction-left-class}-#{$direction-top-class}#{$br-name} {object-position: left top;}
+      &-#{$direction-right-class}-#{$direction-bottom-class}#{$br-name} {object-position: right bottom;}
+      &-#{$direction-right-class}-#{$direction-top-class}#{$br-name} {object-position: right top;}
+    }
+  }
+}

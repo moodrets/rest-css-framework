@@ -5,6 +5,7 @@
     &-#{$color}\:#{$hover-class}:hover {color: var(--color-#{$color});}
     &-#{$color}\:#{$focus-class}:focus {color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {color: var(--color-#{$color});}
+    &-#{$color}\:#{$placeholder-class}::placeholder {color: var(--color-#{$color});}
   }
 
   @each $name, $size in $breakpoint-list {

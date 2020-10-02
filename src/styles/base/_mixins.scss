@@ -14,6 +14,23 @@
   list-style: none;
 }
 
+@mixin set-property($map){
+  @each $key, $value in $map {
+    #{$key} : #{$value};
+  }
+}
+
+@mixin set-button-types($map){
+  @each $type, $props in $map {
+    &-#{$type} {
+      @include set-property(map-deep-get($props, default));
+      &:hover {@include set-property(map-deep-get($props, hover));}
+      &:focus {@include set-property(map-deep-get($props, focus));}
+      &:active {@include set-property(map-deep-get($props, active));}
+    }
+  }
+}
+
 @mixin button-reset {
   outline: none;
   border: none;

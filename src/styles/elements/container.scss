@@ -1,10 +1,12 @@
-.#{$container-class} {
+.#{$container-prefix-class} {
   max-width: #{$container-width};
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 
-  &-#{$size-small-class} {
-    max-width: #{$container-width-small};
+  @each $key, $value in $container-width-fixed {
+    &-#{$key} {
+      max-width: #{$value};
+    }
   }
 }

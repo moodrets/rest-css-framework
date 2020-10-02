@@ -1,0 +1,4 @@
+.#{$box-sizing-prefix-class} {
+  &-#{$box-sizing-border-class} {box-sizing: border-box;}
+  &-#{$box-sizing-content-class} {box-sizing: content-box;}
+}

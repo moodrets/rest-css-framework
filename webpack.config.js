@@ -1,19 +1,19 @@
-const path = require('path');
-const fs = require('fs');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path')
+const fs = require('fs')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const mode = {
 	prod: false,
 	dev: false
-};
+}
 
-const PAGES_DIR = `./src/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const PAGES_DIR = `./src/`
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 process.argv.forEach(flag => {
 	if ( flag === 'development' ) {
@@ -26,7 +26,7 @@ process.argv.forEach(flag => {
 
 const paths = {
 	entry: [
-		'./src/js/app.js'
+    './src/js/app.js',
 	],
 	output: {
 		filename: mode.dev ? 'js/[name].js' : 'js/[name].[contenthash].js',

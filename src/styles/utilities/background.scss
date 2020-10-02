@@ -5,12 +5,50 @@
     &-#{$color}\:#{$focus-class}:focus {background-color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {background-color: var(--color-#{$color});}
   }
+
+  @each $key, $value in $background-gradient-list {
+    &-#{$background-gradient-class}-#{$key} {background-image: var(--gradient-#{$key});}
+  }
+
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
       &-#{$inherit-class}#{$br-name} {background-color: inherit;}
       &-#{$current-color-class}#{$br-name} {background-color: currentColor;}
       &-#{$transparent-class}#{$br-name} {background-color: transparent;}
+
+      // position
+      &-#{$background-position-class}-#{$direction-top-class}#{$br-name} {background-position: top;}
+      &-#{$background-position-class}-#{$direction-bottom-class}#{$br-name} {background-position: bottom;}
+      &-#{$background-position-class}-#{$direction-left-class}#{$br-name} {background-position: left;}
+      &-#{$background-position-class}-#{$direction-right-class}#{$br-name} {background-position: right;}
+      &-#{$background-position-class}-#{$direction-center-class}#{$br-name} {background-position: center;}
+      &-#{$background-position-class}-#{$direction-left-class}-#{$direction-top-class}#{$br-name} {background-position: left top;}
+      &-#{$background-position-class}-#{$direction-left-class}-#{$direction-bottom-class}#{$br-name} {background-position: left bottom;}
+      &-#{$background-position-class}-#{$direction-right-class}-#{$direction-top-class}#{$br-name} {background-position: right top;}
+      &-#{$background-position-class}-#{$direction-right-class}-#{$direction-bottom-class}#{$br-name} {background-position: right bottom;}
+
+      // repeat
+      &-#{$background-repeat-class}#{$br-name} {background-repeat: repeat;}
+      &-#{$background-repeat-class}-#{$direction-vertical-class}#{$br-name} {background-repeat: repeat-y;}
+      &-#{$background-repeat-class}-#{$direction-horizontal-class}#{$br-name} {background-repeat: repeat-x;}
+      &-#{$background-norepeat-class}#{$br-name} {background-repeat: no-repeat;}
+
+      // size
+      &-#{$background-size-cover-class}#{$br-name} {background-size: cover;}
+      &-#{$background-size-contain-class}#{$br-name} {background-size: contain;}
+      &-#{$background-size-auto-class}#{$br-name} {background-size: auto;}
+
+      // attachment
+      &-#{$background-attachment-fixed-class}#{$br-name} {background-attachment: fixed;}
+      &-#{$background-attachment-scroll-class}#{$br-name} {background-attachment: scroll;}
+      &-#{$background-attachment-local-class}#{$br-name} {background-attachment: local;}
+
+      // clip
+      &-#{$background-clip-border-class}#{$br-name} {background-clip: border-box;}
+      &-#{$background-clip-padding-class}#{$br-name} {background-clip: padding-box;}
+      &-#{$background-clip-content-class}#{$br-name} {background-clip: content-box;}
+      &-#{$background-clip-text-class}#{$br-name} {background-clip: text;}
     }
   }
 }

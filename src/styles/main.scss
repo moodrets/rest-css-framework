@@ -15,7 +15,6 @@
 
 // utilities
 @import 'utilities/cursor';
-@import 'utilities/mute';
 @import 'utilities/animations';
 @import 'utilities/transitions';
 @import 'utilities/opacity';
@@ -30,6 +29,7 @@
 @import 'utilities/text-decoration';
 @import 'utilities/text-transform';
 @import 'utilities/word';
+@import 'utilities/white-space';
 @import 'utilities/alignment';
 @import 'utilities/font';
 @import 'utilities/line-height';
@@ -40,10 +40,12 @@
 @import 'utilities/border';
 @import 'utilities/outline';
 @import 'utilities/shadows';
+@import 'utilities/box-sizing';
 @import 'utilities/width';
 @import 'utilities/height';
 @import 'utilities/sizes';
-@import 'utilities/grid';
+@import 'utilities/object-fit';
+@import 'utilities/row-grid';
 @import 'utilities/column';
 @import 'utilities/flex';
 @import 'utilities/display';

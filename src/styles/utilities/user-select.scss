@@ -1,5 +1,6 @@
 .#{$user-select-prefix-class} {
-  &-#{$none-class} {user-select: none;}
-  &-#{$auto-class} {user-select: auto;}
   &-#{$user-select-all-class} {user-select: all;}
+  &-#{$user-select-text-class} {user-select: text;}
+  &-#{$auto-class} {user-select: auto;}
+  &-#{$none-class} {user-select: none;}
 }

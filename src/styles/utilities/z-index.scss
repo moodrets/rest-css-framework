@@ -5,6 +5,7 @@
       @each $z, $value in $z-index-list {
         &-#{$z}#{$br-name} {z-index: #{$value};}
       }
+      &-#{$auto-class}#{$br-name} {z-index: auto;}
     }
   }
 }
