@@ -1,0 +1,42 @@
+.#{$transform-prefix-class} {
+  --rotate: 0;
+  --translate-x: 0;
+  --translate-y: 0;
+  --scale-x: 1;
+  --scale-y: 1;
+  --skew-x: 0;
+  --skew-y: 0;
+  transform: translateX(var(--translate-x)) translateY(var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      @each $key, $value in $transform-rotate-list {
+        &-#{$transform-rotate-class}-#{$key}#{$br-name} {--rotate: #{$value};}
+      }
+
+      @each $key, $value in $transform-translate-list {
+        &-#{$transform-translate-class}-#{$key}#{$br-name} {--translate-x: #{$value};--translate-y: #{$value};}
+        &-#{$transform-translate-class}-#{$direction-vertical-class}-#{$key}#{$br-name} {--translate-y: #{$value};}
+        &-#{$transform-translate-class}-#{$direction-horizontal-class}-#{$key}#{$br-name} {--translate-x: #{$value};}
+      }
+
+      @each $key, $value in $transform-scale-list {
+        &-#{$transform-scale-class}-#{$key}#{$br-name} {--scale-x: #{$value};--scale-y: #{$value};}
+        &-#{$transform-scale-class}-#{$direction-vertical-class}-#{$key}#{$br-name} {--scale-y: #{$value};}
+        &-#{$transform-scale-class}-#{$direction-horizontal-class}-#{$key}#{$br-name} {--scale-x: #{$value};}
+      }
+
+      @each $key, $value in $transform-skew-list {
+        &-#{$transform-skew-class}-#{$key}#{$br-name} {--skew-x: #{$value};--skew-y: #{$value};}
+        &-#{$transform-skew-class}-#{$direction-vertical-class}-#{$key}#{$br-name} {--skew-y: #{$value};}
+        &-#{$transform-skew-class}-#{$direction-horizontal-class}-#{$key}#{$br-name} {--skew-x: #{$value};}
+      }
+
+      @each $key, $value in $transform-origin-list {
+        &-#{$transform-origin-class}-#{$key}#{$br-name} {transform-origin: #{$value};}
+      }
+    }
+  }
+}

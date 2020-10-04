@@ -1,8 +1,8 @@
 <template>
   <div class="rs-border" v-cloak>
     <h1 class="mt-0">Borders</h1>
-    <div class="row row-gap-7 row-cols-1 row-cols-2:md row-cols-4:lg">
-      <div class="col">
+    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-4:lg">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border width</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderWidth">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border color</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderColor">
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border style</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderStyle">
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border none</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderNone">
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="col col-6:lg">
+      <div class="cell cell-6:lg">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border radius (<router-link to="/radius">radius utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderRadius">
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <div class="col col-6:lg">
+      <div class="cell cell-6:lg">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Border class and breakpoints <span class="txt-danger">(higher priority)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderBreakpoints">
@@ -81,13 +81,13 @@
     <code class="my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2">class="{{borderClass}}"</code>
 
     <div class="mt-10">
-      <div class="d-n d-f:md row row-cols-1 row-cols-2:md p-5 sh-1 mb-3">
-        <div class="col"><strong>class</strong></div>
-        <div class="col"><strong>element</strong></div>
+      <div class="d-n d-f:md case case-cells-1 case-cells-2:md p-5 sh-1 mb-3">
+        <div class="cell"><strong>class</strong></div>
+        <div class="cell"><strong>element</strong></div>
       </div>
-      <div class="row ai-c row-cols-1 row-cols-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
-        <div class="col txt-primary-2 font-500">{{item.className}}</div>
-        <div class="col"><div class="p-6 mt-4 mt-0:md" :class="item.className.replace(/\./g,'')"></div></div>
+      <div class="case ai-c case-cells-1 case-cells-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
+        <div class="cell txt-primary-2 font-500">{{item.className}}</div>
+        <div class="cell"><div class="p-6 mt-4 mt-0:md" :class="item.className.replace(/\./g,'')"></div></div>
       </div>
     </div>
 

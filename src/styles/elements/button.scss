@@ -19,11 +19,4 @@
   }
 
   @include set-button-types($button-types);
-
-  &[disabled],
-  &-disabled {
-    background: var(--color-disabled);
-    pointer-events: none;
-    cursor: default;
-  }
 }

@@ -3,8 +3,8 @@
     <h1 class="mt-0">Colors</h1>
     <p>These colors are used for background-color, text, svg icon and border classes</p>
 
-    <div class="row row-gap-7">
-      <div class="col col-12 col-6:md">
+    <div class="case case-gap-7">
+      <div class="cell cell-12 cell-6:md">
         <h3 class="mt-0 mb-4 txt-info-2 font-500">State</h3>
         <div class="rs-select pos-rel">
           <select class="op-0 pos-abs pos-cover sz-100" ref="state-select" v-rs-select v-model="colorsState">
@@ -24,25 +24,25 @@
     <code class="my-4 d-b p-3 rds-2 bdr bdr-secondary-2 bg-secondary">class="bdr bdr-success{{colorsState}}"</code>
     <code class="my-4 d-b p-3 rds-2 bdr bdr-secondary-2 bg-secondary">class="svg-icon txt-secondary{{colorsState}}"</code>
     <div class="mt-10">
-      <div class="d-n d-f:md row p-3 sh-1 mb-3">
-        <div class="col col-4"><strong>class</strong></div>
-        <div class="col col-4"><strong>background-color</strong></div>
-        <div class="col col-4"><strong>variable</strong></div>
+      <div class="d-n d-f:md case p-3 sh-1 mb-3">
+        <div class="cell cell-4"><strong>class</strong></div>
+        <div class="cell cell-4"><strong>background-cellor</strong></div>
+        <div class="cell cell-4"><strong>variable</strong></div>
       </div>
-      <div class="row row-cols-1 row-cols-3:md ai-c p-3 sh-1 mb-3" v-for="(color, index) in colorVars" :key="index">
-        <div class="col">
+      <div class="case case-cells-1 case-cells-3:md ai-c p-3 sh-1 mb-3" v-for="(color, index) in colorVars" :key="index">
+        <div class="cell">
           <div
             tabindex="0"
             class="font-500"
             :class="`txt-`+(color.includes('light') || color.includes('trsp') ? 'secondary-2' : color.replace('--color-', ''))+colorsState">.txt-{{color|cssVarName('--color-')}}</div>
         </div>
-        <div class="col">
+        <div class="cell">
           <div class="d-f ai-c fl-n-ch my-4 my-0:md">
             <div tabindex="0" class="d-if sh-2 p-8 rds-round mr-5" :class="`bg-`+color.replace('--color-', '')+colorsState"></div>
             <div class="ml-4 font-500 txt-success" v-if="stateText">{{stateText}}</div>
           </div>
         </div>
-        <div class="col">
+        <div class="cell">
           <div :class="`txt-`+(color.includes('light') || color.includes('trsp') ? 'secondary-2' : color.replace('--color-', ''))+colorsState">var({{color}})</div>
         </div>
       </div>

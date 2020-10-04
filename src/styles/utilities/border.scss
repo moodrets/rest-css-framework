@@ -133,6 +133,7 @@
     &-#{$color} {border-color: var(--color-#{$color});}
     &-#{$color}\:#{$hover-class}:hover {border-color: var(--color-#{$color});}
     &-#{$color}\:#{$focus-class}:focus {border-color: var(--color-#{$color});}
+    &-#{$color}\:#{$focus-within-class}:focus-within {border-color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {border-color: var(--color-#{$color});}
   }
 }

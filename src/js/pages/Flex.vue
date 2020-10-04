@@ -2,9 +2,9 @@
   <div class="rs-flex">
     <h1 class="mt-0">Flex</h1>
 
-    <div class="row row-gap-7 row-cols-1 row-cols-2:md row-cols-3:lg">
+    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-3:lg">
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex container height</h4>
         <div class="d-f ai-c">
           <input class="bdr wd-100 out-n bdr-wd-2 bdr-secondary rs-form-control p-4 rds-4" type="text" v-model="flexContainerHeight">
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex wrap</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexWrap">
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex direction</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexDirection">
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Align items</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignItems">
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Align content</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignContent">
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Align self <span class="txt-danger">(item 4)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignSelf">
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify items</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifyItems">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify content</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifyContent">
@@ -96,7 +96,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify self <span class="txt-danger">(item 4)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifySelf">
@@ -118,12 +118,12 @@
       <div class="p-6 sh-1 bg-light m-2">flex item 5</div>
       <div class="p-6 sh-1 bg-light m-2">flex item 6</div>
     </div>
-    <div class="mt-8 row row-gap-7 row-cols-1 row-cols-2:md">
-      <div class="col">
+    <div class="mt-8 case case-gap-7 case-cells-1 case-cells-2:md">
+      <div class="cell">
         <h4 class="mt-0 mb-4">Flex container classess</h4>
         <code class="my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2">class="{{flexContainerClasses}}"</code>
       </div>
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4">Flex <span class="txt-danger">(item 4)</span> classess</h4>
         <code class="my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2">class="{{flexItemClasses}}"</code>
       </div>
@@ -155,8 +155,8 @@
       flexDirection: '',
       flexDirectionList: [
         {value: '', name: 'default'},
-        {value: ' fd-r', name: 'row'},
-        {value: ' fd-rr', name: 'row-reverse'},
+        {value: ' fd-r', name: 'case'},
+        {value: ' fd-rr', name: 'case-reverse'},
         {value: ' fd-c', name: 'column'},
         {value: ' fd-cr', name: 'column-reverse'},
       ],

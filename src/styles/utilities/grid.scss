@@ -1,0 +1,82 @@
+.#{$grid-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      @each $spacing, $value in $spacing-list {
+        &-#{$grid-gap-class}-#{$spacing}#{$br-name} {
+          gap: var(--spacing-#{$spacing});
+        }
+
+        &-#{$grid-gap-class}-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {
+          column-gap: var(--spacing-#{$spacing});
+        }
+
+        &-#{$grid-gap-class}-#{$direction-vertical-class}-#{$spacing}#{$br-name} {
+          row-gap: var(--spacing-#{$spacing});
+        }
+      }
+
+      @for $c from 1 through $grid-column-count {
+        &-#{$grid-columns-class}-#{$c}#{$br-name} {
+          grid-template-columns: repeat(#{$c}, minmax(0, 1fr));
+        }
+      }
+
+      @for $c from 1 through $grid-row-count {
+        &-#{$grid-rows-class}-#{$c}#{$br-name} {
+          grid-template-rows: repeat(#{$c}, minmax(0, 1fr));
+        }
+      }
+
+      &-#{$grid-auto-flow-column-class}#{$br-name} {grid-auto-flow: column;}
+      &-#{$grid-auto-flow-column-dense-class}#{$br-name} {grid-auto-flow: column dense;}
+      &-#{$grid-auto-flow-row-class}#{$br-name} {grid-auto-flow: row;}
+      &-#{$grid-auto-flow-row-dense-class}#{$br-name} {grid-auto-flow: row dense;}
+      &-#{$grid-columns-class}-#{$none-class}#{$br-name} {grid-template-columns: none;}
+      &-#{$grid-rows-class}-#{$none-class}#{$br-name} {grid-template-rows: none;}
+    }
+  }
+}
+
+.#{$grid-column-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      @for $c from 1 through $grid-column-count {
+        &-#{$grid-column-span-class}-#{$c}#{$br-name} {grid-column: span #{$c} / span #{$c};}
+      }
+
+      @for $c from 1 through $grid-column-count+1 {
+        &-#{$grid-column-start-class}-#{$c}#{$br-name} {grid-column-start: #{$c};}
+        &-#{$grid-column-end-class}-#{$c}#{$br-name} {grid-column-end: #{$c};}
+      }
+
+      &-#{$auto-class}#{$br-name} {grid-column: auto;}
+      &-#{$grid-column-start-class}-#{$auto-class}#{$br-name} {grid-column-start: auto;}
+      &-#{$grid-column-end-class}-#{$auto-class}#{$br-name} {grid-column-end: auto;}
+    }
+  }
+}
+
+.#{$grid-row-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+
+      @for $c from 1 through $grid-row-count {
+        &-#{$grid-row-span-class}-#{$c}#{$br-name} {grid-row: span #{$c} / span #{$c};}
+      }
+
+      @for $c from 1 through $grid-row-count+1 {
+        &-#{$grid-row-start-class}-#{$c}#{$br-name} {grid-row-start: #{$c};}
+        &-#{$grid-row-end-class}-#{$c}#{$br-name} {grid-row-end: #{$c};}
+      }
+
+      &-#{$auto-class}#{$br-name} {grid-row: auto;}
+      &-#{$grid-row-start-class}-#{$auto-class}#{$br-name} {grid-row-start: auto;}
+      &-#{$grid-row-end-class}-#{$auto-class}#{$br-name} {grid-row-end: auto;}
+    }
+  }
+}

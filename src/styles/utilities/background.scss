@@ -3,6 +3,7 @@
     &-#{$color} {background-color: var(--color-#{$color});}
     &-#{$color}\:#{$hover-class}:hover {background-color: var(--color-#{$color});}
     &-#{$color}\:#{$focus-class}:focus {background-color: var(--color-#{$color});}
+    &-#{$color}\:#{$focus-within-class}:focus-within {background-color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {background-color: var(--color-#{$color});}
   }
 

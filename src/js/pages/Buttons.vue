@@ -1,9 +1,9 @@
 <template>
   <div class="rs-buttons" v-cloak>
     <h1 class="mt-0">Buttons</h1>
-    <div class="row row-gap-7 row-cols-1 row-cols-2:md row-cols-3:lg">
+    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-3:lg">
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button base type</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonColor">
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button border (<router-link to="/borders">border utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonBorder">
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button padding (<router-link to="/spacings">spacing utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonPadding">
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button radius (<router-link to="/radius">radius utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonRadius">
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Background <span class="txt-warning">:hover</span> color</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonBgColor">
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Text color (<router-link to="/colors">colors utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonTextColor">
@@ -104,7 +104,7 @@
         </div>
       </div>
 
-      <div class="col col-12:md">
+      <div class="cell cell-12:md">
         <h4 class="mt-0 mb-4 txt-info-2 font-500">Button text</h4>
         <input class="rs-form-control p-4 out-n wd-100 bdr bdr-wd-2 bdr-secondary rds-4" type="text" v-model="buttonText">
       </div>
@@ -127,13 +127,13 @@
 
 
     <div class="mt-10">
-      <div class="d-n d-f:md row row-cols-1 row-cols-2:md p-5 sh-1 mb-3">
-        <div class="col"><strong>class</strong></div>
-        <div class="col"><strong>element</strong></div>
+      <div class="d-n d-f:md case case-cells-1 case-cells-2:md p-5 sh-1 mb-3">
+        <div class="cell"><strong>class</strong></div>
+        <div class="cell"><strong>element</strong></div>
       </div>
-      <div class="row ai-c row-cols-1 row-cols-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
-        <div class="col txt-primary font-500">{{item.className}}</div>
-        <div class="col"><button class="font-sz-15 font-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
+      <div class="case ai-c case-cells-1 case-cells-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
+        <div class="cell txt-primary font-500">{{item.className}}</div>
+        <div class="cell"><button class="font-sz-15 font-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
       </div>
     </div>
 

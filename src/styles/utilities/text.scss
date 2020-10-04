@@ -4,6 +4,7 @@
     &-#{$color} {color: var(--color-#{$color});}
     &-#{$color}\:#{$hover-class}:hover {color: var(--color-#{$color});}
     &-#{$color}\:#{$focus-class}:focus {color: var(--color-#{$color});}
+    &-#{$color}\:#{$focus-within-class}:focus-within {color: var(--color-#{$color});}
     &-#{$color}\:#{$active-class}:active {color: var(--color-#{$color});}
     &-#{$color}\:#{$placeholder-class}::placeholder {color: var(--color-#{$color});}
   }

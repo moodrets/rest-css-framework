@@ -20,4 +20,12 @@
   &-#{$font-extra-bold-class} {font-weight: 800;}
   &-#{$font-bolder-class} {font-weight: 900;}
   &-#{$font-italic-class} {font-weight: italic;}
+  &-#{$font-smooth-class} {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  &-#{$font-smooth-auto-class} {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
 }

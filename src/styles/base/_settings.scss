@@ -47,6 +47,7 @@ $direction-bottom-class: 'b';
 $direction-baseline-class: 'bs';
 $direction-vertical-class: 'y';
 $direction-horizontal-class: 'x';
+$negative-class: 'neg';
 
 // pseudo
 $hover-class: 'h';
@@ -59,13 +60,8 @@ $placeholder-class: 'pl';
 $size-prefix-class: 'sz';
 $size-max-class: 'max';
 $size-min-class: 'min';
-$size-exstra-small-class: 'xs';
-$size-small-class: 'sm';
-$size-medium-class: 'md';
-$size-large-class: 'lg';
-$size-extra-large-class: 'xl';
-$size-very-extra-large-class: 'xxl';
-$size-list: ( // use for width, height and size utilities
+// uses for width, height and size utilities
+$size-list: (
   1: 16px,
   2: 20px,
   3: 24px,
@@ -80,8 +76,8 @@ $size-list: ( // use for width, height and size utilities
   280: 280px,
   320: 320px,
   480: 480px,
-  100: 100%,
   // mandatory
+  100: 100%,
   75: 75%,
   50: 50%,
   33: 33.33%,
@@ -202,14 +198,19 @@ $button-types: (
       background: var(--color-danger-2),
     ),
   ),
+  disabled: (
+    default: (
+      background: var(--color-disabled),
+      pointer-events: none,
+      cursor: default,
+    )
+  )
 );
 
 // shadow
 $shadow-prefix-class: 'sh';
-$shadow-horizontal: '0'; // for $color-list values
-$shadow-vertical: '0'; // for $color-list values
-$shadow-width: '2px'; // for $color-list values
-$shadow-scattering: '2px'; // for $color-list values
+$shadow-width-class: 'wd';
+$shadow-scattering-class: 'sc';
 $shadow-list: (
   1: 'rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px',
   2: 'rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px',
@@ -219,6 +220,63 @@ $shadow-list: (
   in-2: 'inset rgba(50, 50, 93, 0.25) 0 6px 12px -2px, inset rgba(0, 0, 0, 0.3) 0 3px 7px -3px',
   in-3: 'inset rgba(50, 50, 93, 0.25) 0 13px 27px -5px, inset rgba(0, 0, 0, 0.3) 0 8px 16px -8px',
   in-4: 'inset rgba(0, 0, 0, 0.19) 0 10px 20px, inset rgba(0, 0, 0, 0.23) 0 6px 6px',
+);
+// for colored shadows
+$shadow-width-list: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+  11: 11px,
+  12: 12px,
+);
+$shadow-vertical-shift-list: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+  11: 11px,
+  12: 12px,
+);
+$shadow-horizontal-shift-list: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+  11: 11px,
+  12: 12px,
+);
+$shadow-scattering-list: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+  11: 11px,
+  12: 12px,
 );
 
 // box sizing
@@ -244,9 +302,6 @@ $position-fixed-class: 'fx';
 $position-sticky-class: 'sti';
 $position-static-class: 'sta';
 $position-cover-class: 'cover';
-$position-center-class: 'cn';
-$position-center-horizontal-class: 'cn-x';
-$position-center-vertical-class: 'cn-y';
 
 // z-index
 $z-index-class: 'z';
@@ -309,6 +364,8 @@ $white-space-break-spaces-class: 'brs';
 
 // font
 $font-prefix-class: 'font';
+$font-smooth-class: 'smooth';
+$font-smooth-auto-class: 'smooth-a';
 $font-base-class: 'base';
 $font-secondary-class: 'secondary';
 $font-thin-class: '100';
@@ -433,9 +490,10 @@ $display-table-caption-class: 'tcp';
 $display-contents-class: 'cn';
 
 // spacing
-$margin-class: 'm';
-$padding-class: 'p';
-$margin-negative-class: 'neg';
+$margin-prefix-class: 'm';
+$padding-prefix-class: 'p';
+$spacing-childs-prefix-class: 'space';
+// automatic generateы negative values
 $spacing-list: (
   1em: 1em,
   2em: 2em,
@@ -477,20 +535,42 @@ $border-width-list: (
   8: 8px,
   9: 9px,
   10: 10px,
+  11: 11px,
+  12: 12px,
 );
 
 // outline
 $outline-prefix-class: 'out';
 
 // row
-$row-prefix-class: 'row';
-$row-equal-height-class: 'eq-cols';
-$row-columns-class: 'cols';
+$row-prefix-class: 'case';
+$row-columns-class: 'cells';
+$row-equal-height-class: 'eq-cells';
 $row-gap-class: 'gap';
-$row-column-prefix-class: 'col';
+$row-column-prefix-class: 'cell';
 $row-column-auto-class: 'a';
 $row-column-offset-class: 'ofs';
 $row-column-count: 12;
+
+// grid
+$grid-prefix-class: 'grid';
+$grid-columns-class: 'cols';
+$grid-rows-class: 'rows';
+$grid-gap-class: 'gap';
+$grid-column-count: 12;
+$grid-row-count: 12;
+$grid-column-prefix-class: 'col';
+$grid-column-start-class: 'st';
+$grid-column-end-class: 'end';
+$grid-column-span-class: 'sp';
+$grid-row-prefix-class: 'row';
+$grid-row-start-class: 'st';
+$grid-row-end-class: 'end';
+$grid-row-span-class: 'sp';
+$grid-auto-flow-row-class: 'fl-r';
+$grid-auto-flow-column-class: 'fl-c';
+$grid-auto-flow-row-dense-class: 'fl-rd';
+$grid-auto-flow-column-dense-class: 'fl-cd';
 
 // column
 $column-prefix-class: 'clm';
@@ -562,6 +642,8 @@ $flex-order-list: (
   8: 8,
   9: 9,
   10: 10,
+  11: 11,
+  12: 12,
   f: -1,
   l: 13
 );
@@ -631,6 +713,58 @@ $times: (
   4: 4s,
 );
 
+// transform
+$transform-prefix-class: 'trf';
+$transform-origin-class: 'or';
+$transform-scale-class: 'sc';
+$transform-translate-class: 'tr';
+$transform-rotate-class: 'rt';
+$transform-skew-class: 'sk';
+$transform-rotate-list: (
+  45: 45deg,
+  90: 45deg,
+  180: 45deg,
+  45-neg: 45deg,
+  90-neg: 45deg,
+  180-neg: 45deg,
+  0: 0,
+);
+$transform-translate-list: (
+  50: 50%,
+  100: 100%,
+  50-neg: -50%,
+  100-neg: -100%,
+  0: 0,
+);
+$transform-scale-list: (
+  1: 1,
+  '1-2': 1.2,
+  '1-3': 1.3,
+  '1-4': 1.4,
+  '1-5': 1.5,
+  0: 0,
+);
+$transform-skew-list: (
+  3: 3deg,
+  6: 6deg,
+  9: 6deg,
+  3-neg: -3deg,
+  6-neg: -6deg,
+  9-neg: -9deg,
+  0: 0,
+);
+$transform-origin-list: (
+  c: center,
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+  t-l: top left,
+  t-r: top right,
+  b-l: bottom left,
+  b-r: bottom right,
+);
+
 // alignment
 $align-prefix-class: 'va';
 $align-child-class: 'ch';
@@ -686,7 +820,6 @@ $breakpoint-list: (
 	md: 768px,
 	lg: 1024px,
 	xl: 1280px,
-	xxl: 1440px,
 );
 
 $global: (
@@ -707,7 +840,7 @@ $lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
 $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
 
 :root {
-	// color list
+  // color list
   @each $color, $value in $color-list {--color-#{$color}: #{$value};}
   // gradient list
   @each $color, $value in $background-gradient-list {--gradient-#{$color}: #{$value};}

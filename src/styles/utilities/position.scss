@@ -10,19 +10,6 @@
       &-#{$inherit-class}#{$br-name} {position: inherit;}
       &-#{$position-cover-class}#{$br-name} {left: 0; right: 0; top: 0; bottom: 0;}
       &-#{$auto-class}#{$br-name} {left: auto; right: auto; top: auto; bottom: auto;}
-      &-#{$position-center-class}#{$br-name} {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      &-#{$position-center-horizontal-class}#{$br-name} {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      &-#{$position-center-vertical-class}#{$br-name} {
-        top: 50%;
-        transform: translateY(-50%);
-      }
 
       @each $spacing, $value in $spacing-list {
         &-#{$direction-top-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing});}
@@ -31,6 +18,13 @@
         &-#{$direction-left-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing});}
         &-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {left: var(--spacing-#{$spacing}); right: var(--spacing-#{$spacing});}
         &-#{$direction-vertical-class}-#{$spacing}#{$br-name} {top: var(--spacing-#{$spacing}); bottom: var(--spacing-#{$spacing});}
+
+        &-#{$direction-top-class}-#{$spacing}-#{$negative-class}#{$br-name} {top: calc(var(--spacing-#{$spacing}) * -1);}
+        &-#{$direction-right-class}-#{$spacing}-#{$negative-class}#{$br-name} {right: calc(var(--spacing-#{$spacing}) * -1);}
+        &-#{$direction-bottom-class}-#{$spacing}-#{$negative-class}#{$br-name} {bottom: calc(var(--spacing-#{$spacing}) * -1);}
+        &-#{$direction-left-class}-#{$spacing}-#{$negative-class}#{$br-name} {left: calc(var(--spacing-#{$spacing}) * -1);}
+        &-#{$direction-horizontal-class}-#{$spacing}-#{$negative-class}#{$br-name} {left: calc(var(--spacing-#{$spacing}) * -1); right: calc(var(--spacing-#{$spacing}) * -1);}
+        &-#{$direction-vertical-class}-#{$spacing}-#{$negative-class}#{$br-name} {top: calc(var(--spacing-#{$spacing}) * -1); bottom: calc(var(--spacing-#{$spacing}) * -1);}
       }
 
       &-#{$direction-top-class}-#{$auto-class}#{$br-name} {top: auto;}

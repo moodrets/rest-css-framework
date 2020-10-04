@@ -11,6 +11,8 @@
       &-#{$inherit-class}#{$br-name} {vertical-align: inherit;}
 
       // for childs
+      &-#{$direction-top-class}-#{$align-text-top-class}#{$br-name} {vertical-align: text-top;}
+      &-#{$direction-top-class}-#{$align-text-bottom-class}#{$br-name} {vertical-align: text-bottom;}
       &-#{$direction-top-class}-#{$align-child-class}#{$br-name} * {vertical-align: top;}
       &-#{$direction-middle-class}-#{$align-child-class}#{$br-name} * {vertical-align: middle;}
       &-#{$direction-bottom-class}-#{$align-child-class}#{$br-name} * {vertical-align: bottom;}

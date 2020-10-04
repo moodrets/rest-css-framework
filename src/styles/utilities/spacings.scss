@@ -1,4 +1,4 @@
-.#{$margin-class} {
+.#{$margin-prefix-class} {
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
@@ -13,12 +13,12 @@
 
         @if ($spacing != 0) {
           // negative
-          &#{$direction-top-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1)}
-          &#{$direction-right-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-right: calc(var(--spacing-#{$spacing}) * -1)}
-          &#{$direction-left-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1)}
-          &#{$direction-bottom-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
-          &#{$direction-vertical-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1); margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
-          &#{$direction-horizontal-class}-#{$spacing}-#{$margin-negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1); margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-top-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-right-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-right: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-left-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-bottom-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-vertical-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-top: calc(var(--spacing-#{$spacing}) * -1); margin-bottom: calc(var(--spacing-#{$spacing}) * -1)}
+          &#{$direction-horizontal-class}-#{$spacing}-#{$negative-class}#{$br-name} {margin-left: calc(var(--spacing-#{$spacing}) * -1); margin-right: calc(var(--spacing-#{$spacing}) * -1)}
         }
       }
       // auto
@@ -34,7 +34,7 @@
   }
 }
 
-.#{$padding-class} {
+.#{$padding-prefix-class} {
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
@@ -48,6 +48,30 @@
         &#{$direction-horizontal-class}-#{$spacing}#{$br-name} {padding-left: var(--spacing-#{$spacing}); padding-right: var(--spacing-#{$spacing})}
       }
       &-#{$inherit-class}#{$br-name} {padding: inherit}
+    }
+  }
+}
+
+.#{$spacing-childs-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      @each $spacing, $value in $spacing-list {
+        &-#{$direction-horizontal-class}-#{$spacing}#{$br-name} {
+          > * + * {margin-left: var(--spacing-#{$spacing});}
+        }
+        &-#{$direction-vertical-class}-#{$spacing}#{$br-name} {
+          > * + * {margin-top: var(--spacing-#{$spacing});}
+        }
+        @if ($spacing != 0) {
+          &-#{$direction-horizontal-class}-#{$spacing}-#{$negative-class}#{$br-name} {
+            > * + * {margin-left: calc(var(--spacing-#{$spacing}) * -1);}
+          }
+          &-#{$direction-vertical-class}-#{$spacing}-#{$negative-class}#{$br-name} {
+            > * + * {margin-top: calc(var(--spacing-#{$spacing}) * -1);}
+          }
+        }
+      }
     }
   }
 }
