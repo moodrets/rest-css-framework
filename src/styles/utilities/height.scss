@@ -7,23 +7,16 @@
         &-#{$size}#{$br-name} {height: var(--size-#{$size});}
       }
 
-      &-#{$auto-class}#{$br-name} {height: auto;}
-      &-#{$inherit-class}#{$br-name} {height: inherit;}
-
       &-#{$height-max-class} {
         @each $size, $value in $size-list {
           &-#{$size}#{$br-name} {max-height: var(--size-#{$size});}
         }
-        &-#{$auto-class}#{$br-name} {max-height: auto;}
-        &-#{$inherit-class}#{$br-name} {max-height: inherit;}
       }
 
       &-#{$height-min-class} {
         @each $size, $value in $size-list {
           &-#{$size}#{$br-name} {min-height: var(--size-#{$size});}
         }
-        &-#{$auto-class}#{$br-name} {min-height: auto;}
-        &-#{$inherit-class}#{$br-name} {min-height: inherit;}
       }
     }
   }

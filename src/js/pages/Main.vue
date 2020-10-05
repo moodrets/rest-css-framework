@@ -11,8 +11,8 @@
       </div>
     </div> -->
 
-    <div class="sh sh-wd-4 sh-x-7 sh-y-7 sh-sc-7 sh-primary:h trs-30 sz-10 rds-4">
-
+    <div class="anim-toggle">
+      <div class="anim anim-slide-left sz-10 bdr bg-light"></div>
     </div>
 
   </div>

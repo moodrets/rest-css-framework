@@ -7,23 +7,16 @@
         &-#{$size}#{$br-name} {width: var(--size-#{$size});}
       }
 
-      &-#{$auto-class}#{$br-name} {width: auto;}
-      &-#{$inherit-class}#{$br-name} {width: inherit;}
-
       &-#{$width-max-class} {
         @each $size, $value in $size-list {
           &-#{$size}#{$br-name} {max-width: var(--size-#{$size});}
         }
-        &-#{$auto-class}#{$br-name} {max-width: auto;}
-        &-#{$inherit-class}#{$br-name} {max-width: inherit;}
       }
 
       &-#{$width-min-class} {
         @each $size, $value in $size-list {
           &-#{$size}#{$br-name} {min-width: var(--size-#{$size});}
         }
-        &-#{$auto-class}#{$br-name} {min-width: auto;}
-        &-#{$inherit-class}#{$br-name} {min-width: inherit;}
       }
     }
   }

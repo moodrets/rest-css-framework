@@ -1,0 +1,4 @@
+.#{$border-collapse-prefix-class} {
+  &-#{$border-collapse-separate-class} {border-collapse: separate;}
+  &-#{$border-collapse-collapse-class} {border-collapse: collapse;}
+}

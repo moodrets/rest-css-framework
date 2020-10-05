@@ -56,6 +56,10 @@ $focus-within-class: 'fcw';
 $active-class: 'a';
 $placeholder-class: 'pl';
 
+// state class
+$open-state-class: 'is-open';
+$active-state-class: 'is-active';
+
 // size
 $size-prefix-class: 'sz';
 $size-max-class: 'max';
@@ -93,6 +97,13 @@ $size-list: (
   33vw: 33.33vw,
   25vw: 25vw,
   0: 0,
+  a: auto,
+  inh: inherit,
+  'av': available,
+  'min-c': min-content,
+  'max-c': max-content,
+  'fit-c': fit-content,
+  'fit-a': fit-available,
 );
 
 // button
@@ -283,6 +294,11 @@ $shadow-scattering-list: (
 $box-sizing-prefix-class: 'bx';
 $box-sizing-border-class: 'bb';
 $box-sizing-content-class: 'cb';
+
+// border collapse
+$border-collapse-prefix-class: 'bc';
+$border-collapse-separate-class: 's';
+$border-collapse-collapse-class: 'c';
 
 // width
 $width-prefix-class: 'wd';
@@ -702,7 +718,12 @@ $spinner-base-border-width: 3px;
 
 // transtion animation
 $animation-prefix-class: 'anim';
+$animation-toggle-class: 'toggle';
+
+// transition
 $transition-prefix-class: 'trs';
+
+// transform animation duration
 $times: (
   30: .3s,
   50: .5s,
