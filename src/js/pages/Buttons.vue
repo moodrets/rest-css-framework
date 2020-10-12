@@ -17,7 +17,7 @@
             <option value="disabled">disabled</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <option value="bdr bdr-wd-2 bdr-danger">Border danger 2px</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
             <option :value="spacing.replace('--spacing-', 'p-')" v-for="spacing in spacingsVars" :key="spacing">var({{spacing}})</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
             <option :value="radius.replace('--radius-', 'rds-')" v-for="radius in radiusVars" :key="radius">var({{radius}})</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
             <option value="bg-theme-2:h">Background theme 2</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
             <option value="txt-theme-2">Text theme 2</option>
           </select>
           <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
           </div>
         </div>
       </div>

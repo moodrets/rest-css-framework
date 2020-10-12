@@ -1,7 +1,7 @@
 <template>
-  <div class="rs-mobile-menu pos-fx pos-cover z-100 trs-30" :class="!visible ? 'op-0 vs-h' : ''" @click="clickHandler">
+  <div class="rs-mobile-menu pos-fx pos-cover z-100 trs-toggle" :class="visible ? 'is-open' : 'vs-h'" @click="clickHandler">
     <div class="bg-dark pos-fx pos-cover z-1-neg op-70 pe-n"></div>
-    <div class="p-6 wd-280 bg-light sh-2 pos-fx pos-l-0 pos-t-0 pos-b-0 ov-y-a">
+    <div class="p-6 wd-280 bg-light sh-2 trf trs trs-slide-left pos-fx pos-l-0 pos-t-0 pos-b-0 ov-y-a">
       <div class="mb-3" v-for="route in routes" :key="route.name" @click="toggle">
         <h3 class="font-500" v-if="route.header">{{route.header}}</h3>
         <router-link

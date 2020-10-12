@@ -5,11 +5,12 @@
   --shadow-width: 2px;
 
   @each $color, $value in $color-list {
-    &-#{$color} {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--color-#{$color});}
-    &-#{$color}\:#{$hover-class}:hover {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--color-#{$color});}
-    &-#{$color}\:#{$focus-class}:focus {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--color-#{$color});}
-    &-#{$color}\:#{$focus-within-class}:focus-within {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--color-#{$color});}
-    &-#{$color}\:#{$active-class}:active {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--color-#{$color});}
+    &-#{$color} {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) rgba(var(--color-#{$color}), var(--shadow-opacity));}
+    @include apply-states($color) {box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) rgba(var(--color-#{$color}), var(--shadow-opacity));}
+  }
+
+  @each $key, $value in $opacity-list {
+    &-#{$opacity-class}-#{$key} {--shadow-opacity: #{$value};}
   }
 
   @each $name, $size in $breakpoint-list {
@@ -17,10 +18,6 @@
       $br-name: breakpoint-infix($name);
       @each $shadow, $value in $shadow-list {
         &-#{$shadow}#{$br-name} {box-shadow: var(--shadow-#{$shadow});}
-        &-#{$shadow}#{$br-name}\:#{$hover-class}:hover {box-shadow: var(--shadow-#{$shadow});}
-        &-#{$shadow}#{$br-name}\:#{$focus-class}:focus {box-shadow: var(--shadow-#{$shadow});}
-        &-#{$shadow}#{$br-name}\:#{$focus-within-class}:focus-within {box-shadow: var(--shadow-#{$shadow});}
-        &-#{$shadow}#{$br-name}\:#{$active-class}:active {box-shadow: var(--shadow-#{$shadow});}
       }
       @each $key, $value in $shadow-width-list {
         &-#{$shadow-width-class}-#{$key}#{$br-name} {--shadow-width: #{$value};}

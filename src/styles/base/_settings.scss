@@ -31,11 +31,12 @@ $none-class: 'n';
 $inherit-class: 'inh';
 $unset-class: 'un';
 $initial-class: 'int';
+$revert-class: 'rvr';
 $normal-class: 'nl';
 $auto-class: 'a';
 $all-class: 'all';
 $transparent-class: 'trsp';
-$current-color-class: 'current';
+$current-class: 'current';
 $direction-start-class: 's';
 $direction-end-class: 'e';
 $direction-left-class: 'l';
@@ -52,12 +53,10 @@ $negative-class: 'neg';
 // pseudo
 $hover-class: 'h';
 $focus-class: 'f';
-$focus-within-class: 'fcw';
+$focus-within-class: 'fw';
+$focus-visible-class: 'fv';
 $active-class: 'a';
 $placeholder-class: 'pl';
-
-// state class
-$open-state-class: 'is-open';
 $active-state-class: 'is-active';
 
 // size
@@ -66,17 +65,18 @@ $size-max-class: 'max';
 $size-min-class: 'min';
 // uses for width, height and size utilities
 $size-list: (
-  1: 16px,
-  2: 20px,
-  3: 24px,
-  4: 30px,
-  5: 32px,
-  6: 36px,
-  7: 42px,
-  8: 48px,
-  9: 52px,
-  10: 64px,
-  11: 72px,
+  1: 12px,
+  2: 16px,
+  3: 20px,
+  4: 24px,
+  5: 30px,
+  6: 32px,
+  7: 36px,
+  8: 42px,
+  9: 48px,
+  10: 52px,
+  11: 64px,
+  12: 72px,
   280: 280px,
   320: 320px,
   480: 480px,
@@ -112,106 +112,106 @@ $button-base-font-size: 14px;
 $button-types: (
   primary: (
     default: (
-      background: var(--color-primary),
-      color: var(--color-light),
+      background: rgba(var(--color-primary), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     hover: (
-      background: var(--color-primary-1),
-      color: var(--color-light),
+      background: rgba(var(--color-primary-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     focus: (
-      background: var(--color-primary-1),
-      color: var(--color-light),
+      background: rgba(var(--color-primary-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     active: (
-      background: var(--color-primary-2),
+      background: rgba(var(--color-primary-2), var(--background-opacity)),
     ),
   ),
   secondary: (
     default: (
-      background: var(--color-secondary),
+      background: rgba(var(--color-secondary), var(--background-opacity)),
     ),
     hover: (
-      background: var(--color-secondary-1),
+      background: rgba(var(--color-secondary-1), var(--background-opacity)),
     ),
     focus: (
-      background: var(--color-secondary-1),
+      background: rgba(var(--color-secondary-1), var(--background-opacity)),
     ),
     active: (
-      background: var(--color-secondary-2),
+      background: rgba(var(--color-secondary-2), var(--background-opacity)),
     ),
   ),
   warning: (
     default: (
-      background: var(--color-warning),
-      color: var(--color-light),
+      background: rgba(var(--color-warning), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     hover: (
-      background: var(--color-warning-1),
-      color: var(--color-light),
+      background: rgba(var(--color-warning-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     focus: (
-      background: var(--color-warning-1),
-      color: var(--color-light),
+      background: rgba(var(--color-warning-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     active: (
-      background: var(--color-warning-2),
+      background: rgba(var(--color-warning-2), var(--background-opacity)),
     ),
   ),
   success: (
     default: (
-      background: var(--color-success),
-      color: var(--color-light),
+      background: rgba(var(--color-success), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     hover: (
-      background: var(--color-success-1),
-      color: var(--color-light),
+      background: rgba(var(--color-success-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     focus: (
-      background: var(--color-success-1),
-      color: var(--color-light),
+      background: rgba(var(--color-success-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     active: (
-      background: var(--color-success-2),
+      background: rgba(var(--color-success-2), var(--background-opacity)),
     ),
   ),
   info: (
     default: (
-      background: var(--color-info),
-      color: var(--color-light),
+      background: rgba(var(--color-info), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     hover: (
-      background: var(--color-info-1),
-      color: var(--color-light),
+      background: rgba(var(--color-info-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     focus: (
-      background: var(--color-info-1),
-      color: var(--color-light),
+      background: rgba(var(--color-info-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     active: (
-      background: var(--color-info-2),
+      background: rgba(var(--color-info-2), var(--background-opacity)),
     ),
   ),
   danger: (
     default: (
-      background: var(--color-danger),
-      color: var(--color-light),
+      background: rgba(var(--color-danger), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     hover: (
-      background: var(--color-danger-1),
-      color: var(--color-light),
+      background: rgba(var(--color-danger-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     focus: (
-      background: var(--color-danger-1),
-      color: var(--color-light),
+      background: rgba(var(--color-danger-1), var(--background-opacity)),
+      color: rgba(var(--color-light), var(--text-opacity)),
     ),
     active: (
-      background: var(--color-danger-2),
+      background: rgba(var(--color-danger-2), var(--background-opacity)),
     ),
   ),
   disabled: (
     default: (
-      background: var(--color-disabled),
+      background: rgba(var(--color-disabled), var(--background-opacity)),
       pointer-events: none,
       cursor: default,
     )
@@ -509,7 +509,7 @@ $display-contents-class: 'cn';
 $margin-prefix-class: 'm';
 $padding-prefix-class: 'p';
 $spacing-childs-prefix-class: 'space';
-// automatic generateы negative values
+// automatic generates negative values
 $spacing-list: (
   1em: 1em,
   2em: 2em,
@@ -669,9 +669,9 @@ $svg-icon-prefix-class: 'svg-icon';
 $svg-icon-stroke-class: 'stroke';
 $svg-icon-nofill-class: 'nofill';
 
-// opacity
-$opacity-prefix-class: 'op';
-$opacity: (
+// opacity for text colors, borders, background colors and opacity utility
+$opacity-class: 'op';
+$opacity-list: (
   100: 1,
   90: .9,
   80: .8,
@@ -718,13 +718,11 @@ $spinner-base-border-width: 3px;
 
 // transtion animation
 $animation-prefix-class: 'anim';
-$animation-toggle-class: 'toggle';
 
 // transition
 $transition-prefix-class: 'trs';
-
-// transform animation duration
-$times: (
+// transition duration
+$duration-list: (
   30: .3s,
   50: .5s,
   70: .7s,
@@ -784,6 +782,102 @@ $transform-origin-list: (
   t-r: top right,
   b-l: bottom left,
   b-r: bottom right,
+);
+
+$transform-toggle-class: 'toggle';
+$transform-toggle-list: (
+  fade: (
+    default: (
+      opacity: 0,
+      visibility: hidden
+    ),
+    shown: (
+      opacity: 1,
+      visibility: visible
+    )
+  ),
+  show: (
+    default: (
+      opacity: 0,
+      transition-duration: 0s,
+      visibility: hidden
+    ),
+    shown: (
+      opacity: 1,
+      transition-duration: 0s,
+      visibility: visible
+    )
+  ),
+  scale-from-0: (
+    default: (
+      --scale-x: 0,
+      --scale-y: 0,
+      visibility: hidden
+    ),
+    shown: (
+      --scale-x: 1,
+      --scale-y: 1,
+      visibility: visible
+    )
+  ),
+  scale-1-2: (
+    default: (
+      --scale-x: 1,
+      --scale-y: 1,
+    ),
+    shown: (
+      --scale-x: 1.2,
+      --scale-y: 1.2,
+    )
+  ),
+  slide-left: (
+    default: (
+      --translate-x: -110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    shown: (
+      --translate-x: 0,
+      opacity: 1,
+      visibility: visible
+    )
+  ),
+  slide-right: (
+    default: (
+      --translate-x: 110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    shown: (
+      --translate-x: 0,
+      opacity: 1,
+      visibility: visible
+    )
+  ),
+  slide-top: (
+    default: (
+      --translate-y: -110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    shown: (
+      --translate-y: 0,
+      opacity: 1,
+      visibility: visible
+    )
+  ),
+  slide-bottom: (
+    default: (
+      --translate-y: 110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    shown: (
+      --translate-y: 0,
+      opacity: 1,
+      visibility: visible
+    )
+  ),
 );
 
 // alignment
@@ -861,8 +955,13 @@ $lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
 $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
 
 :root {
+  --text-opacity: 1;
+  --placeholder-opacity: 1;
+  --border-opacity: 1;
+  --background-opacity: 1;
+  --shadow-opacity: 1;
   // color list
-  @each $color, $value in $color-list {--color-#{$color}: #{$value};}
+  @each $color, $value in $color-list {--color-#{$color}: #{hex-to-rgb($value)};}
   // gradient list
   @each $color, $value in $background-gradient-list {--gradient-#{$color}: #{$value};}
 	// breakpoint list

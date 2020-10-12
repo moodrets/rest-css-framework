@@ -14,9 +14,8 @@
 @import 'elements/tables';
 
 // utilities
+@import 'utilities/all';
 @import 'utilities/cursor';
-@import 'utilities/animations';
-@import 'utilities/transitions';
 @import 'utilities/transform';
 @import 'utilities/opacity';
 @import 'utilities/user-select';
@@ -47,6 +46,8 @@
 @import 'utilities/height';
 @import 'utilities/sizes';
 @import 'utilities/object-fit';
+@import 'utilities/animations';
+@import 'utilities/transitions';
 @import 'utilities/column';
 @import 'utilities/row-grid';
 @import 'utilities/grid';

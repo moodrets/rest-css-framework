@@ -1,0 +1,11 @@
+.#{$all-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$inherit-class}#{$br-name} {all: inherit}
+      &-#{$initial-class}#{$br-name} {all: initial}
+      &-#{$unset-class}#{$br-name} {all: unset}
+      &-#{$revert-class}#{$br-name} {all: revert}
+    }
+  }
+}

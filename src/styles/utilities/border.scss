@@ -122,18 +122,16 @@
       @each $key, $value in $border-width-list {
         &-#{$border-width-class}-#{$key} {border-width: #{$value};}
       }
-
-      &-#{$inherit-class}#{$br-name} {border: inherit;}
-      &-#{$current-color-class}#{$br-name} {border-color: currentColor;}
-      &-#{$transparent-class}#{$br-name} {border-color: transparent;}
     }
   }
 
   @each $color, $value in $color-list {
-    &-#{$color} {border-color: var(--color-#{$color});}
-    &-#{$color}\:#{$hover-class}:hover {border-color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-class}:focus {border-color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-within-class}:focus-within {border-color: var(--color-#{$color});}
-    &-#{$color}\:#{$active-class}:active {border-color: var(--color-#{$color});}
+    &-#{$color} {border-color: #{$value}; border-color: rgba(var(--color-#{$color}), var(--border-opacity));}
+  }
+
+  @include apply-other-props(border);
+
+  @each $key, $value in $opacity-list {
+    &-#{$opacity-class}-#{$key} {--border-opacity: #{$value};}
   }
 }

@@ -1,10 +1,14 @@
 .#{$background-prefix-class} {
+
   @each $color, $value in $color-list {
-    &-#{$color} {background-color: var(--color-#{$color});}
-    &-#{$color}\:#{$hover-class}:hover {background-color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-class}:focus {background-color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-within-class}:focus-within {background-color: var(--color-#{$color});}
-    &-#{$color}\:#{$active-class}:active {background-color: var(--color-#{$color});}
+    &-#{$color} {background-color: #{$value}; background-color: rgba(var(--color-#{$color}), var(--background-opacity));}
+    @include apply-states($color) {background-color: #{$value}; background-color: rgba(var(--color-#{$color}), var(--background-opacity));}
+  }
+
+  @include apply-other-props(background-color);
+
+  @each $key, $value in $opacity-list {
+    &-#{$opacity-class}-#{$key} {--background-opacity: #{$value};}
   }
 
   @each $key, $value in $background-gradient-list {
@@ -14,9 +18,6 @@
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
-      &-#{$inherit-class}#{$br-name} {background-color: inherit;}
-      &-#{$current-color-class}#{$br-name} {background-color: currentColor;}
-      &-#{$transparent-class}#{$br-name} {background-color: transparent;}
 
       // position
       &-#{$background-position-class}-#{$direction-top-class}#{$br-name} {background-position: top;}
@@ -50,6 +51,8 @@
       &-#{$background-clip-padding-class}#{$br-name} {background-clip: padding-box;}
       &-#{$background-clip-content-class}#{$br-name} {background-clip: content-box;}
       &-#{$background-clip-text-class}#{$br-name} {background-clip: text;}
+
+      &-#{$none-class}#{$br-name} {background: none;}
     }
   }
 }

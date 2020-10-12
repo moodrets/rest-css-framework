@@ -1,14 +1,4 @@
 .#{$text-prefix-class} {
-
-  @each $color, $value in $color-list {
-    &-#{$color} {color: var(--color-#{$color});}
-    &-#{$color}\:#{$hover-class}:hover {color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-class}:focus {color: var(--color-#{$color});}
-    &-#{$color}\:#{$focus-within-class}:focus-within {color: var(--color-#{$color});}
-    &-#{$color}\:#{$active-class}:active {color: var(--color-#{$color});}
-    &-#{$color}\:#{$placeholder-class}::placeholder {color: var(--color-#{$color});}
-  }
-
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
       $br-name: breakpoint-infix($name);
@@ -32,9 +22,26 @@
         text-overflow: clip;
         white-space: normal;
       }
-      &-#{$inherit-class}#{$br-name} {color: inherit;}
-      &-#{$current-color-class}#{$br-name} {color: currentColor;}
-      &-#{$transparent-class}#{$br-name} {color: transparent;}
     }
+  }
+
+  @each $color, $value in $color-list {
+    &-#{$color} {color: #{$value}; color: rgba(var(--color-#{$color}), var(--text-opacity));}
+    @include apply-states($color) {color: #{$value}; color: rgba(var(--color-#{$color}), var(--text-opacity));}
+  }
+
+  @include apply-other-props(color);
+
+  @each $key, $value in $opacity-list {
+    &-#{$opacity-class}-#{$key} {--text-opacity: #{$value};}
+  }
+}
+
+.#{$placeholder-class} {
+  @each $color, $value in $color-list {
+    &-#{$color}::placeholder {color: #{$value}; color: rgba(var(--color-#{$color}), var(--placeholder-opacity));}
+  }
+  @each $key, $value in $opacity-list {
+    &-#{$opacity-class}-#{$key} {--placeholder-opacity: #{$value};}
   }
 }

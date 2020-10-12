@@ -8,11 +8,7 @@
 	}
 }
 
-@mixin list-reset($m: 0, $p: 0) {
-  margin: $m;
-  padding: $p;
-  list-style: none;
-}
+
 
 @mixin set-property($map){
   @each $key, $value in $map {
@@ -29,16 +25,6 @@
       &:active {@include set-property(map-deep-get($props, active));}
     }
   }
-}
-
-@mixin button-reset {
-  outline: none;
-  border: none;
-  line-height: normal;
-  text-decoration: none;
-  border: none;
-  background: none;
-  padding: 0;
 }
 
 @mixin font-face($name, $path, $weight: normal, $style: normal, $display: swap) {
@@ -60,4 +46,36 @@
       }
     }
   }
+}
+
+@mixin apply-states($modifier, $br-name: '') {
+  $modifier-type: if($modifier, '-'+$modifier, '');
+  &#{$modifier-type}\:#{$hover-class}:hover#{$br-name} {@content;}
+  &#{$modifier-type}\:#{$focus-class}:focus#{$br-name} {@content;}
+  &#{$modifier-type}\:#{$focus-visible-class}:focus-visible#{$br-name} {@content;}
+  &#{$modifier-type}\:#{$focus-within-class}:focus-within#{$br-name} {@content;}
+  &#{$modifier-type}\:#{$active-class}:active#{$br-name} {@content;}
+  &#{$modifier-type}\:#{$active-state-class}.#{$active-state-class}#{$br-name} {@content;}
+}
+
+@mixin apply-other-props($prop, $br-name: '') {
+  &-#{$current-class}#{$br-name} {#{$prop}: currentColor;}
+  &-#{$transparent-class}#{$br-name} {#{$prop}: transparent;}
+  &-#{$inherit-class}#{$br-name} {#{$prop}: inherit;}
+}
+
+@mixin button-reset {
+  outline: none;
+  border: none;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+@mixin list-reset($m: 0, $p: 0) {
+  margin: $m;
+  padding: $p;
+  list-style: none;
 }

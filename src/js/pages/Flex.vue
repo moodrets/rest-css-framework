@@ -19,7 +19,7 @@
             <option :value="item.value" v-for="item in flexWrapList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
             <option :value="item.value" v-for="item in flexDirectionList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <option :value="item.value" v-for="item in flexAlignItemsList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
             <option :value="item.value" v-for="item in flexAlignContentList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
             <option :value="item.value" v-for="item in flexAlignSelfList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
             <option :value="item.value" v-for="item in flexJustifyItemsList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
             <option :value="item.value" v-for="item in flexJustifyContentList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@
             <option :value="item.value" v-for="item in flexJustifySelfList" :key="item.value">{{item.name}}</option>
           </select>
           <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-cn-y pe-n sz-1"></svg-icon>
+            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>

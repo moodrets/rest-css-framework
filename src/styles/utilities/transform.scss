@@ -6,7 +6,7 @@
   --scale-y: 1;
   --skew-x: 0;
   --skew-y: 0;
-  transform: translateX(var(--translate-x)) translateY(var(--translate-y)) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+  transform: translate3d(var(--translate-x), var(--translate-y), 0) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
 
   @each $name, $size in $breakpoint-list {
     @include breakpoint-up($name, $size) {
@@ -36,6 +36,22 @@
 
       @each $key, $value in $transform-origin-list {
         &-#{$transform-origin-class}-#{$key}#{$br-name} {transform-origin: #{$value};}
+      }
+    }
+  }
+
+  @each $key, $props in $transform-toggle-list {
+    &-#{$key} {
+      @include set-property(map-deep-get($props, default));
+    }
+  }
+}
+
+.#{$transform-prefix-class}-#{$transform-toggle-class} {
+  @include apply-states(false) {
+    @each $key, $props in $transform-toggle-list {
+      [class*="#{$transform-prefix-class}-#{$key}"] {
+        @include set-property(map-deep-get($props, shown));
       }
     }
   }

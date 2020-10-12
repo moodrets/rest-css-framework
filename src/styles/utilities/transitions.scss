@@ -1,5 +1,8 @@
 .#{$transition-prefix-class} {
-  @each $time, $value in $times {
-    &-#{$time} {transition: all #{$value};}
+  transition-property: all;
+  transition-duration: .3s;
+
+  @each $duration, $value in $duration-list {
+    &-#{$duration} {transition-duration: #{$value};}
   }
 }
