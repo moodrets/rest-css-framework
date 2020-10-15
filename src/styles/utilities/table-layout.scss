@@ -1,0 +1,10 @@
+.#{$table-layout-prefix-class} {
+  @each $name, $size in $breakpoint-list {
+    @include breakpoint-up($name, $size) {
+      $br-name: breakpoint-infix($name);
+      &-#{$table-layout-fixed-class}#{$br-name} {table-layout: fixed;}
+      &-#{$auto-class}#{$br-name} {table-layout: auto;}
+      &-#{$inherit-class}#{$br-name} {table-layout: inherit;}
+    }
+  }
+}

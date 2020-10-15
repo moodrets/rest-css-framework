@@ -17,6 +17,5 @@
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </div>
     </div>
-
   </div>
 </template>

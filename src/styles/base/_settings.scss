@@ -300,6 +300,18 @@ $border-collapse-prefix-class: 'bc';
 $border-collapse-separate-class: 's';
 $border-collapse-collapse-class: 'c';
 
+// table
+$table-layout-prefix-class: 'tl';
+$table-layout-fixed-class: 'fx';
+
+// lists
+$list-prefix-class: 'list';
+$list-marker-class: 'm';
+$list-style-type-disc-class: 'disc';
+$list-style-type-decimal-class: 'decimal';
+$list-style-position-inside-class: 'inside';
+$list-style-position-outside-class: 'outside';
+
 // width
 $width-prefix-class: 'wd';
 $width-max-class: 'max';
