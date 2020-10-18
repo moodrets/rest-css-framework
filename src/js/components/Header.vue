@@ -1,6 +1,6 @@
 <template>
-  <header class="rs-header bg-theme py-3 sh-2 pos-sti pos-l-0 pos-r-0 pos-t-0 z-10">
-    <div class="container d-f ai-c jc-sb px-5 px-7:md">
+  <header class="rs-header bg-theme py-3 sh-2 pos-sti pos-cover-0 pos-b-a z-10">
+    <div class="container mx-a d-f ai-c jc-sb px-5 px-7:md">
       <div @click="openMobileMenu" class="mr-5 cur-p d-n:lg">
         <svg-icon name="rs-menu" add-class="sz-5"></svg-icon>
       </div>

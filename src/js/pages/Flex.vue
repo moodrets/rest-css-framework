@@ -5,7 +5,7 @@
     <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-3:lg">
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex container height</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Flex container height</h4>
         <div class="d-f ai-c">
           <input class="bdr wd-100 out-n bdr-wd-2 bdr-secondary rs-form-control p-4 rds-4" type="text" v-model="flexContainerHeight">
           <span class="ml-3">px</span>
@@ -13,96 +13,96 @@
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex wrap</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Flex wrap</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexWrap">
             <option :value="item.value" v-for="item in flexWrapList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Flex direction</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Flex direction</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexDirection">
             <option :value="item.value" v-for="item in flexDirectionList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Align items</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Align items</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignItems">
             <option :value="item.value" v-for="item in flexAlignItemsList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Align content</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Align content</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignContent">
             <option :value="item.value" v-for="item in flexAlignContentList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Align self <span class="txt-danger">(item 4)</span></h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Align self <span class="txt-danger">(item 4)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexAlignSelf">
             <option :value="item.value" v-for="item in flexAlignSelfList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify items</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Justify items</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifyItems">
             <option :value="item.value" v-for="item in flexJustifyItemsList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify content</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Justify content</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifyContent">
             <option :value="item.value" v-for="item in flexJustifyContentList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Justify self <span class="txt-danger">(item 4)</span></h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Justify self <span class="txt-danger">(item 4)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="flexJustifySelf">
             <option :value="item.value" v-for="item in flexJustifySelfList" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y pe-n sz-1"></svg-icon>
           </div>
         </div>

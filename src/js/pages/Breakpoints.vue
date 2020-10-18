@@ -9,7 +9,7 @@
     <div class="case ai-c case-cells-1 case-cells-3:md p-5 sh-1 mb-3" v-for="breakpoint in breakpointsVars" :key="breakpoint">
       <div class="cell">{{breakpoint|cssVarName('--')}}</div>
       <div class="cell">
-        <div class="d-ib p-2 bg-primary txt-light rds-2 font-700">
+        <div class="d-ib p-2 bg-primary txt-light rds-2 font-we-700">
           {{breakpoint|cssVarValue}}
         </div>
       </div>

@@ -2,7 +2,7 @@
   <div class="rs-modal">
     <h1 class="mt-0">Modal example</h1>
 
-    <button @click="toggleModal" class="button button-primary p-3 rds-3 font-500">Show modal</button>
+    <button @click="toggleModal" class="button button-primary p-3 rds-3 font-we-500">Show modal</button>
 
     <div class="some-modal p-7 pos-fx pos-cover z-100 d-f trs-30" :class="!modalVisible ? 'op-0 vs-h' : 'ov-y-a'" @click="clickHandler">
       <div class="some-modal__overlay pos-fx pos-cover z-1-neg pe-n bg-dark op-70"></div>

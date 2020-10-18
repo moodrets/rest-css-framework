@@ -1,7 +1,12 @@
-.#{$spinner-prefix-class} {
-  width: $spinner-base-width;
-  height: $spinner-base-height;
-  border: #{$spinner-base-border-width} solid currentColor;
+@keyframes spinner {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(360deg);}
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid currentColor;
   border-top-color: transparent;
   border-radius: 100%;
   animation: spinner linear 1s infinite;

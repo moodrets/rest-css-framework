@@ -1,4 +1,4 @@
-.#{$button-prefix-class} {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +17,4 @@
   &:focus {
     text-decoration: none;
   }
-
-  @include set-button-types($button-types);
 }

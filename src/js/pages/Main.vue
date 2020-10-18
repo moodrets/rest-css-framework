@@ -3,19 +3,21 @@
     <h1 class="mt-0">Rest Css Framework</h1>
     <p>Low-level framework for almost all occasions</p>
 
-    <div class="bdr bdr-primary bdr-op-90 p-4">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima earum ab maxime dicta optio qui distinctio fugiat quasi, dolorum facilis alias hic nobis porro fugit voluptas quos, eum veniam aperiam.
+    <div class="d-f fw-wr case-cells-5 case-cells-3:md ml-5-neg">
+      <div class="cell pl-5 pb-5">1</div>
+      <div class="cell pl-5 pb-5">2</div>
+      <div class="cell pl-5 pb-5">3</div>
+      <div class="cell pl-5 pb-5">4</div>
+      <div class="cell pl-5 pb-5">5</div>
+      <div class="cell cell-2 pl-5 pb-5">6</div>
     </div>
 
-    <div class="p-5 my-7 txt-light bg-primary txt-op-70 sh sh-success sh-op-80 sh-wd-7">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, reiciendis cupiditate? Mollitia atque saepe, modi quaerat quia eligendi minima, similique sint in est omnis deserunt obcaecati rerum quae eos cum?
-    </div>
+    <div class="trf trf-sc-1-5" style="text-align: center">samsa samsa samsa</div>
 
-    <div class="trf-toggle:h pos-rel d-if" tabindex="0">
-      <button class="button button-primary p-4">button</button>
-      <div class="trs sh-2 rds-4 pos-abs pos-t-100 pos-l-50 trf trf-scale-from-0 trf-or-t trf-tr-x-50-neg p-8 bg-dark txt-light txt-op-80">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-      </div>
-    </div>
+    <ul class="list-success">
+      <li style="font-weight: 800">samsa 1</li>
+      <li style="font-weight: 800">samsa 2</li>
+    </ul>
+
   </div>
 </template>

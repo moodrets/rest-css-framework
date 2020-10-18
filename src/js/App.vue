@@ -2,12 +2,12 @@
   <div id="framework-app">
     <Header></Header>
     <main class="rs-main mt-7 mt-9:lg font-sz-17">
-      <div class="container px-5 px-7:md">
-        <div class="case case-gap-9:lg">
-          <div class="cell cell-12 cell-3:lg d-n d-b:lg">
+      <div class="container mx-a px-5 px-7:md">
+        <div class="case ml-9-neg">
+          <div class="cell cell-12 cell-3:lg d-n d-b:lg pl-9">
             <Aside></Aside>
           </div>
-          <div class="cell cell-12 cell-9:lg">
+          <div class="cell cell-12 cell-9:lg pl-9">
             <router-view></router-view>
           </div>
         </div>

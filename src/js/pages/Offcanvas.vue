@@ -2,7 +2,7 @@
   <div class="rs-offcanvas">
     <h1 class="mt-0">Offcanvas</h1>
 
-    <button @click="toggleOffcanvas" class="button button-success rds-3 p-3 font-500">Show offcanvas</button>
+    <button @click="toggleOffcanvas" class="button button-success rds-3 p-3 font-we-500">Show offcanvas</button>
 
     <pre>
       <code class="font-sz-14 my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2 ov-x-a">{{offcanvasCode}}</code>

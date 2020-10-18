@@ -3,72 +3,72 @@
     <h1 class="mt-0">Borders</h1>
     <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-4:lg">
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border width</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border width</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderWidth">
             <option :value="iter" v-for="iter in 10" :key="iter">{{iter}}px</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border color</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border color</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderColor">
             <option :value="color.replace('--color-', '')" v-for="color in colorVars" :key="color">var({{color}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border style</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border style</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderStyle">
             <option :value="style.value" v-for="style in borderStyleValues" :key="style.value">{{style.text}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border none</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border none</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderNone">
             <option :value="item.value" v-for="item in borderNoneValues" :key="item.value">{{item.text}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell cell-6:lg">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border radius (<router-link to="/radius">radius utility</router-link>)</h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border radius (<router-link to="/radius">radius utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderRadius">
             <option :value="item.replace('--radius-', '')" v-for="item in radiusVars" :key="item">var({{item}})</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
       </div>
 
       <div class="cell cell-6:lg">
-        <h4 class="mt-0 mb-4 txt-info-2 font-500">Border class and breakpoints <span class="txt-danger">(higher priority)</span></h4>
+        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border class and breakpoints <span class="txt-danger">(higher priority)</span></h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="borderBreakpoints">
             <option :value="item.value" v-for="item in borderBreakpointsValues" :key="item.value">{{item.name}}</option>
           </select>
-          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-500 rds-4">
+          <div class="rs-select__value p-4 pr-10 bdr bdr-wd-2 bdr-secondary font-we-500 rds-4">
             <svg-icon name="rs-arrow-down" add-class="sz-1 pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pe-n"></svg-icon>
           </div>
         </div>
@@ -86,7 +86,7 @@
         <div class="cell"><strong>element</strong></div>
       </div>
       <div class="case ai-c case-cells-1 case-cells-2:md p-5 sh-1 mb-3" v-for="item in borderClassList" :key="item.className">
-        <div class="cell txt-primary-2 font-500">{{item.className}}</div>
+        <div class="cell txt-primary-2 font-we-500">{{item.className}}</div>
         <div class="cell"><div class="p-6 mt-4 mt-0:md" :class="item.className.replace(/\./g,'')"></div></div>
       </div>
     </div>
