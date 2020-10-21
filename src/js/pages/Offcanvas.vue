@@ -8,8 +8,8 @@
       <code class="font-sz-14 my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2 ov-x-a">{{offcanvasCode}}</code>
     </pre>
 
-    <div class="some-offcanvas pos-fx pos-cover z-100 trs-30" :class="!visible ? 'op-0 vs-h' : ''" @click="clickHandler">
-      <div class="some-offcanvas__overlay pe-n pos-fx pos-cover z-1 bg-dark op-70"></div>
+    <div class="some-offcanvas pos-fx pos-cover-0 z-100 trs-03" :class="!visible ? 'op-0 vs-h' : ''" @click="clickHandler">
+      <div class="some-offcanvas__overlay pe-n pos-fx pos-cover-0 z-1 bg-dark op-70"></div>
       <div class="some-offcanvas__body pos-rel z-2 bg-light sh-2 p-7 wd-280 pos-fx pos-l-0 pos-t-0 pos-b-0 ov-y-a">
         <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item 1</button>
         <button class="button button-primary p-4 rds-4 mb-4 wd-100">Menu item 2</button>
@@ -38,8 +38,8 @@
       return {
         visible: false,
         offcanvasCode: `
-          <div class="some-offcanvas pos-fx pos-cover z-100 trs-30" class="if (hidden) op-0 vs-h">
-            <div class="some-offcanvas__overlay pe-n pos-fx pos-cover z-1 bg-dark op-70"></div>
+          <div class="some-offcanvas pos-fx pos-cover-0 z-100 trs-03" class="if (hidden) op-0 vs-h">
+            <div class="some-offcanvas__overlay pe-n pos-fx pos-cover-0 z-1 bg-dark op-70"></div>
             <div class="some-offcanvas__body pos-rel z-2 bg-light sh-2 p-7 wd-280 pos-fx pos-l-0 pos-t-0 pos-b-0 ov-y-a">
               ...
             </div>

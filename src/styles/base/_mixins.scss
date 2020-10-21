@@ -21,10 +21,10 @@
 @mixin apply-utility-content($utility, $br-name: ''){
   $first-prop-key: nth(nth(map-get($utility, properties), 1), 1);
   $first-prop-value: nth(nth(map-get($utility, properties), 1), 2);
+  $child-selector: if(map-get($utility, child), map-get($utility, child), '');
   @each $key, $value in map-get($utility, values) {
     $key-type: if($key != '', '-'+$key, '');
     $placeholder: null;
-    $child-selector: if(map-get($utility, child), map-get($utility, child), '');
     @each $prop, $prop-value in map-get($utility, properties) {
       $placeholder: if($prop == 'plc', '::placeholder', '');
       .#{$prop}#{$key-type}#{$placeholder}#{$br-name} #{$child-selector} {
@@ -50,7 +50,7 @@
   }
   @if (map-get($utility, inherit)) {
     $inherit-class: if(map-get($utility, inherit-class), map-get($utility, inherit-class), 'inh');
-    .#{$first-prop-key}-#{$inherit-class}#{$br-name} {
+    .#{$first-prop-key}-#{$inherit-class}#{$br-name} #{$child-selector} {
       @each $item in $first-prop-value {
         #{$item}: inherit
       }

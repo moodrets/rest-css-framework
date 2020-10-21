@@ -99,6 +99,7 @@
 @include apply-utility($columns-utility);
 @include apply-utility($columns-gap-utility);
 @include apply-utility($flex-item-utility);
+@include apply-utility($flex-item-child-utility);
 @include apply-utility($flex-shrink-utility);
 @include apply-utility($flex-grow-utility);
 @include apply-utility($flex-wrap-utility);

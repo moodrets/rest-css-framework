@@ -1,12 +1,6 @@
-$breakpoint-list: (
-	xs: 0, // mandatory
-	sm: 420px,
-	md: 768px,
-	lg: 1024px,
-	xl: 1280px,
-);
-
 $global: (
+  important: false,
+  prefix: '',
   font-family-base: 'Roboto, Arial, Helvetica, sans-serif',
   font-family-secondary: 'Montserrat, Tahoma, sans-serif',
   font-size-base: 14px,
@@ -15,13 +9,13 @@ $global: (
   mobile-first: true,
 );
 
-$media-width: if(map-get($global, mobile-first), 'min', 'max');
-
-// use this vars in media query @media($sm) {...}
-$sm: '#{$media-width}-width: (#{map-get($breakpoint-list, sm)})';
-$md: '#{$media-width}-width: (#{map-get($breakpoint-list, md)})';
-$lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
-$xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
+$breakpoint-list: (
+	xs: 0, // mandatory
+	sm: 420px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+);
 
 $color-list : (
   disabled: #ccc,
@@ -137,6 +131,23 @@ $opacity-list: (
   30: .3,
   20: .2,
   10: .1,
+  0: 0,
+);
+
+$spacing-list: (
+  1: 6px,
+  2: 4px,
+  3: 8px,
+  4: 10px,
+  5: 12px,
+  6: 14px,
+  7: 16px,
+  8: 20px,
+  9: 30px,
+  10: 40px,
+  11: 50px,
+  12: 60px,
+  13: 80px,
   0: 0,
 );
 
@@ -313,27 +324,13 @@ $position-directions-utility: (
       right
     ),
   ),
-  values: (
-    1: 6px,
-    2: 4px,
-    3: 8px,
-    4: 10px,
-    5: 12px,
-    6: 14px,
-    7: 16px,
-    8: 20px,
-    9: 30px,
-    10: 40px,
-    11: 50px,
-    12: 60px,
-    13: 80px,
-    0: 0,
+  values: map-merge($spacing-list, (
     100: 100%,
     50: 50%,
     33: 33%,
     25: 25%,
     a: auto
-  ),
+  )),
   responsive: true,
   inherit: true,
 );
@@ -796,21 +793,7 @@ $margin-utility: (
       margin-right,
     ),
   ),
-  values: (
-    1: 6px,
-    2: 4px,
-    3: 8px,
-    4: 10px,
-    5: 12px,
-    6: 14px,
-    7: 16px,
-    8: 20px,
-    9: 30px,
-    10: 40px,
-    11: 50px,
-    12: 60px,
-    13: 80px,
-    0: 0,
+  values: map-merge($spacing-list, (
     a: auto,
     1-neg: -6px,
     2-neg: -4px,
@@ -825,7 +808,7 @@ $margin-utility: (
     11-neg: -50px,
     12-neg: -60px,
     13-neg: -80px,
-  ),
+  )),
   responsive: true,
   inherit: true,
 );
@@ -846,22 +829,7 @@ $padding-utility: (
       padding-right,
     ),
   ),
-  values: (
-    1: 6px,
-    2: 4px,
-    3: 8px,
-    4: 10px,
-    5: 12px,
-    6: 14px,
-    7: 16px,
-    8: 20px,
-    9: 30px,
-    10: 40px,
-    11: 50px,
-    12: 60px,
-    13: 80px,
-    0: 0,
-  ),
+  values: $spacing-list,
   responsive: true,
   inherit: true,
 );
@@ -1522,23 +1490,9 @@ $columns-gap-utility: (
   properties: (
     clm-gap: column-gap,
   ),
-  values: (
-    1: 6px,
-    2: 4px,
-    3: 8px,
-    4: 10px,
-    5: 12px,
-    6: 14px,
-    7: 16px,
-    8: 20px,
-    9: 30px,
-    10: 40px,
-    11: 50px,
-    12: 60px,
-    13: 80px,
-    0: 0,
+  values: map-merge($spacing-list, (
     nl: normal,
-  ),
+  )),
   responsive: true,
   inherit: false,
 );
@@ -1578,6 +1532,19 @@ $flex-item-utility: (
     fill: 1 1 0,
     n: none,
   ),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-item-child-utility: (
+  properties: (
+    fl-ch: flex,
+  ),
+  values: (
+    fill: 1 1 0,
+    n: none,
+  ),
+  child: unquote('> *'),
   responsive: true,
   inherit: true,
 );
@@ -1891,22 +1858,7 @@ $grid-gap-utility: (
     gap-x: column-gap,
     gap-y: row-gap,
   ),
-  values: (
-    1: 6px,
-    2: 4px,
-    3: 8px,
-    4: 10px,
-    5: 12px,
-    6: 14px,
-    7: 16px,
-    8: 20px,
-    9: 30px,
-    10: 40px,
-    11: 50px,
-    12: 60px,
-    13: 80px,
-    0: 0,
-  ),
+  values: $spacing-list,
   responsive: true,
 );
 
@@ -2205,6 +2157,14 @@ $transform-toggle-shown-utility: (
     is-active: is-active,
   ),
 );
+
+$media-width: if(map-get($global, mobile-first), 'min', 'max');
+
+// use this vars in media query @media($sm) {...}
+$sm: '#{$media-width}-width: (#{map-get($breakpoint-list, sm)})';
+$md: '#{$media-width}-width: (#{map-get($breakpoint-list, md)})';
+$lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
+$xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
 
 :root {
   --text-opacity: 1;

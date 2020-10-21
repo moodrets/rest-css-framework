@@ -1,7 +1,0 @@
-.#{$text-transform-prefix-class} {
-  &-#{$text-transform-capitalize-class} {text-transform: capitalize;}
-  &-#{$text-transform-lowercase-class} {text-transform: lowercase;}
-  &-#{$text-transform-uppercase-class} {text-transform: uppercase;}
-  &-#{$none-class} {text-transform: none;}
-  &-#{$inherit-class} {text-transform: inherit;}
-}
