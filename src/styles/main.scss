@@ -1,16 +1,16 @@
 // base
 @import 'base/functions';
-@import 'base/mixins';
 @import 'base/data';
+@import 'base/mixins';
 @import 'base/normalize';
 @import 'base/defaults';
 
 // elements
-@import 'elements/typography';
 @import 'elements/clearfix';
 @import 'elements/spinner';
 @import 'elements/button';
 @import 'elements/svg-icon';
+@import 'elements/typography';
 
 // utilities
 @include apply-utility($all-utility);
@@ -64,8 +64,8 @@
 @include apply-utility($border-utility);
 @include apply-utility($border-width-utility);
 @include apply-utility($border-style-utility);
-@include apply-utility($border-colored-utility);
 @include apply-utility($border-opacity-utility);
+@include apply-utility($border-colored-utility);
 @include apply-utility($width-utility);
 @include apply-utility($max-width-utility);
 @include apply-utility($min-width-utility);
@@ -119,5 +119,6 @@
 @include apply-utility($grid-gap-utility);
 @include apply-utility($case-utility);
 @include apply-utility($case-cells-utility);
+@include apply-utility($cell-utility);
 @include apply-utility($cell-width-utility);
 @include apply-utility($display-utility);

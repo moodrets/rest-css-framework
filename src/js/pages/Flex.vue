@@ -2,7 +2,7 @@
   <div class="rs-flex">
     <h1 class="mt-0">Flex</h1>
 
-    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-3:lg">
+    <div class="case case-cells-1 case-cells-2:md case-cells-3:lg">
 
       <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Flex container height</h4>
@@ -118,7 +118,7 @@
       <div class="p-6 sh-1 bg-light m-2">flex item 5</div>
       <div class="p-6 sh-1 bg-light m-2">flex item 6</div>
     </div>
-    <div class="mt-8 case case-gap-7 case-cells-1 case-cells-2:md">
+    <div class="mt-8 case case-cells-1 case-cells-2:md">
       <div class="cell">
         <h4 class="mt-0 mb-4">Flex container classess</h4>
         <code class="my-7 d-b p-5 bdr bdr-secondary-1 bg-secondary rds-2">class="{{flexContainerClasses}}"</code>

@@ -1,14 +1,12 @@
 <template>
   <div class="rs-modal">
     <h1 class="mt-0">Modal example</h1>
-
-    <button @click="toggleModal" class="button button-primary p-3 rds-3 font-we-500">Show modal</button>
-
+    <button @click="toggleModal" class="button bg-info-1 txt-light p-3 rds-3 font-we-500">Show modal</button>
     <div class="some-modal p-7 pos-fx pos-cover-0 z-100 d-f trs-03" :class="!modalVisible ? 'op-0 vs-h' : 'ov-y-a'" @click="clickHandler">
       <div class="some-modal__overlay pos-fx pos-cover-0 z-1-neg pe-n bg-dark op-70"></div>
       <div class="some-modal__body pos-rel z-10 p-9 bg-light sh-2 m-a wd-480 wd-max-100 rds-7">
-        <div class="some-modal__close pos-abs pos-r-7 pos-t-7 cur-p" @click="toggleModal">
-          <svg-icon name="rs-close"></svg-icon>
+        <div class="some-modal__close pos-abs pos-r-7 pos-t-7 cur-p p-4" @click="toggleModal">
+          <svg-icon name="rs-close" add-class="sz-2"></svg-icon>
         </div>
         <h2 class="mt-0">Contenteditable modal</h2>
         <div contenteditable="true">
@@ -16,7 +14,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 

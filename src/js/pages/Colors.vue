@@ -3,7 +3,7 @@
     <h1 class="mt-0">Colors</h1>
     <p>These colors are used for background-color, text, shadow, border and svg icon classes</p>
 
-    <div class="d-f fw-wr case case-gap-7">
+    <div class="case">
       <div class="cell cell-12 cell-6:md">
         <h3 class="mt-0 mb-4 txt-info-2 font-we-500">State</h3>
         <div class="rs-select bdr bdr-wd-2 bdr-secondary bdr-primary:fw pos-rel rds-4">

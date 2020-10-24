@@ -151,6 +151,22 @@ $spacing-list: (
   0: 0,
 );
 
+$spacing-negative-list: (
+  1-neg: -6px,
+  2-neg: -4px,
+  3-neg: -8px,
+  4-neg: -10px,
+  5-neg: -12px,
+  6-neg: -14px,
+  7-neg: -16px,
+  8-neg: -20px,
+  9-neg: -30px,
+  10-neg: -40px,
+  11-neg: -50px,
+  12-neg: -60px,
+  13-neg: -80px,
+);
+
 $all-utility: (
   properties: (
     all: all,
@@ -202,7 +218,7 @@ $cursor-utility: (
   ),
   responsive: false,
   inherit: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -324,13 +340,19 @@ $position-directions-utility: (
       right
     ),
   ),
-  values: map-merge($spacing-list, (
-    100: 100%,
-    50: 50%,
-    33: 33%,
-    25: 25%,
-    a: auto
-  )),
+  values: map-merge(
+    map-merge(
+      $spacing-list,
+      $spacing-negative-list,
+    ),
+    (
+      100: 100%,
+      50: 50%,
+      33: 33%,
+      25: 25%,
+      a: auto,
+    )
+  ),
   responsive: true,
   inherit: true,
 );
@@ -618,7 +640,7 @@ $background-colored-utility: (
   ),
   values: $background-color-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -631,7 +653,7 @@ $background-opacity-utility: (
   ),
   values: $opacity-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -793,22 +815,13 @@ $margin-utility: (
       margin-right,
     ),
   ),
-  values: map-merge($spacing-list, (
-    a: auto,
-    1-neg: -6px,
-    2-neg: -4px,
-    3-neg: -8px,
-    4-neg: -10px,
-    5-neg: -12px,
-    6-neg: -14px,
-    7-neg: -16px,
-    8-neg: -20px,
-    9-neg: -30px,
-    10-neg: -40px,
-    11-neg: -50px,
-    12-neg: -60px,
-    13-neg: -80px,
-  )),
+  values: map-merge(
+    map-merge(
+      $spacing-list,
+      $spacing-negative-list,
+    ),
+    (a: auto)
+  ),
   responsive: true,
   inherit: true,
 );
@@ -980,7 +993,7 @@ $text-decoration-utility: (
     o: overline,
     l: line-through
   ),
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -998,7 +1011,7 @@ $text-transform-utility: (
     u: uppercase,
     n: none,
   ),
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -1054,12 +1067,13 @@ $text-colored-utility: (
   ),
   values: $text-color-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
     fv: focus-visible,
     a: active,
+    v: visited,
     is-active: is-active,
     group-hover: hover,
     group-focus: focus,
@@ -1073,7 +1087,7 @@ $text-opacity-utility: (
   ),
   values: $opacity-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -1119,7 +1133,7 @@ $placeholder-utility: (
   ),
   values: $placeholder-color-list,
   responsive: false,
-  states: (
+  pseudo: (
     f: focus,
     h: hover,
   ),
@@ -1159,7 +1173,7 @@ $shadow-colored-utility: (
   ),
   values: $shadow-color-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1190,7 +1204,7 @@ $shadow-scattering-utility: (
     0: 0,
   ),
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1221,7 +1235,7 @@ $shadow-horizonal-utility: (
     0: 0,
   ),
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1252,7 +1266,7 @@ $shadow-vertical-utility: (
     0: 0,
   ),
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1283,7 +1297,7 @@ $shadow-width-utility: (
     0: 0,
   ),
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1300,7 +1314,7 @@ $shadow-opacity-utility: (
   ),
   values: $opacity-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -1323,7 +1337,7 @@ $shadow-types-utility: (
     n: none,
   ),
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1363,7 +1377,6 @@ $border-utility: (
   ),
   values: (
     '': 1px solid var(--border-color),
-    n: none,
   ),
   responsive: true,
   inherit: true,
@@ -1426,7 +1439,7 @@ $border-style-utility: (
     sl: solid,
   ),
   responsive: true,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1443,7 +1456,7 @@ $border-colored-utility: (
   ),
   values: $border-color-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
     fw: focus-within,
@@ -1457,7 +1470,7 @@ $border-opacity-utility: (
   ),
   values: $opacity-list,
   responsive: false,
-  states: (
+  pseudo: (
     h: hover,
     f: focus,
   ),
@@ -1858,7 +1871,9 @@ $grid-gap-utility: (
     gap-x: column-gap,
     gap-y: row-gap,
   ),
-  values: $spacing-list,
+  values: map-merge($spacing-list, (
+    nl: normal,
+  )),
   responsive: true,
 );
 
@@ -1894,8 +1909,21 @@ $case-cells-utility: (
     11: calc(100% / 11),
     12: calc(100% / 12),
   ),
-  child: unquote('> [class*="cell"]'),
+  child: unquote('> [class*="cell"]:not([class*="cell-"])'),
   responsive: true,
+);
+
+$cell-utility: (
+  prefix-class: 'cell',
+  properties: (
+    '' : (
+      flex-basis: 0,
+      flex-grow: 1,
+      max-width: 100%,
+    )
+  ),
+  responsive: false,
+  multiprops: true
 );
 
 $cell-width-utility: (
@@ -1906,18 +1934,18 @@ $cell-width-utility: (
     )
   ),
   values: (
-    1: unquote('calc(100% * 1 / 12) !important'),
-    2: unquote('calc(100% * 2 / 12) !important'),
-    3: unquote('calc(100% * 3 / 12) !important'),
-    4: unquote('calc(100% * 4 / 12) !important'),
-    5: unquote('calc(100% * 5 / 12) !important'),
-    6: unquote('calc(100% * 6 / 12) !important'),
-    7: unquote('calc(100% * 7 / 12) !important'),
-    8: unquote('calc(100% * 8 / 12) !important'),
-    9: unquote('calc(100% * 9 / 12) !important'),
-    10: unquote('calc(100% * 10 / 12) !important'),
-    11: unquote('calc(100% * 11 / 12) !important'),
-    12: unquote('calc(100% * 12 / 12) !important'),
+    1: unquote('calc(100% * 1 / 12)'),
+    2: unquote('calc(100% * 2 / 12)'),
+    3: unquote('calc(100% * 3 / 12)'),
+    4: unquote('calc(100% * 4 / 12)'),
+    5: unquote('calc(100% * 5 / 12)'),
+    6: unquote('calc(100% * 6 / 12)'),
+    7: unquote('calc(100% * 7 / 12)'),
+    8: unquote('calc(100% * 8 / 12)'),
+    9: unquote('calc(100% * 9 / 12)'),
+    10: unquote('calc(100% * 10 / 12)'),
+    11: unquote('calc(100% * 11 / 12)'),
+    12: unquote('calc(100% * 12 / 12)'),
   ),
   responsive: true,
 );
@@ -1967,6 +1995,7 @@ $transform-scale-utility: (
   ),
   values: (
     1: 1,
+    '1-1': 1.1,
     '1-2': 1.2,
     '1-3': 1.3,
     '1-4': 1.4,
@@ -1974,6 +2003,9 @@ $transform-scale-utility: (
     0: 0,
   ),
   responsive: true,
+  pseudo: (
+    h: hover
+  )
 );
 
 $transform-translate-utility: (
@@ -2150,8 +2182,8 @@ $transform-toggle-shown-utility: (
   ),
   responsive: false,
   multiprops: true,
-  parent: 'trf-toggle',
-  parent-states: (
+  parent: '.trf-toggle',
+  parent-pseudo: (
     h: hover,
     f: focus,
     is-active: is-active,
@@ -2173,10 +2205,9 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
   --background-opacity: 1;
   --shadow-opacity: 1;
   --border-color: #000;
-  // color list
   @each $color, $value in $color-list {--color-#{$color}: #{hex-to-rgb($value)};}
-  // breakpoints
   @each $size, $value in $breakpoint-list {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
-  // global list
+  @each $space, $value in $spacing-list {--spacing-#{$space}: #{$value};}
+  @each $radius, $value in map-get($radius-utility, values) {--radius-#{$radius}: #{$value};}
   @each $var, $value in $global {--#{$var}: #{$value};}
 }

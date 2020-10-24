@@ -22,26 +22,28 @@
   $first-prop-key: nth(nth(map-get($utility, properties), 1), 1);
   $first-prop-value: nth(nth(map-get($utility, properties), 1), 2);
   $child-selector: if(map-get($utility, child), map-get($utility, child), '');
+  $prefix: if(map-get($utility, prefix), map-get($utility, prefix), map-get($global, prefix));
+  $important: if(map-get($global, important), !important, '');
   @each $key, $value in map-get($utility, values) {
-    $key-type: if($key != '', '-'+$key, '');
+    $key-type: if($key == '', '', '-'+$key);
     $placeholder: null;
     @each $prop, $prop-value in map-get($utility, properties) {
       $placeholder: if($prop == 'plc', '::placeholder', '');
-      .#{$prop}#{$key-type}#{$placeholder}#{$br-name} #{$child-selector} {
+      .#{$prefix}#{$prop}#{$key-type}#{$placeholder}#{$br-name} #{$child-selector} {
         @each $item in $prop-value {
-          #{$item}: $value
+          #{$item}: $value #{$important}
         }
       }
-      @if (map-get($utility, states)) {
-        @each $state, $pseudo in map-get($utility, states) {
+      @if (map-get($utility, pseudo)) {
+        @each $state, $pseudo in map-get($utility, pseudo) {
           $pseudo-type: if($pseudo == 'is-active', '.#{$pseudo}', ':#{$pseudo}');
           $group-hover: if($state == 'group-hover', '.#{$state}:hover', '');
           $group-focus: if($state == 'group-focus', '.#{$state}:focus', '');
           @if ($state == 'group-hover') {$state: ''; $pseudo-type: 'hover';}
           @if ($state == 'group-focus') {$state: ''; $pseudo-type: 'focus';}
-          #{$group-hover} #{$group-focus} .#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$placeholder}#{$br-name} {
+          #{$group-hover} #{$group-focus} .#{$prefix}#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$placeholder}#{$br-name} {
             @each $item in $prop-value {
-              #{$item}: $value
+              #{$item}: $value #{$important}
             }
           }
         }
@@ -50,23 +52,25 @@
   }
   @if (map-get($utility, inherit)) {
     $inherit-class: if(map-get($utility, inherit-class), map-get($utility, inherit-class), 'inh');
-    .#{$first-prop-key}-#{$inherit-class}#{$br-name} #{$child-selector} {
+    .#{$prefix}#{$first-prop-key}-#{$inherit-class}#{$br-name} #{$child-selector} {
       @each $item in $first-prop-value {
-        #{$item}: inherit
+        #{$item}: inherit #{$important}
       }
     }
   }
 }
 
 @mixin apply-utility-content-multiprops($utility, $br-name: '') {
+  $prefix: if(map-get($utility, prefix), map-get($utility, prefix), map-get($global, prefix));
+  $important: if(map-get($global, important), !important, '');
   @each $key, $value in map-get($utility, properties) {
     $key-type: if($key == '', '#{$key}', '-#{$key}');
-    @each $state-key, $state-value in map-get($utility, parent-states) {
+    @each $state-key, $state-value in map-get($utility, parent-pseudo) {
       $pseudo-type: if($state-key == 'is-active', '.#{$state-value}', ':#{$state-value}');
       $parent: if(map-get($utility, parent), '#{map-get($utility, parent)}\\:#{$state-key}#{$pseudo-type}', '');
-      #{$parent} .#{map-get($utility, prefix-class)}#{$key-type}#{$br-name} {
+      #{$parent} .#{$prefix}#{map-get($utility, prefix-class)}#{$key-type}#{$br-name} {
         @each $prop, $prop-value in $value {
-          #{$prop}: #{$prop-value}
+          #{$prop}: #{$prop-value} #{$important}
         }
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="rs-border" v-cloak>
     <h1 class="mt-0">Borders</h1>
-    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-4:lg">
+    <div class="case case-cells-1 case-cells-2:md case-cells-4:lg">
       <div class="cell">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Border width</h4>
         <div class="rs-select pos-rel">

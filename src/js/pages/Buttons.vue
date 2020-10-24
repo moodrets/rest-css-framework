@@ -1,28 +1,9 @@
 <template>
   <div class="rs-buttons" v-cloak>
     <h1 class="mt-0">Buttons</h1>
-    <div class="case case-gap-7 case-cells-1 case-cells-2:md case-cells-3:lg">
+    <div class="case case-cells-1 case-cells-2:md case-cells-3:lg ml-7-neg">
 
-      <div class="cell">
-        <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Button base type</h4>
-        <div class="rs-select pos-rel">
-          <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonColor">
-            <option value="">default</option>
-            <option value="button-primary">primary</option>
-            <option value="button-secondary">secondary</option>
-            <option value="button-success">success</option>
-            <option value="button-warning">warning</option>
-            <option value="button-danger">danger</option>
-            <option value="button-info">info</option>
-            <option value="disabled">disabled</option>
-          </select>
-          <div class="rs-select__value pe-n p-4 pr-10 bdr bdr-wd-2 bdr-secondary rds-4 font-we-500">
-            <svg-icon name="rs-arrow-down" add-class="pos-abs pos-r-7 pos-t-50 trf trf-tr-y-50-neg pos-cn-y sz-1"></svg-icon>
-          </div>
-        </div>
-      </div>
-
-      <div class="cell">
+      <div class="cell pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Button border (<router-link to="/borders">border utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonBorder">
@@ -44,7 +25,7 @@
         </div>
       </div>
 
-      <div class="cell">
+      <div class="cell pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Button padding (<router-link to="/spacings">spacing utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonPadding">
@@ -56,7 +37,7 @@
         </div>
       </div>
 
-      <div class="cell">
+      <div class="cell pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Button radius (<router-link to="/radius">radius utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonRadius">
@@ -68,7 +49,7 @@
         </div>
       </div>
 
-      <div class="cell">
+      <div class="cell pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Background <span class="txt-warning">:hover</span> color</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonBgColor">
@@ -86,7 +67,7 @@
         </div>
       </div>
 
-      <div class="cell">
+      <div class="cell pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Text color (<router-link to="/colors">colors utility</router-link>)</h4>
         <div class="rs-select pos-rel">
           <select class="pos-abs pos-cover op-0 sz-100" v-rs-select v-model="buttonTextColor">
@@ -104,7 +85,7 @@
         </div>
       </div>
 
-      <div class="cell cell-12:md">
+      <div class="cell cell-12:md pl-7 pb-7">
         <h4 class="mt-0 mb-4 txt-info-2 font-we-500">Button text</h4>
         <input class="rs-form-control p-4 out-n wd-100 bdr bdr-wd-2 bdr-secondary rds-4" type="text" v-model="buttonText">
       </div>
@@ -115,25 +96,24 @@
     </div>
     <code class="my-8 d-b p-3 rds-2 bdr bdr-secondary-2 bg-secondary">class="{{buttonClass}}"</code>
     <div class="my-5 my-8:md">
-      <button class="button p-4 rds-3 button-success font-sz-15">
+      <button class="button bg-primary txt-light p-4 rds-3 font-sz-15">
         <svg-icon add-class="mr-3" name="rs-settings"></svg-icon>
         <span>Button with icon</span>
       </button>
-      <button class="button p-4 rds-3 button-danger font-sz-15">
+      <button class="button bg-success txt-light p-4 rds-3 font-sz-15">
         <span>Button with icon</span>
         <svg-icon add-class="ml-3" name="rs-trash"></svg-icon>
       </button>
     </div>
 
-
     <div class="mt-10">
-      <div class="d-n d-f:md case case-cells-1 case-cells-2:md p-5 sh-1 mb-3">
-        <div class="cell"><strong>class</strong></div>
-        <div class="cell"><strong>element</strong></div>
+      <div class="d-n d-f:md case p-5 sh-1 mb-3">
+        <div class="cell cell-12 cell-8:md pl-7"><strong>class</strong></div>
+        <div class="cell cell-12 cell-4:md pl-7"><strong>element</strong></div>
       </div>
-      <div class="case ai-c case-cells-1 case-cells-2:md p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
-        <div class="cell txt-primary font-we-500">{{item.className}}</div>
-        <div class="cell"><button class="font-sz-15 font-we-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
+      <div class="case ai-c p-5 sh-1 mb-3" v-for="item in buttonsList" :key="item.className">
+        <div class="cell cell-12 cell-8:md txt-primary font-we-500">{{item.className}}</div>
+        <div class="cell cell-12 cell-4:md pl-7"><button class="font-sz-15 font-we-500 p-3 rds-3" :class="item.className.replace(/\./g,'')">Button element</button></div>
       </div>
     </div>
 
@@ -158,13 +138,13 @@
         buttonRadius: 'rds-1',
         buttonsList: [
           {className: '.button'},
-          {className: '.button .button-primary'},
-          {className: '.button .button-secondary'},
-          {className: '.button .button-success'},
-          {className: '.button .button-danger'},
-          {className: '.button .button-info'},
-          {className: '.button .button-warning'},
-          {className: '.button .button-disabled'},
+          {className: '.button .bg-primary .bg-primary-1:h .txt-light'},
+          {className: '.button .bg-success .bg-success-1:h .txt-light'},
+          {className: '.button .bg-warning .bg-warning-1:h .txt-light'},
+          {className: '.button .bg-info .bg-info-1:h .txt-light'},
+          {className: '.button .bg-theme .bg-theme-1:h .txt-light:h trs-03 sh-2:a trf trf-sc-1-1:h'},
+          {className: '.button .bg-danger .bg-danger-1:h .txt-light'},
+          {className: '.button .bg-disabled cur-d'},
         ]
       }
     },
