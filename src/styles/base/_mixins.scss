@@ -19,59 +19,49 @@
 }
 
 @mixin apply-utility-content($utility, $br-name: ''){
-  $first-prop-key: nth(nth(map-get($utility, properties), 1), 1);
-  $first-prop-value: nth(nth(map-get($utility, properties), 1), 2);
-  $child-selector: if(map-get($utility, child), map-get($utility, child), '');
   $prefix: if(map-get($utility, prefix), map-get($utility, prefix), map-get($global, prefix));
-  $important: if(map-get($global, important), !important, '');
+  $important: if(map-get($global, important) or map-get($utility, important), !important, '');
+  $child-selector: if(map-get($utility, child), map-get($utility, child), '');
+
   @each $key, $value in map-get($utility, values) {
-    $key-type: if($key == '', '', '-'+$key);
-    $placeholder: null;
+    $key-type: if($key == '' or $key == null, '', '-#{$key}');
     @each $prop, $prop-value in map-get($utility, properties) {
-      $placeholder: if($prop == 'plc', '::placeholder', '');
-      .#{$prefix}#{$prop}#{$key-type}#{$placeholder}#{$br-name} #{$child-selector} {
-        @each $item in $prop-value {
-          #{$item}: $value #{$important}
+      $iterable-object: if($prop-value, $prop-value, $value);
+      @if (not map-get($utility, only-pseudo)) {
+        .#{$prefix}#{$prop}#{$key-type}#{$br-name} #{$child-selector} {
+          @each $item, $subvalue in $iterable-object {
+            $css-prop: if($subvalue, $subvalue, $value);
+            #{$item}: $css-prop #{$important}
+          }
         }
       }
       @if (map-get($utility, pseudo)) {
         @each $state, $pseudo in map-get($utility, pseudo) {
           $pseudo-type: if($pseudo == 'is-active', '.#{$pseudo}', ':#{$pseudo}');
-          $group-hover: if($state == 'group-hover', '.#{$state}:hover', '');
-          $group-focus: if($state == 'group-focus', '.#{$state}:focus', '');
-          @if ($state == 'group-hover') {$state: ''; $pseudo-type: 'hover';}
-          @if ($state == 'group-focus') {$state: ''; $pseudo-type: 'focus';}
-          #{$group-hover} #{$group-focus} .#{$prefix}#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$placeholder}#{$br-name} {
-            @each $item in $prop-value {
-              #{$item}: $value #{$important}
+          $group-hover: if($pseudo == 'group-hover', '.#{$pseudo}:hover', '');
+          $group-focus: if($pseudo == 'group-focus', '.#{$pseudo}:focus', '');
+          $group-active: if($pseudo == 'group-active', '.#{$pseudo}.is-active', '');
+          @if ($state == 'gh') {$state: ''; $pseudo-type: 'gh'}
+          @if ($state == 'gf') {$state: ''; $pseudo-type: 'gf'}
+          @if ($state == 'ga') {$state: ''; $pseudo-type: 'ga'}
+          #{$group-active} #{$group-hover} #{$group-focus} .#{$prefix}#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$br-name} #{$child-selector} {
+            @each $item, $subvalue in $iterable-object {
+              $css-prop: if($subvalue, $subvalue, $value);
+              #{$item}: $css-prop #{$important}
             }
           }
         }
       }
     }
   }
+
   @if (map-get($utility, inherit)) {
+    $first-prop-key: nth(nth(map-get($utility, properties), 1), 1);
+    $first-prop-value: nth(nth(map-get($utility, properties), 1), 2);
     $inherit-class: if(map-get($utility, inherit-class), map-get($utility, inherit-class), 'inh');
     .#{$prefix}#{$first-prop-key}-#{$inherit-class}#{$br-name} #{$child-selector} {
       @each $item in $first-prop-value {
         #{$item}: inherit #{$important}
-      }
-    }
-  }
-}
-
-@mixin apply-utility-content-multiprops($utility, $br-name: '') {
-  $prefix: if(map-get($utility, prefix), map-get($utility, prefix), map-get($global, prefix));
-  $important: if(map-get($global, important), !important, '');
-  @each $key, $value in map-get($utility, properties) {
-    $key-type: if($key == '', '#{$key}', '-#{$key}');
-    @each $state-key, $state-value in map-get($utility, parent-pseudo) {
-      $pseudo-type: if($state-key == 'is-active', '.#{$state-value}', ':#{$state-value}');
-      $parent: if(map-get($utility, parent), '#{map-get($utility, parent)}\\:#{$state-key}#{$pseudo-type}', '');
-      #{$parent} .#{$prefix}#{map-get($utility, prefix-class)}#{$key-type}#{$br-name} {
-        @each $prop, $prop-value in $value {
-          #{$prop}: #{$prop-value} #{$important}
-        }
       }
     }
   }
@@ -82,18 +72,10 @@
     @each $name, $size in $breakpoint-list {
       @include breakpoint-up($name, $size) {
         $br-name: breakpoint-infix($name);
-        @if (map-get($utility, multiprops)) {
-          @include apply-utility-content-multiprops($utility, $br-name);
-        } @else {
-          @include apply-utility-content($utility, $br-name);
-        }
+        @include apply-utility-content($utility, $br-name);
       }
     }
   } @else {
-    @if (map-get($utility, multiprops)) {
-      @include apply-utility-content-multiprops($utility);
-    } @else {
-      @include apply-utility-content($utility);
-    }
+    @include apply-utility-content($utility);
   }
 }

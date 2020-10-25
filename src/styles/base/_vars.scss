@@ -44,40 +44,6 @@ $color-list : (
   danger-2:#cd3333,
 );
 
-$text-color-list: ();
-$shadow-color-list: ();
-$border-color-list: ();
-$background-color-list: ();
-$placeholder-color-list: ();
-
-@each $color, $value in $color-list {
-  $text-color-list: map-merge($text-color-list, (
-    #{$color}: rgba(var(--color-#{$color}), var(--text-opacity)),
-    current: currentColor,
-    trsp: transparent,
-  ));
-  $shadow-color-list: map-merge($shadow-color-list, (
-    #{$color}: rgba(var(--color-#{$color}), var(--shadow-opacity)),
-    current: currentColor,
-    trsp: transparent,
-  ));
-  $border-color-list: map-merge($border-color-list, (
-    #{$color}: rgba(var(--color-#{$color}), var(--border-opacity)),
-    current: currentColor,
-    trsp: transparent,
-  ));
-  $background-color-list: map-merge($background-color-list, (
-    #{$color}: rgba(var(--color-#{$color}), var(--background-opacity)),
-    current: currentColor,
-    trsp: transparent,
-  ));
-  $placeholder-color-list: map-merge($placeholder-color-list, (
-    #{$color}: rgba(var(--color-#{$color}), var(--placeholder-opacity)),
-    current: currentColor,
-    trsp: transparent,
-  ));
-}
-
 $size-list: (
   1: 12px,
   2: 16px,
@@ -166,6 +132,34 @@ $spacing-negative-list: (
   12-neg: -60px,
   13-neg: -80px,
 );
+
+$text-color-list: ();
+$shadow-color-list: ();
+$border-color-list: ();
+$background-color-list: ();
+
+@each $color, $value in $color-list {
+  $text-color-list: map-merge($text-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--text-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+  $shadow-color-list: map-merge($shadow-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--shadow-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+  $border-color-list: map-merge($border-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--border-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+  $background-color-list: map-merge($background-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--background-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+}
 
 $all-utility: (
   properties: (
@@ -281,6 +275,20 @@ $float-utility: (
   inherit: true,
 );
 
+$clear-utility: (
+  properties: (
+    cl: clear,
+  ),
+  values: (
+    l: left,
+    r: right,
+    bt: both,
+    n: none,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
 $display-utility: (
   properties: (
     d: display,
@@ -301,6 +309,7 @@ $display-utility: (
     n: none,
   ),
   responsive: true,
+  important: true,
   inherit: false,
 );
 
@@ -398,7 +407,7 @@ $box-sizing-utility: (
   ),
   values: (
     bb: border-box,
-    bc: content-box,
+    cb: content-box,
   ),
   responsive: true,
   inherit: true,
@@ -469,7 +478,7 @@ $font-weight-utility: (
 
 $font-style-utility: (
   properties: (
-    font-s: font-style,
+    font-st: font-style,
   ),
   values: (
     i: italic,
@@ -480,18 +489,16 @@ $font-style-utility: (
 );
 
 $font-smooth-utility: (
-  prefix-class: 'font',
   properties: (
-    smooth: (
+    font-smooth: (
       -webkit-font-smoothing: antialiased,
       -moz-osx-font-smoothing: grayscale,
     ),
-    smooth-a: (
+    font-smooth-a: (
       -webkit-font-smoothing: auto,
       -moz-osx-font-smoothing: auto,
     )
   ),
-  multiprops: true,
 );
 
 $font-family-utility: (
@@ -499,8 +506,8 @@ $font-family-utility: (
     font: font-family,
   ),
   values: (
-    base: unquote('Roboto, Arial, Helvetica, sans-serif'),
-    secondary: unquote('Montserrat, Tahoma, sans-serif'),
+    base: var(--font-family-base),
+    secondary: var(--font-family-secondary),
   ),
   responsive: false,
 );
@@ -546,6 +553,20 @@ $line-height-utility: (
   ),
   responsive: true,
   inherit: true,
+);
+
+$letter-spacing-utility: (
+  properties: (
+    lts: letter-spacing,
+  ),
+  values: (
+    sm: 1px,
+    md: 2px,
+    lg: 3px,
+    xl: 4px,
+    nl: normal
+  ),
+  responsive: true,
 );
 
 $border-collapse-utility: (
@@ -697,9 +718,9 @@ $background-repeat-utility: (
     bg-rep: background-repeat,
   ),
   values: (
-    r: repeat,
-    rx: repeat-y,
-    ry: repeat-x,
+    '': repeat,
+    x: repeat-y,
+    y: repeat-x,
     nr: no-repeat,
   ),
   responsive: true,
@@ -889,6 +910,25 @@ $overscroll-behavior-utility: (
   inherit: false,
 );
 
+$scroll-snap-type-utility: (
+  properties: (
+    sc: scroll-snap-type,
+  ),
+  values: (
+    b: block,
+    inline: inline,
+    x: x,
+    xm: x mandatory,
+    y: y,
+    yp: y proximity,
+    bt: both,
+    btm: both mandatory,
+    n: none,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
 $vertical-align-utility: (
   properties: (
     va: vertical-align,
@@ -983,6 +1023,21 @@ $text-align-utility: (
   inherit: true,
 );
 
+$text-align-justify-utility: (
+  properties: (
+    txt: (
+      text-align,
+      -moz-text-align-last,
+      text-align-last
+    ),
+  ),
+  values: (
+    j: justify,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
 $text-decoration-utility: (
   properties: (
     td: text-decoration,
@@ -1066,7 +1121,6 @@ $text-colored-utility: (
     txt: color,
   ),
   values: $text-color-list,
-  responsive: false,
   pseudo: (
     h: hover,
     f: focus,
@@ -1075,9 +1129,12 @@ $text-colored-utility: (
     a: active,
     v: visited,
     is-active: is-active,
-    group-hover: hover,
-    group-focus: focus,
+    pl: ':placeholder',
+    gh: group-hover,
+    gf: group-focus,
+    ga: group-active,
   ),
+  responsive: false,
   inherit: false,
 );
 
@@ -1094,65 +1151,25 @@ $text-opacity-utility: (
   inherit: false,
 );
 
-$text-align-justify-utility: (
-  properties: (
-    txt: (
-      text-align,
-      -moz-text-align-last,
-      text-align-last
-    ),
-  ),
-  values: (
-    j: justify,
-  ),
-  responsive: true,
-  inherit: false,
-);
-
 $text-truncate-utility: (
-  prefix-class: 'txt',
   properties: (
-    trn: (
+    txt-trn: (
       overflow: hidden,
       text-overflow: ellipsis,
       white-space: nowrap,
     ),
-    trn-res: (
+    txt-trn-res: (
       overflow: visible,
       text-overflow: clip,
       white-space: normal,
     )
   ),
   responsive: true,
-  multiprops: true,
-);
-
-$placeholder-utility: (
-  properties: (
-    plc: color,
-  ),
-  values: $placeholder-color-list,
-  responsive: false,
-  pseudo: (
-    f: focus,
-    h: hover,
-  ),
-  inherit: false,
-);
-
-$placeholder-opacity-utility: (
-  properties: (
-    plc-op: --placeholder-opacity,
-  ),
-  values: $opacity-list,
-  responsive: false,
-  inherit: false,
 );
 
 $shadow-utility: (
-  prefix-class: 'sh',
   properties: (
-    '': (
+    sh: (
       --shadow-x: 0,
       --shadow-y: 0,
       --shadow-scattering: 0,
@@ -1163,8 +1180,6 @@ $shadow-utility: (
     )
   ),
   responsive: false,
-  inherit: true,
-  multiprops: true,
 );
 
 $shadow-colored-utility: (
@@ -1878,14 +1893,12 @@ $grid-gap-utility: (
 );
 
 $case-utility: (
-  prefix-class: 'case',
   properties: (
-    '': (
+    case: (
       display: flex,
       flex-wrap: wrap,
     )
   ),
-  multiprops: true,
 );
 
 $case-cells-utility: (
@@ -1914,16 +1927,14 @@ $case-cells-utility: (
 );
 
 $cell-utility: (
-  prefix-class: 'cell',
   properties: (
-    '' : (
+    cell : (
       flex-basis: 0,
       flex-grow: 1,
       max-width: 100%,
     )
   ),
   responsive: false,
-  multiprops: true
 );
 
 $cell-width-utility: (
@@ -1964,9 +1975,8 @@ $transition-utility: (
 );
 
 $transform-utility: (
-  prefix-class: 'trf',
   properties: (
-    '': (
+    trf: (
       --rotate: 0,
       --translate-x: 0,
       --translate-y: 0,
@@ -1977,7 +1987,6 @@ $transform-utility: (
       transform: translate3d(var(--translate-x), var(--translate-y), 0) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y)),
     )
   ),
-  multiprops: true,
 );
 
 $transform-scale-utility: (
@@ -2004,7 +2013,7 @@ $transform-scale-utility: (
   ),
   responsive: true,
   pseudo: (
-    h: hover
+    h: hover,
   )
 );
 
@@ -2093,100 +2102,94 @@ $transform-origin-utility: (
 );
 
 $transform-toggle-utility: (
-  prefix-class: 'trf',
   properties: (
-    fade: (
+    trf-fade: (
       opacity: 0,
       visibility: hidden
     ),
-    show: (
+    trf-show: (
       opacity: 0,
       transition-duration: 0s,
       visibility: hidden
     ),
-    scale-from-0: (
+    trf-scale-from-0: (
       --scale-x: 0,
       --scale-y: 0,
       visibility: hidden
     ),
-    scale-1-2: (
+    trf-scale-1-2: (
       --scale-x: 1,
       --scale-y: 1,
     ),
-    slide-left: (
+    trf-slide-left: (
       --translate-x: -110%,
       opacity: 0,
       visibility: hidden
     ),
-    slide-right: (
+    trf-slide-right: (
       --translate-x: 110%,
       opacity: 0,
       visibility: hidden
     ),
-    slide-top: (
+    trf-slide-top: (
       --translate-y: -110%,
       opacity: 0,
       visibility: hidden
     ),
-    slide-bottom: (
+    trf-slide-bottom: (
       --translate-y: 110%,
       opacity: 0,
       visibility: hidden
     )
   ),
-  responsive: false,
-  multiprops: true,
 );
 
-$transform-toggle-shown-utility: (
-  prefix-class: 'trf',
+$transform-toggle-active-utility: (
   properties: (
-    fade: (
+    trf-fade: (
       opacity: 1,
       visibility: visible
     ),
-    show: (
+    trf-show: (
       opacity: 1,
       transition-duration: 0s,
       visibility: visible
     ),
-    scale-from-0: (
+    trf-scale-from-0: (
       --scale-x: 1,
       --scale-y: 1,
       visibility: visible
     ),
-    scale-1-2: (
+    trf-scale-1-2: (
       --scale-x: 1.2,
       --scale-y: 1.2,
     ),
-    slide-left: (
+    trf-slide-left: (
       --translate-x: 0,
       opacity: 1,
       visibility: visible
     ),
-    slide-right: (
+    trf-slide-right: (
       --translate-x: 0,
       opacity: 1,
       visibility: visible
     ),
-    slide-top: (
+    trf-slide-top: (
       --translate-y: 0,
       opacity: 1,
       visibility: visible
     ),
-    slide-bottom: (
+    trf-slide-bottom: (
       --translate-y: 0,
       opacity: 1,
       visibility: visible
     )
   ),
-  responsive: false,
-  multiprops: true,
-  parent: '.trf-toggle',
-  parent-pseudo: (
-    h: hover,
-    f: focus,
-    is-active: is-active,
+  only-pseudo: true,
+  pseudo: (
+    gh: group-hover,
+    gf: group-focus,
+    ga: group-active,
   ),
 );
 
@@ -2206,8 +2209,5 @@ $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
   --shadow-opacity: 1;
   --border-color: #000;
   @each $color, $value in $color-list {--color-#{$color}: #{hex-to-rgb($value)};}
-  @each $size, $value in $breakpoint-list {@if ($size != xs){--breakpoint-#{$size}: #{$value};}}
-  @each $space, $value in $spacing-list {--spacing-#{$space}: #{$value};}
-  @each $radius, $value in map-get($radius-utility, values) {--radius-#{$radius}: #{$value};}
   @each $var, $value in $global {--#{$var}: #{$value};}
 }

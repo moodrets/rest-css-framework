@@ -1,6 +1,6 @@
 // base
 @import 'base/functions';
-@import 'base/data';
+@import 'base/vars';
 @import 'base/mixins';
 @import 'base/normalize';
 @import 'base/defaults';
@@ -24,8 +24,6 @@
 @include apply-utility($list-types-utility);
 @include apply-utility($list-style-type-utility);
 @include apply-utility($list-style-position-utility);
-@include apply-utility($placeholder-utility);
-@include apply-utility($placeholder-opacity-utility);
 @include apply-utility($text-colored-utility);
 @include apply-utility($text-opacity-utility);
 @include apply-utility($text-align-utility);
@@ -42,6 +40,7 @@
 @include apply-utility($font-style-utility);
 @include apply-utility($font-smooth-utility);
 @include apply-utility($line-height-utility);
+@include apply-utility($letter-spacing-utility);
 @include apply-utility($background-utility);
 @include apply-utility($background-gradient-utility);
 @include apply-utility($background-colored-utility);
@@ -84,7 +83,9 @@
 @include apply-utility($overflow-utility);
 @include apply-utility($overflow-touch-utility);
 @include apply-utility($overscroll-behavior-utility);
+@include apply-utility($scroll-snap-type-utility);
 @include apply-utility($float-utility);
+@include apply-utility($clear-utility);
 @include apply-utility($transition-utility);
 @include apply-utility($position-utility);
 @include apply-utility($position-directions-utility);
@@ -95,7 +96,7 @@
 @include apply-utility($transform-skew-utility);
 @include apply-utility($transform-origin-utility);
 @include apply-utility($transform-toggle-utility);
-@include apply-utility($transform-toggle-shown-utility);
+@include apply-utility($transform-toggle-active-utility);
 @include apply-utility($columns-utility);
 @include apply-utility($columns-gap-utility);
 @include apply-utility($flex-item-utility);
