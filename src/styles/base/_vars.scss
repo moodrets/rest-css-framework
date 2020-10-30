@@ -2103,40 +2103,40 @@ $transform-origin-utility: (
 
 $transform-toggle-utility: (
   properties: (
-    trf-fade: (
+    fade-start: (
       opacity: 0,
       visibility: hidden
     ),
-    trf-show: (
+    show-start: (
       opacity: 0,
       transition-duration: 0s,
       visibility: hidden
     ),
-    trf-scale-from-0: (
+    scale-0-start: (
       --scale-x: 0,
       --scale-y: 0,
       visibility: hidden
     ),
-    trf-scale-1-2: (
+    scale-1-2-start: (
       --scale-x: 1,
       --scale-y: 1,
     ),
-    trf-slide-left: (
+    slide-left-start: (
       --translate-x: -110%,
       opacity: 0,
       visibility: hidden
     ),
-    trf-slide-right: (
+    slide-right-start: (
       --translate-x: 110%,
       opacity: 0,
       visibility: hidden
     ),
-    trf-slide-top: (
+    slide-top-start: (
       --translate-y: -110%,
       opacity: 0,
       visibility: hidden
     ),
-    trf-slide-bottom: (
+    slide-bottom-start: (
       --translate-y: 110%,
       opacity: 0,
       visibility: hidden
@@ -2146,46 +2146,45 @@ $transform-toggle-utility: (
 
 $transform-toggle-active-utility: (
   properties: (
-    trf-fade: (
+    fade-end: (
       opacity: 1,
       visibility: visible
     ),
-    trf-show: (
+    show-end: (
       opacity: 1,
       transition-duration: 0s,
       visibility: visible
     ),
-    trf-scale-from-0: (
+    scale-0-end: (
       --scale-x: 1,
       --scale-y: 1,
       visibility: visible
     ),
-    trf-scale-1-2: (
+    scale-1-2-end: (
       --scale-x: 1.2,
       --scale-y: 1.2,
     ),
-    trf-slide-left: (
+    slide-left-end: (
       --translate-x: 0,
       opacity: 1,
       visibility: visible
     ),
-    trf-slide-right: (
+    slide-right-end: (
       --translate-x: 0,
       opacity: 1,
       visibility: visible
     ),
-    trf-slide-top: (
+    slide-top-end: (
       --translate-y: 0,
       opacity: 1,
       visibility: visible
     ),
-    trf-slide-bottom: (
+    slide-bottom-end: (
       --translate-y: 0,
       opacity: 1,
       visibility: visible
     )
   ),
-  only-pseudo: true,
   pseudo: (
     gh: group-hover,
     gf: group-focus,
