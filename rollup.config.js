@@ -1,4 +1,5 @@
-import svelte from 'rollup-plugin-svelte'
+import vuePlugin from 'rollup-plugin-vue'
+import alias from 'rollup-plugin-alias';
 import scss from 'rollup-plugin-scss'
 import html from 'rollup-plugin-generate-html-template'
 import resolve from '@rollup/plugin-node-resolve'
@@ -14,9 +15,17 @@ export default {
     format: 'iife',
   },
   plugins: [
-    svelte({
-      extensions: ['.svelte'],
-      emitCss: true,
+    alias({
+      resolve: [ '.js', '.ts'],
+      entries: [
+        {
+          find: 'vue',
+          replacement: 'node_modules/vue/dist/vue.runtime.esm-browser.js'
+        },
+      ]
+    }),
+    vuePlugin({
+      target: 'browser'
     }),
     resolve({
       browser: true,
@@ -32,6 +41,6 @@ export default {
       template: 'src/index.html',
       target: 'index.html',
     }),
-    svgToSymbol()
+    svgToSymbol(),
   ]
 }

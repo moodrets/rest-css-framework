@@ -61,11 +61,11 @@ $size-list: (
   320: 320px,
   480: 480px,
   // mandatory
-  100: 100%,
-  75: 75%,
-  50: 50%,
-  33: 33.33%,
-  25: 25%,
+  full: 100%,
+  75per: 75%,
+  50per: 50%,
+  33per: 33.33%,
+  25per: 25%,
   100vh: 100vh,
   75vh: 75vh,
   50vh: 50vh,
@@ -664,6 +664,9 @@ $background-colored-utility: (
   pseudo: (
     h: hover,
     f: focus,
+    a: active,
+    fw: focus-within,
+    fs: focus-visible,
   ),
   inherit: false,
 );
@@ -1351,7 +1354,7 @@ $shadow-types-utility: (
     in-4: unquote('inset rgba(0, 0, 0, 0.19) 0 10px 20px, inset rgba(0, 0, 0, 0.23) 0 6px 6px'),
     n: none,
   ),
-  responsive: false,
+  responsive: true,
   pseudo: (
     h: hover,
     f: focus,

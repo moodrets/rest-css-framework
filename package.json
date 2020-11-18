@@ -22,19 +22,19 @@
   "homepage": "https://moodrets.github.io/rest-css-framework/",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-html": "^0.2.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "@spaceavocado/svelte-router": "^1.0.16",
+    "@vue/compiler-sfc": "^3.0.2",
     "rollup": "^2.32.1",
+    "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-generate-html-template": "^1.7.0",
     "rollup-plugin-scss": "^2.6.1",
-    "rollup-plugin-svelte": "^6.1.0",
     "rollup-plugin-svg-sprite": "^1.0.0",
     "rollup-plugin-svg-to-symbol": "^1.0.0",
-    "svelte": "^3.29.4"
+    "rollup-plugin-vue": "^6.0.0-beta.11"
   },
   "dependencies": {
     "sirv-cli": "^1.0.8",
-    "svelte-spa-router": "^3.0.5"
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-rc.1"
   }
 }

@@ -1,11 +1,29 @@
-import Home from '../pages/Home.svelte'
-import Borders from '../pages/Borders.svelte'
-import Colors from '../pages/Colors.svelte'
+import { createWebHistory, createRouter } from 'vue-router/dist/vue-router.esm-browser'
+import Home from '../pages/Home.vue'
+import Borders from '../pages/Borders.vue'
+import Colors from '../pages/Colors.vue'
 
-const routes = {
-  '/': Home,
-  '/borders': Borders,
-  '/colors': Colors,
-}
+export const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/borders",
+    name: "Borders",
+    component: Borders,
+  },
+  {
+    path: "/colors",
+    name: "Colors",
+    component: Colors,
+  },
+];
 
-export default routes
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+})
+
+export default router
