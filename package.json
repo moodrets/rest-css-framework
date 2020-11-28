@@ -4,7 +4,6 @@
   "description": "Low-level css framework",
   "main": "rollup.config.js",
   "scripts": {
-    "start": "sirv dist",
     "dev": "rollup -c -w -m",
     "prod": "rollup -c",
     "predeploy": "rollup -c",
@@ -28,12 +27,12 @@
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-generate-html-template": "^1.7.0",
     "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-svg-sprite": "^1.0.0",
     "rollup-plugin-svg-to-symbol": "^1.0.0",
     "rollup-plugin-vue": "^6.0.0-beta.11"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.8",
     "vue": "^3.0.2",
     "vue-router": "^4.0.0-rc.1"
   }

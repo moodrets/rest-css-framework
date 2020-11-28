@@ -10,14 +10,14 @@ export const routes = [
     component: Home,
   },
   {
-    path: "/borders",
-    name: "Borders",
-    component: Borders,
-  },
-  {
     path: "/colors",
     name: "Colors",
     component: Colors,
+  },
+  {
+    path: "/borders",
+    name: "Borders",
+    component: Borders,
   },
 ];
 

@@ -5,6 +5,7 @@ import html from 'rollup-plugin-generate-html-template'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import svgToSymbol from 'rollup-plugin-svg-to-symbol'
+import serve from 'rollup-plugin-serve'
 
 const isProd = !process.env.ROLLUP_WATCH;
 
@@ -15,6 +16,11 @@ export default {
     format: 'iife',
   },
   plugins: [
+    serve({
+      open: false,
+      historyApiFallback: true,
+      contentBase: ['dist'],
+    }),
     alias({
       resolve: [ '.js', '.ts'],
       entries: [

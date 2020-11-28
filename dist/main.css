@@ -1829,13 +1829,13 @@ body {
   text-decoration: none ; }
 
 .td-u {
-  text-decoration: undeline ; }
+  text-decoration: underline ; }
 
 .td-u\:h:hover {
-  text-decoration: undeline ; }
+  text-decoration: underline ; }
 
 .td-u\:f:focus {
-  text-decoration: undeline ; }
+  text-decoration: underline ; }
 
 .td-o {
   text-decoration: overline ; }

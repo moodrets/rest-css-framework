@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Borders</h1>
+    <h1 class="mt-0">Borders</h1>
   </div>
 </template>
 

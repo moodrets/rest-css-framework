@@ -137,6 +137,37 @@
 	const isHTMLTag = /*#__PURE__*/ makeMap(HTML_TAGS);
 	const isSVGTag = /*#__PURE__*/ makeMap(SVG_TAGS);
 
+	/**
+	 * For converting {{ interpolation }} values to displayed strings.
+	 * @private
+	 */
+	const toDisplayString = (val) => {
+	    return val == null
+	        ? ''
+	        : isObject(val)
+	            ? JSON.stringify(val, replacer, 2)
+	            : String(val);
+	};
+	const replacer = (_key, val) => {
+	    if (isMap(val)) {
+	        return {
+	            [`Map(${val.size})`]: [...val.entries()].reduce((entries, [key, val]) => {
+	                entries[`${key} =>`] = val;
+	                return entries;
+	            }, {})
+	        };
+	    }
+	    else if (isSet(val)) {
+	        return {
+	            [`Set(${val.size})`]: [...val.values()]
+	        };
+	    }
+	    else if (isObject(val) && !isArray(val) && !isPlainObject(val)) {
+	        return String(val);
+	    }
+	    return val;
+	};
+
 	const EMPTY_OBJ =  Object.freeze({})
 	    ;
 	const EMPTY_ARR =  Object.freeze([]) ;
@@ -173,6 +204,7 @@
 	    // extract "RawType" from strings like "[object RawType]"
 	    return toTypeString(value).slice(8, -1);
 	};
+	const isPlainObject = (val) => toTypeString(val) === '[object Object]';
 	const isIntegerKey = (key) => isString(key) &&
 	    key !== 'NaN' &&
 	    key[0] !== '-' &&
@@ -4726,6 +4758,17 @@
 	function createTextVNode(text = ' ', flag = 0) {
 	    return createVNode(Text, null, text, flag);
 	}
+	/**
+	 * @private
+	 */
+	function createCommentVNode(text = '', 
+	// when used as the v-else branch, the comment node must be created as a
+	// block to ensure correct updates.
+	asBlock = false) {
+	    return asBlock
+	        ? (openBlock(), createBlock(Comment, null, text))
+	        : createVNode(Comment, null, text);
+	}
 	function normalizeVNode(child) {
 	    if (child == null || typeof child === 'boolean') {
 	        // empty placeholder
@@ -6025,6 +6068,46 @@
 	    }
 	}
 
+	/**
+	 * Actual implementation
+	 */
+	function renderList(source, renderItem) {
+	    let ret;
+	    if (isArray(source) || isString(source)) {
+	        ret = new Array(source.length);
+	        for (let i = 0, l = source.length; i < l; i++) {
+	            ret[i] = renderItem(source[i], i);
+	        }
+	    }
+	    else if (typeof source === 'number') {
+	        if ( !Number.isInteger(source)) {
+	            warn(`The v-for range expect an integer value but got ${source}.`);
+	            return [];
+	        }
+	        ret = new Array(source);
+	        for (let i = 0; i < source; i++) {
+	            ret[i] = renderItem(i + 1, i);
+	        }
+	    }
+	    else if (isObject(source)) {
+	        if (source[Symbol.iterator]) {
+	            ret = Array.from(source, renderItem);
+	        }
+	        else {
+	            const keys = Object.keys(source);
+	            ret = new Array(keys.length);
+	            for (let i = 0, l = keys.length; i < l; i++) {
+	                const key = keys[i];
+	                ret[i] = renderItem(source[key], key, i);
+	            }
+	        }
+	    }
+	    else {
+	        ret = [];
+	    }
+	    return ret;
+	}
+
 	// Core API ------------------------------------------------------------------
 	const version = "3.0.2";
 
@@ -6518,56 +6601,6 @@
 
 	script.render = render;
 	script.__file = "src/js/components/Header.vue";
-
-	var script$1 = {
-	    components: {
-	      Header: script
-	    }
-	  };
-
-	const _hoisted_1$1 = { class: "container mx-a px-4 px-6:lg" };
-	const _hoisted_2$1 = { class: "case ml-8-neg:lg" };
-	const _hoisted_3$1 = /*#__PURE__*/createVNode("aside", { class: "cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg" }, null, -1 /* HOISTED */);
-	const _hoisted_4$1 = { class: "cell cell-12 cell-9:lg pl-8:lg" };
-
-	function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-	  const _component_Header = resolveComponent("Header");
-	  const _component_router_view = resolveComponent("router-view");
-
-	  return (openBlock(), createBlock(Fragment, null, [
-	    createVNode(_component_Header),
-	    createVNode("section", _hoisted_1$1, [
-	      createVNode("div", _hoisted_2$1, [
-	        _hoisted_3$1,
-	        createVNode("main", _hoisted_4$1, [
-	          createVNode(_component_router_view)
-	        ])
-	      ])
-	    ])
-	  ], 64 /* STABLE_FRAGMENT */))
-	}
-
-	script$1.render = render$1;
-	script$1.__file = "src/js/App.vue";
-
-	var script$2 = {
-	    props: ['addClass', 'name']
-	  };
-
-	function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-	  return (openBlock(), createBlock("div", {
-	    class: ["svg-icon", $props.addClass]
-	  }, [
-	    (openBlock(), createBlock("svg", null, [
-	      createVNode("use", {
-	        "xlink:href": '#'+$props.name
-	      }, null, 8 /* PROPS */, ["xlink:href"])
-	    ]))
-	  ], 2 /* CLASS */))
-	}
-
-	script$2.render = render$2;
-	script$2.__file = "src/js/components/Icon.vue";
 
 	/*!
 	  * vue-router v4.0.0-rc.1
@@ -9160,66 +9193,178 @@
 	    return [leavingRecords, updatingRecords, enteringRecords];
 	}
 
-	var script$3 = {
+	var script$1 = {
 
 	  };
 
-	const _hoisted_1$2 = /*#__PURE__*/createVNode("h1", null, "Home", -1 /* HOISTED */);
+	const _hoisted_1$1 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Rest Css Framework", -1 /* HOISTED */);
 
-	function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+	function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+	  return (openBlock(), createBlock("div", null, [
+	    _hoisted_1$1
+	  ]))
+	}
+
+	script$1.render = render$1;
+	script$1.__file = "src/js/pages/Home.vue";
+
+	var script$2 = {
+
+	  };
+
+	const _hoisted_1$2 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Borders", -1 /* HOISTED */);
+
+	function render$2(_ctx, _cache, $props, $setup, $data, $options) {
 	  return (openBlock(), createBlock("div", null, [
 	    _hoisted_1$2
 	  ]))
 	}
 
+	script$2.render = render$2;
+	script$2.__file = "src/js/pages/Borders.vue";
+
+	const cssVars = [...document.styleSheets]
+	  .filter(sheet => sheet.href === null || sheet.href.includes('main'))
+	  .reduce((acc, sheet) => (acc = [
+	    ...acc,
+	    ...[...sheet.cssRules].reduce((def, rule) => (def = rule.selectorText === ':root' ? [...def, ...[...rule.style].filter(name => name.startsWith("--"))]: def), [])
+	  ]),[]);
+
+	const cssColorVars = cssVars.filter(variable => variable.includes('--color'));
+
+	var script$3 = {
+	    setup(){
+
+	      const colors = cssColorVars;
+	      const colorValue = ref(['txt', 'text']);
+	      const statesValue = ref(['', 'default']);
+	      const colorUtilities = reactive([
+	        {value: 'txt', text: 'text'},
+	        {value: 'bg', text: 'background'},
+	        {value: 'sh', text: 'shadow'},
+	        {value: 'bdr', text: 'border'},
+	      ]);
+
+	      const states = reactive([
+	        {value: '', text: 'default'},
+	        {value: ':h', text: 'hover'},
+	        {value: ':f', text: 'focus'},
+	        {value: ':fw', text: 'focus-within'},
+	        {value: ':fv', text: 'focus-visible'},
+	        {value: ':pl', text: 'placeholder'},
+	      ]);
+
+	      const changeUtilies = e => {
+	        colorValue.value = e;
+	      };
+
+	      const changeState = e => {
+	        statesValue.value = e;
+	      };
+
+	      return {
+	        colors,
+	        colorValue,
+	        colorUtilities,
+	        changeUtilies,
+	        states,
+	        statesValue,
+	        changeState
+	      }
+	    }
+	  };
+
+	const _hoisted_1$3 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Colors", -1 /* HOISTED */);
+	const _hoisted_2$1 = /*#__PURE__*/createVNode("div", { class: "mb-8" }, [
+	  /*#__PURE__*/createVNode("p", null, [
+	    /*#__PURE__*/createTextVNode("Expand or replace colors list in file "),
+	    /*#__PURE__*/createVNode("strong", { class: "txt-info-2 font-we-700" }, "_vars.scss")
+	  ])
+	], -1 /* HOISTED */);
+	const _hoisted_3$1 = { class: "case case-cells-1 case-cells-2:md mb-8 ml-5-neg" };
+	const _hoisted_4$1 = { class: "cell pl-5 pb-5" };
+	const _hoisted_5 = { class: "cell pl-5 pb-5" };
+	const _hoisted_6 = { class: "case case-cells-1 case-cells-3:md ai-c" };
+	const _hoisted_7 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_8 = { class: "font-we-500" };
+	const _hoisted_9 = { class: "txt-success" };
+	const _hoisted_10 = { class: "txt-primary" };
+	const _hoisted_11 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_12 = { class: "cell pb-3 pb-0:md" };
+
+	function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+	  const _component_rs_select = resolveComponent("rs-select");
+
+	  return (openBlock(), createBlock(Fragment, null, [
+	    _hoisted_1$3,
+	    _hoisted_2$1,
+	    createVNode("div", _hoisted_3$1, [
+	      createVNode("div", _hoisted_4$1, [
+	        createVNode(_component_rs_select, {
+	          title: "Color utility",
+	          titleColor: "success",
+	          items: $setup.colorUtilities,
+	          onSelectValueChange: $setup.changeUtilies
+	        }, null, 8 /* PROPS */, ["items", "onSelectValueChange"])
+	      ]),
+	      createVNode("div", _hoisted_5, [
+	        createVNode(_component_rs_select, {
+	          title: "Color states",
+	          titleColor: "primary",
+	          link: "/states",
+	          linkText: "Pseudo",
+	          items: $setup.states,
+	          onSelectValueChange: $setup.changeState
+	        }, null, 8 /* PROPS */, ["items", "onSelectValueChange"])
+	      ])
+	    ]),
+	    (openBlock(true), createBlock(Fragment, null, renderList($setup.colors, (color) => {
+	      return (openBlock(), createBlock("div", {
+	        class: "sh-1 p-2 mb-3",
+	        key: color
+	      }, [
+	        createVNode("div", _hoisted_6, [
+	          createVNode("div", _hoisted_7, [
+	            createVNode("div", _hoisted_8, [
+	              createVNode("span", _hoisted_9, "." + toDisplayString($setup.statesValue[0] !== ':pl' ? $setup.colorValue[0] : 'txt'), 1 /* TEXT */),
+	              createTextVNode("-" + toDisplayString(_ctx.$filters.cssVarName(color, '--color-')), 1 /* TEXT */),
+	              createVNode("span", _hoisted_10, toDisplayString($setup.statesValue[0]), 1 /* TEXT */)
+	            ])
+	          ]),
+	          createVNode("div", _hoisted_11, [
+	            createVNode("div", {
+	              class: ["sz-4 sh-1 rds-round mr-4", 'bg-'+_ctx.$filters.cssVarName(color, '--color-')]
+	            }, null, 2 /* CLASS */)
+	          ]),
+	          createVNode("div", _hoisted_12, [
+	            createVNode("div", {
+	              class: 'txt-'+_ctx.$filters.cssVarName(color, '--color-')
+	            }, toDisplayString(_ctx.$filters.cssVarName(color, '--color-')), 3 /* TEXT, CLASS */)
+	          ])
+	        ])
+	      ]))
+	    }), 128 /* KEYED_FRAGMENT */))
+	  ], 64 /* STABLE_FRAGMENT */))
+	}
+
 	script$3.render = render$3;
-	script$3.__file = "src/js/pages/Home.vue";
-
-	var script$4 = {
-
-	  };
-
-	const _hoisted_1$3 = /*#__PURE__*/createVNode("h1", null, "Borders", -1 /* HOISTED */);
-
-	function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-	  return (openBlock(), createBlock("div", null, [
-	    _hoisted_1$3
-	  ]))
-	}
-
-	script$4.render = render$4;
-	script$4.__file = "src/js/pages/Borders.vue";
-
-	var script$5 = {
-
-	  };
-
-	const _hoisted_1$4 = /*#__PURE__*/createVNode("h1", null, "Colors", -1 /* HOISTED */);
-
-	function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-	  return (openBlock(), createBlock("div", null, [
-	    _hoisted_1$4
-	  ]))
-	}
-
-	script$5.render = render$5;
-	script$5.__file = "src/js/pages/Colors.vue";
+	script$3.__file = "src/js/pages/Colors.vue";
 
 	const routes = [
 	  {
 	    path: "/",
 	    name: "Home",
+	    component: script$1,
+	  },
+	  {
+	    path: "/colors",
+	    name: "Colors",
 	    component: script$3,
 	  },
 	  {
 	    path: "/borders",
 	    name: "Borders",
-	    component: script$4,
-	  },
-	  {
-	    path: "/colors",
-	    name: "Colors",
-	    component: script$5,
+	    component: script$2,
 	  },
 	];
 
@@ -9228,11 +9373,179 @@
 	  routes,
 	});
 
+	var script$4 = {
+	    setup(){
+
+	      const routesMenu = reactive(routes);
+
+	      return {
+	        routesMenu
+	      }
+	    }
+	  };
+
+	const _hoisted_1$4 = {
+	  class: "rs-aside-menu d-f fd-c ai-fe ov-y-a pos-sti pos-t-13 pr-3",
+	  style: {"height":"calc(100vh - 110px)"}
+	};
+
+	function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+	  const _component_router_link = resolveComponent("router-link");
+
+	  return (openBlock(), createBlock("div", _hoisted_1$4, [
+	    (openBlock(true), createBlock(Fragment, null, renderList($setup.routesMenu, (route) => {
+	      return (openBlock(), createBlock(_component_router_link, {
+	        class: "font-we-500 txt-r font-sz-15 mb-4 py-2 bdr-b bdr-b-wd-2 bdr-primary bdr-dark:h d-b txt-primary txt-primary:v td-n",
+	        key: route.name,
+	        to: route.path
+	      }, {
+	        default: withCtx(() => [
+	          createTextVNode(toDisplayString(route.name), 1 /* TEXT */)
+	        ]),
+	        _: 2
+	      }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"]))
+	    }), 128 /* KEYED_FRAGMENT */))
+	  ]))
+	}
+
+	script$4.render = render$4;
+	script$4.__file = "src/js/components/Aside.vue";
+
+	var script$5 = {
+	    components: {
+	      Header: script,
+	      Aside: script$4
+	    }
+	  };
+
+	const _hoisted_1$5 = { class: "pb-9" };
+	const _hoisted_2$2 = { class: "container mx-a px-4 px-6:lg font-sz-16" };
+	const _hoisted_3$2 = { class: "case ml-8-neg:lg" };
+	const _hoisted_4$2 = { class: "cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg" };
+	const _hoisted_5$1 = { class: "cell cell-12 cell-9:lg pl-8:lg" };
+
+	function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+	  const _component_Header = resolveComponent("Header");
+	  const _component_Aside = resolveComponent("Aside");
+	  const _component_router_view = resolveComponent("router-view");
+
+	  return (openBlock(), createBlock("div", _hoisted_1$5, [
+	    createVNode(_component_Header),
+	    createVNode("section", _hoisted_2$2, [
+	      createVNode("div", _hoisted_3$2, [
+	        createVNode("aside", _hoisted_4$2, [
+	          createVNode(_component_Aside)
+	        ]),
+	        createVNode("main", _hoisted_5$1, [
+	          createVNode(_component_router_view)
+	        ])
+	      ])
+	    ])
+	  ]))
+	}
+
+	script$5.render = render$5;
+	script$5.__file = "src/js/App.vue";
+
+	var script$6 = {
+	    props: ['addClass', 'name']
+	  };
+
+	function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+	  return (openBlock(), createBlock("div", {
+	    class: ["svg-icon", $props.addClass]
+	  }, [
+	    (openBlock(), createBlock("svg", null, [
+	      createVNode("use", {
+	        "xlink:href": '#'+$props.name
+	      }, null, 8 /* PROPS */, ["xlink:href"])
+	    ]))
+	  ], 2 /* CLASS */))
+	}
+
+	script$6.render = render$6;
+	script$6.__file = "src/js/components/Icon.vue";
+
+	var script$7 = {
+	    props: [
+	      'items',
+	      'title',
+	      'titleColor',
+	      'link',
+	      'linkText'
+	    ],
+	    emits: ['selectValueChange'],
+	    setup(props, ctx){
+
+	      const selectOptions = reactive(props.items);
+
+	      const changeSelect = e => {
+	        ctx.emit('selectValueChange', [e.target.value, e.target.options[e.target.selectedIndex].text]);
+	      };
+
+	      return {
+	        selectOptions,
+	        changeSelect
+	      }
+	    }
+	  };
+
+	const _hoisted_1$6 = { class: "d-f fw-wr mb-3" };
+	const _hoisted_2$3 = { key: 0 };
+
+	function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+	  const _component_router_link = resolveComponent("router-link");
+
+	  return (openBlock(), createBlock(Fragment, null, [
+	    createVNode("div", _hoisted_1$6, [
+	      createVNode("strong", {
+	        class: ["mr-4", `txt-${$props.titleColor}`]
+	      }, toDisplayString($props.title), 3 /* TEXT, CLASS */),
+	      ($props.link)
+	        ? (openBlock(), createBlock("span", _hoisted_2$3, [
+	            createVNode(_component_router_link, {
+	              to: $props.link,
+	              class: "td-n td-u:h txt-theme-1"
+	            }, {
+	              default: withCtx(() => [
+	                createTextVNode("(" + toDisplayString($props.linkText) + ")", 1 /* TEXT */)
+	              ]),
+	              _: 1
+	            }, 8 /* PROPS */, ["to"])
+	          ]))
+	        : createCommentVNode("v-if", true)
+	    ]),
+	    createVNode("select", {
+	      class: "p-4 bdr bdr-wd-2 bdr-secondary bdr-primary:f rds-5 out-n wd-full",
+	      onChange: _cache[1] || (_cache[1] = (...args) => ($setup.changeSelect(...args)))
+	    }, [
+	      (openBlock(true), createBlock(Fragment, null, renderList($setup.selectOptions, (item) => {
+	        return (openBlock(), createBlock("option", {
+	          value: item.value,
+	          key: item.value
+	        }, toDisplayString(item.text), 9 /* TEXT, PROPS */, ["value"]))
+	      }), 128 /* KEYED_FRAGMENT */))
+	    ], 32 /* HYDRATE_EVENTS */)
+	  ], 64 /* STABLE_FRAGMENT */))
+	}
+
+	script$7.render = render$7;
+	script$7.__file = "src/js/components/Select.vue";
+
 	document.body.insertAdjacentHTML('beforeEnd', sprite);
-	const app = createApp(script$1);
-	app.component('svg-icon', script$2);
+	const app = createApp(script$5);
+
+	app.component('svg-icon', script$6);
+	app.component('rs-select', script$7);
 
 	app.use(router).mount("#framework-app");
+
+	// filters
+	app.config.globalProperties.$filters = {
+	  cssVarName(value, removeablePrefix){
+	    return value.replace(removeablePrefix, '')
+	  }
+	};
 
 }());
 //# sourceMappingURL=main.js.map
