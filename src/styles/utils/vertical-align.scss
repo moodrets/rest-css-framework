@@ -1,0 +1,33 @@
+$vertical-align-utility: (
+  properties: (
+    va: vertical-align,
+  ),
+  values: (
+    t: top,
+    b: bottom,
+    m: middle,
+    tt: text-top,
+    tb: text-bottom,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$vertical-align-childs-utility: (
+  properties: (
+    va: vertical-align,
+  ),
+  values: (
+    t-ch: top,
+    b-ch: bottom,
+    m-ch: middle,
+    tt-ch: text-top,
+    tb-ch: text-bottom,
+  ),
+  child: unquote('> *'),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($vertical-align-utility);
+@include apply-utility($vertical-align-childs-utility);

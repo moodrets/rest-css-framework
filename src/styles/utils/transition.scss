@@ -1,0 +1,14 @@
+$transition-utility: (
+  properties: (
+    trs: transition,
+  ),
+  values: (
+    '03': all .3s,
+    '05': all .5s,
+    '07': all .7s,
+    '1': all 1s,
+  ),
+  responsive: true,
+);
+
+@include apply-utility($transition-utility);

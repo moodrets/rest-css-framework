@@ -1,0 +1,29 @@
+$margin-utility: (
+  properties: (
+    m: margin,
+    mt: margin-top,
+    ml: margin-left,
+    mr: margin-right,
+    mb: margin-bottom,
+    my: (
+      margin-top,
+      margin-bottom,
+    ),
+    mx: (
+      margin-left,
+      margin-right,
+    ),
+  ),
+  // from _vars.scss
+  values: map-merge(
+    map-merge(
+      $spacing-list,
+      $spacing-negative-list,
+    ),
+    (a: auto)
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($margin-utility);

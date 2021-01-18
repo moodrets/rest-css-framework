@@ -1,0 +1,14 @@
+$user-select-utility: (
+  properties: (
+    us: user-select,
+  ),
+  values: (
+    all: all,
+    txt: text,
+    n: none,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($user-select-utility);

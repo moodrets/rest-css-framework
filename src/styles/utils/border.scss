@@ -1,0 +1,146 @@
+$border-color-list: ();
+@each $color, $value in $color-list {
+  $border-color-list: map-merge($border-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--border-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+}
+
+$border-utility: (
+  properties: (
+    bdr: border,
+    bdr-t: border-top,
+    bdr-l: border-left,
+    bdr-r: border-right,
+    bdr-b: border-bottom,
+    bdr-y: (
+      border-left,
+      border-right,
+    ),
+    bdr-x: (
+      border-top,
+      border-bottom,
+    ),
+  ),
+  values: (
+    '': 1px solid var(--border-color),
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$border-width-utility: (
+  properties: (
+    bdr: border-width,
+    bdr-t: border-top-width,
+    bdr-l: border-left-width,
+    bdr-r: border-right-width,
+    bdr-b: border-bottom-width,
+    bdr-y: (
+      border-left-width,
+      border-right-width,
+    ),
+    bdr-x: (
+      border-top-width,
+      border-bottom-width,
+    ),
+  ),
+  values: (
+    wd-1: 1px,
+    wd-2: 2px,
+    wd-3: 3px,
+    wd-4: 4px,
+    wd-5: 5px,
+    wd-6: 6px,
+    wd-7: 7px,
+    wd-8: 8px,
+    wd-9: 9px,
+    wd-10: 10px,
+    wd-11: 11px,
+    wd-12: 12px,
+    wd-0: 0,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+$border-style-utility: (
+  properties: (
+    bdr: border-style,
+    bdr-t: border-top-style,
+    bdr-l: border-left-style,
+    bdr-r: border-right-style,
+    bdr-b: border-bottom-style,
+    bdr-y: (
+      border-left-style,
+      border-right-style,
+    ),
+    bdr-x: (
+      border-top-style,
+      border-bottom-style,
+    ),
+  ),
+  values: (
+    dsh: dashed,
+    dt: dotted,
+    sl: solid,
+  ),
+  responsive: true,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$border-colored-utility: (
+  properties: (
+    bdr: --border-color,
+  ),
+  values: $border-color-list,
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+  ),
+  inherit: false,
+);
+
+$border-opacity-utility: (
+  properties: (
+    bdr-op: --border-opacity,
+  ),
+  values: $opacity-list, // from _vars.scss
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  inherit: false,
+);
+
+$border-collapse-utility: (
+  properties: (
+    bc: border-collapse,
+  ),
+  values: (
+    s: separate,
+    c: collapse,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($border-collapse-utility);
+@include apply-utility($border-utility);
+@include apply-utility($border-width-utility);
+@include apply-utility($border-style-utility);
+@include apply-utility($border-opacity-utility);
+@include apply-utility($border-colored-utility);
+@include apply-utility($border-collapse-utility);

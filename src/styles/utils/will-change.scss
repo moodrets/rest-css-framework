@@ -1,0 +1,20 @@
+$will-change-utility: (
+  properties: (
+    wl-ch: will-change,
+  ),
+  values: (
+    a: auto,
+    sc: scroll-position,
+    cn: contents,
+    tr: transform,
+    op: opacity,
+    l: left,
+    t: top,
+    r: right,
+    b: bottom,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($will-change-utility);

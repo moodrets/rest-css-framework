@@ -1,0 +1,30 @@
+$width-utility: (
+  properties: (
+    wd: width,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+$max-width-utility: (
+  properties: (
+    max-wd: max-width,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+$min-width-utility: (
+  properties: (
+    min-wd: min-width,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($width-utility);
+@include apply-utility($max-width-utility);
+@include apply-utility($min-width-utility);

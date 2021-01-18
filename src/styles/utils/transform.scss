@@ -1,0 +1,225 @@
+$transform-utility: (
+  properties: (
+    trf: (
+      --rotate: 0,
+      --translate-x: 0,
+      --translate-y: 0,
+      --scale-x: 1,
+      --scale-y: 1,
+      --skew-x: 0,
+      --skew-y: 0,
+      transform: translate3d(var(--translate-x), var(--translate-y), 0) rotate(var(--rotate)) skewX(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y)),
+    )
+  ),
+);
+
+$transform-scale-utility: (
+  properties: (
+    trf-sc-x: (
+      --scale-x,
+    ),
+    trf-sc-y: (
+      --scale-y,
+    ),
+    trf-sc: (
+      --scale-x,
+      --scale-y,
+    ),
+  ),
+  values: (
+    1: 1,
+    '1-1': 1.1,
+    '1-2': 1.2,
+    '1-3': 1.3,
+    '1-4': 1.4,
+    '1-5': 1.5,
+    0: 0,
+  ),
+  responsive: true,
+  pseudo: (
+    h: hover,
+  )
+);
+
+$transform-translate-utility: (
+  properties: (
+    trf-tr-x: (
+      --translate-x,
+    ),
+    trf-tr-y: (
+      --translate-y,
+    ),
+    trf-tr: (
+      --translate-y,
+      --translate-x,
+    ),
+  ),
+  values: (
+    50: 50%,
+    100: 100%,
+    50-neg: -50%,
+    100-neg: -100%,
+    0: 0,
+  ),
+  responsive: true,
+);
+
+$transform-rotate-utility: (
+  properties: (
+    trf-rt: (
+      --rotate,
+    ),
+  ),
+  values: (
+    45: 45deg,
+    90: 45deg,
+    180: 45deg,
+    45-neg: 45deg,
+    90-neg: 45deg,
+    180-neg: 45deg,
+    0: 0,
+  ),
+  responsive: true,
+);
+
+$transform-skew-utility: (
+  properties: (
+    trf-sk-x: (
+      --skew-x,
+    ),
+    trf-sk-y: (
+      --skew-y,
+    ),
+    trf-sk: (
+      --skew-y,
+      --skew-x,
+    ),
+  ),
+  values: (
+    3: 3deg,
+    6: 6deg,
+    9: 6deg,
+    3-neg: -3deg,
+    6-neg: -6deg,
+    9-neg: -9deg,
+    0: 0,
+  ),
+  responsive: true,
+);
+
+$transform-origin-utility: (
+  properties: (
+    trf-or: transform-origin,
+  ),
+  values: (
+    c: center,
+    t: top,
+    b: bottom,
+    l: left,
+    r: right,
+    tl: top left,
+    tr: top right,
+    bl: bottom left,
+    br: bottom right,
+  ),
+  responsive: true,
+);
+
+$transform-toggle-utility: (
+  properties: (
+    fade-start: (
+      opacity: 0,
+      visibility: hidden
+    ),
+    show-start: (
+      opacity: 0,
+      transition-duration: 0s,
+      visibility: hidden
+    ),
+    scale-start: (
+      --scale-x: 0,
+      --scale-y: 0,
+      visibility: hidden
+    ),
+    scale-1-2-start: (
+      --scale-x: 1,
+      --scale-y: 1,
+    ),
+    slide-left-start: (
+      --translate-x: -110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    slide-right-start: (
+      --translate-x: 110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    slide-top-start: (
+      --translate-y: -110%,
+      opacity: 0,
+      visibility: hidden
+    ),
+    slide-bottom-start: (
+      --translate-y: 110%,
+      opacity: 0,
+      visibility: hidden
+    )
+  ),
+);
+
+$transform-toggle-active-utility: (
+  properties: (
+    fade-end: (
+      opacity: 1,
+      visibility: visible
+    ),
+    show-end: (
+      opacity: 1,
+      transition-duration: 0s,
+      visibility: visible
+    ),
+    scale-end: (
+      --scale-x: 1,
+      --scale-y: 1,
+      visibility: visible
+    ),
+    scale-1-2-end: (
+      --scale-x: 1.2,
+      --scale-y: 1.2,
+    ),
+    slide-left-end: (
+      --translate-x: 0,
+      opacity: 1,
+      visibility: visible
+    ),
+    slide-right-end: (
+      --translate-x: 0,
+      opacity: 1,
+      visibility: visible
+    ),
+    slide-top-end: (
+      --translate-y: 0,
+      opacity: 1,
+      visibility: visible
+    ),
+    slide-bottom-end: (
+      --translate-y: 0,
+      opacity: 1,
+      visibility: visible
+    )
+  ),
+  pseudo: (
+    gh: group-hover,
+    gf: group-focus,
+    ga: group-active,
+  ),
+);
+
+@include apply-utility($transform-utility);
+@include apply-utility($transform-scale-utility);
+@include apply-utility($transform-translate-utility);
+@include apply-utility($transform-skew-utility);
+@include apply-utility($transform-origin-utility);
+@include apply-utility($transform-toggle-utility);
+@include apply-utility($transform-toggle-active-utility);

@@ -1,0 +1,213 @@
+$shadow-color-list: ();
+@each $color, $value in $color-list {
+  $shadow-color-list: map-merge($shadow-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--shadow-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+}
+
+$shadow-utility: (
+  properties: (
+    sh: (
+      --shadow-x: 0,
+      --shadow-y: 0,
+      --shadow-scattering: 0,
+      --shadow-width: 2px,
+      --shadow-color: #000,
+      --shadow-opacity: 1,
+      box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-scattering) var(--shadow-width) var(--shadow-color),
+    )
+  ),
+  responsive: false,
+);
+
+$shadow-colored-utility: (
+  properties: (
+    sh: --shadow-color,
+  ),
+  values: $shadow-color-list,
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$shadow-scattering-utility: (
+  properties: (
+    sh-sc: --shadow-scattering,
+  ),
+  values: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    0: 0,
+  ),
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$shadow-horizonal-utility: (
+  properties: (
+    sh-x: --shadow-x,
+  ),
+  values: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    0: 0,
+  ),
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$shadow-vertical-utility: (
+  properties: (
+    sh-y: --shadow-y,
+  ),
+  values: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    0: 0,
+  ),
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$shadow-width-utility: (
+  properties: (
+    sh-wd: --shadow-width,
+  ),
+  values: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    0: 0,
+  ),
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: false,
+);
+
+$shadow-opacity-utility: (
+  properties: (
+    sh-op: --shadow-opacity,
+  ),
+  values: $opacity-list, // from _vars.scss
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  inherit: false,
+);
+
+$shadow-types-utility: (
+  properties: (
+    sh: box-shadow,
+  ),
+  values: (
+    1: unquote('rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px'),
+    2: unquote('rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px'),
+    3: unquote('rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px'),
+    4: unquote('rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px'),
+    in-1: unquote('inset rgba(50, 50, 93, 0.25) 0 2px 5px -1px, inset rgba(0, 0, 0, 0.3) 0 1px 3px -1px'),
+    in-2: unquote('inset rgba(50, 50, 93, 0.25) 0 6px 12px -2px, inset rgba(0, 0, 0, 0.3) 0 3px 7px -3px'),
+    in-3: unquote('inset rgba(50, 50, 93, 0.25) 0 13px 27px -5px, inset rgba(0, 0, 0, 0.3) 0 8px 16px -8px'),
+    in-4: unquote('inset rgba(0, 0, 0, 0.19) 0 10px 20px, inset rgba(0, 0, 0, 0.23) 0 6px 6px'),
+    n: none,
+  ),
+  responsive: true,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+  inherit: true,
+);
+
+@include apply-utility($shadow-utility);
+@include apply-utility($shadow-types-utility);
+@include apply-utility($shadow-colored-utility);
+@include apply-utility($shadow-scattering-utility);
+@include apply-utility($shadow-horizonal-utility);
+@include apply-utility($shadow-vertical-utility);
+@include apply-utility($shadow-width-utility);
+@include apply-utility($shadow-opacity-utility);

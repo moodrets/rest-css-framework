@@ -1,0 +1,147 @@
+$background-color-list: ();
+@each $color, $value in $color-list {
+  $background-color-list: map-merge($background-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--background-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+}
+
+$background-utility: (
+  properties: (
+    bg: background,
+  ),
+  values: (
+    n: none,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+$background-gradient-utility: (
+  properties: (
+    bg-gr: background-image,
+  ),
+  values: (
+    primary: unquote('linear-gradient(#00bfff, #009acd)'),
+    secondary: unquote('linear-gradient(#e0e0e0, #a0a0a0)'),
+    success: unquote('linear-gradient(#00BF32, #167C0C)'),
+    warning: unquote('linear-gradient(#FFAF2D, #C15A0D)'),
+    info: unquote('linear-gradient(#87ceff, #6ca6cd)'),
+    danger: unquote('linear-gradient(#ff4040, #cd3333)'),
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+$background-colored-utility: (
+  properties: (
+    bg: background-color,
+  ),
+  values: $background-color-list, // from _vars.scs
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    a: active,
+    fw: focus-within,
+    fs: focus-visible,
+  ),
+  inherit: false,
+);
+
+$background-opacity-utility: (
+  properties: (
+    bg-op: --background-opacity,
+  ),
+  values: $opacity-list, // from _vars.scss
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  inherit: false,
+);
+
+$background-position-utility: (
+  properties: (
+    bg-pos: background-position,
+  ),
+  values: (
+    t: top,
+    b: bottom,
+    l: left,
+    r: right,
+    c: center,
+    lt: left top,
+    lb: left right,
+    rt: right top,
+    rb: right bottom,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$background-attachment-utility: (
+  properties: (
+    bg-att: background-attachment,
+  ),
+  values: (
+    sc: scroll,
+    lc: local,
+    fx: fixed,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$background-repeat-utility: (
+  properties: (
+    bg-rep: background-repeat,
+  ),
+  values: (
+    '': repeat,
+    x: repeat-y,
+    y: repeat-x,
+    nr: no-repeat,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$background-size-utility: (
+  properties: (
+    bg-sz: background-size,
+  ),
+  values: (
+    cv: cover,
+    cn: contain,
+    a: auto,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$background-clip-utility: (
+  properties: (
+    bg-cl: background-clip,
+  ),
+  values: (
+    bb: border-box,
+    pb: padding-box,
+    cb: content-box,
+    txt: text,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($background-utility);
+@include apply-utility($background-gradient-utility);
+@include apply-utility($background-colored-utility);
+@include apply-utility($background-opacity-utility);
+@include apply-utility($background-position-utility);
+@include apply-utility($background-attachment-utility);
+@include apply-utility($background-repeat-utility);
+@include apply-utility($background-size-utility);
+@include apply-utility($background-clip-utility);

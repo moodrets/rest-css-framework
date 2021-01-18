@@ -1,0 +1,13 @@
+$visibility-utility: (
+  properties: (
+    vs: visibility,
+  ),
+  values: (
+    h: hidden,
+    v: visible,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+@include apply-utility($visibility-utility);

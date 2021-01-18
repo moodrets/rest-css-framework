@@ -1,0 +1,19 @@
+$contain-utility: (
+  properties: (
+    cnt: contain,
+  ),
+  values: (
+    l: layout,
+    c: content,
+    p: paint,
+    sz: size,
+    stl: style,
+    str: strict,
+    n: none,
+  ),
+  responsive: false,
+  important: false,
+  inherit: false,
+);
+
+@include apply-utility($contain-utility);

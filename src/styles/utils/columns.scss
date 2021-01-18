@@ -1,0 +1,35 @@
+$columns-utility: (
+  properties: (
+    clm: columns,
+  ),
+  values: (
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    10: 10,
+    11: 11,
+    12: 12,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+$columns-gap-utility: (
+  properties: (
+    clm-gap: column-gap,
+  ),
+  values: map-merge($spacing-list, (
+    nl: normal,
+  )),
+  responsive: true,
+  inherit: false,
+);
+
+@include apply-utility($columns-utility);
+@include apply-utility($columns-gap-utility);

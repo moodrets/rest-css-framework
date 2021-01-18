@@ -1,0 +1,151 @@
+$font-size-utility: (
+  properties: (
+    font-sz: font-size,
+  ),
+  values: (
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    13: 13px,
+    14: 14px,
+    15: 15px,
+    16: 16px,
+    17: 17px,
+    18: 18px,
+    19: 19px,
+    20: 20px,
+    21: 21px,
+    22: 22px,
+    23: 23px,
+    24: 24px,
+    25: 25px,
+    26: 26px,
+    27: 27px,
+    28: 28px,
+    29: 29px,
+    30: 30px,
+    0: 0,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$font-weight-utility: (
+  properties: (
+    font-we: font-weight,
+  ),
+  values: (
+    100: 100,
+    200: 200,
+    300: 300,
+    400: 400,
+    500: 500,
+    600: 600,
+    700: 700,
+    800: 800,
+    900: 900,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$font-style-utility: (
+  properties: (
+    font-st: font-style,
+  ),
+  values: (
+    i: italic,
+    n: normal,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+$font-smooth-utility: (
+  properties: (
+    font-smooth: (
+      -webkit-font-smoothing: antialiased,
+      -moz-osx-font-smoothing: grayscale,
+    ),
+    font-smooth-a: (
+      -webkit-font-smoothing: auto,
+      -moz-osx-font-smoothing: auto,
+    )
+  ),
+);
+
+$font-family-utility: (
+  properties: (
+    font: font-family,
+  ),
+  values: (
+    base: var(--font-family-base),
+    secondary: var(--font-family-secondary),
+  ),
+  responsive: false,
+);
+
+$line-height-utility: (
+  properties: (
+    lh: line-height,
+  ),
+  values: (
+    '1': 1,
+    '1-1': 1.1,
+    '1-2': 1.2,
+    '1-3': 1.3,
+    '1-4': 1.4,
+    '1-5': 1.5,
+    '1-6': 1.6,
+    '1-7': 1.7,
+    '1-8': 1.8,
+    '1-9': 1.9,
+    '2': 2,
+    10: 10px,
+    11: 11px,
+    12: 12px,
+    13: 13px,
+    14: 14px,
+    15: 15px,
+    16: 16px,
+    17: 17px,
+    18: 18px,
+    19: 19px,
+    20: 20px,
+    21: 21px,
+    22: 22px,
+    23: 23px,
+    24: 24px,
+    25: 25px,
+    26: 26px,
+    27: 27px,
+    28: 28px,
+    29: 29px,
+    30: 30px,
+    0: 0,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$letter-spacing-utility: (
+  properties: (
+    lts: letter-spacing,
+  ),
+  values: (
+    sm: 1px,
+    md: 2px,
+    lg: 3px,
+    xl: 4px,
+    nl: normal
+  ),
+  responsive: true,
+);
+
+@include apply-utility($font-size-utility);
+@include apply-utility($font-family-utility);
+@include apply-utility($font-weight-utility);
+@include apply-utility($font-style-utility);
+@include apply-utility($font-smooth-utility);
+@include apply-utility($line-height-utility);
+@include apply-utility($letter-spacing-utility);

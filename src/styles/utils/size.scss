@@ -1,0 +1,13 @@
+$size-utility: (
+  properties: (
+    sz: (
+      width,
+      height
+    ),
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($size-utility);

@@ -1,0 +1,20 @@
+$scroll-snap-type-utility: (
+  properties: (
+    sc: scroll-snap-type,
+  ),
+  values: (
+    b: block,
+    inline: inline,
+    x: x,
+    xm: x mandatory,
+    y: y,
+    yp: y proximity,
+    bt: both,
+    btm: both mandatory,
+    n: none,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($scroll-snap-type-utility);

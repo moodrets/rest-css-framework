@@ -1,0 +1,133 @@
+$text-color-list: ();
+@each $color, $value in $color-list {
+  $text-color-list: map-merge($text-color-list, (
+    #{$color}: rgba(var(--color-#{$color}), var(--text-opacity)),
+    current: currentColor,
+    trsp: transparent,
+  ));
+}
+
+$text-colored-utility: (
+  properties: (
+    txt: color,
+  ),
+  values: $text-color-list,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    v: visited,
+    is-active: is-active,
+    pl: ':placeholder',
+    gh: group-hover,
+    gf: group-focus,
+    ga: group-active,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+$text-opacity-utility: (
+  properties: (
+    txt-op: --text-opacity,
+  ),
+  values: $opacity-list, // from _vars.scss
+  responsive: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  inherit: false,
+);
+
+$text-truncate-utility: (
+  properties: (
+    txt-trn: (
+      overflow: hidden,
+      text-overflow: ellipsis,
+      white-space: nowrap,
+    ),
+    txt-trn-res: (
+      overflow: visible,
+      text-overflow: clip,
+      white-space: normal,
+    )
+  ),
+  responsive: true,
+);
+
+$text-align-utility: (
+  properties: (
+    txt: text-align,
+  ),
+  values: (
+    s: start,
+    e: end,
+    l: left,
+    r: right,
+    c: center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$text-align-justify-utility: (
+  properties: (
+    txt: (
+      text-align,
+      -moz-text-align-last,
+      text-align-last
+    ),
+  ),
+  values: (
+    j: justify,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+$text-decoration-utility: (
+  properties: (
+    td: text-decoration,
+  ),
+  values: (
+    n: none,
+    u: underline,
+    o: overline,
+    l: line-through
+  ),
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+$text-transform-utility: (
+  properties: (
+    tt: text-transform,
+  ),
+  values: (
+    c: capitalize,
+    l: lowercase,
+    u: uppercase,
+    n: none,
+  ),
+  pseudo: (
+    h: hover,
+    f: focus,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+@include apply-utility($text-colored-utility);
+@include apply-utility($text-opacity-utility);
+@include apply-utility($text-align-utility);
+@include apply-utility($text-align-justify-utility);
+@include apply-utility($text-truncate-utility);
+@include apply-utility($text-decoration-utility);
+@include apply-utility($text-transform-utility);

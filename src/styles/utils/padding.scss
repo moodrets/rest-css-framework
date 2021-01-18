@@ -1,0 +1,22 @@
+$padding-utility: (
+  properties: (
+    p: padding,
+    pt: padding-top,
+    pl: padding-left,
+    pr: padding-right,
+    pb: padding-bottom,
+    py: (
+      padding-top,
+      padding-bottom,
+    ),
+    px: (
+      padding-left,
+      padding-right,
+    ),
+  ),
+  values: $spacing-list,
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($padding-utility);

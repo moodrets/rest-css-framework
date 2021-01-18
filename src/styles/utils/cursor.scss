@@ -1,0 +1,24 @@
+$cursor-utility: (
+  properties: (
+    cur: cursor,
+  ),
+  values: (
+    p: pointer,
+    m: move,
+    t: text,
+    h: help,
+    d: default,
+  ),
+  responsive: false,
+  inherit: false,
+  pseudo: (
+    h: hover,
+    f: focus,
+    fw: focus-within,
+    fv: focus-visible,
+    a: active,
+    is-active: is-active,
+  ),
+);
+
+@include apply-utility($cursor-utility);

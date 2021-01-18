@@ -1,0 +1,45 @@
+$overflow-utility: (
+  properties: (
+    ov: overflow,
+    ov-x: overflow-x,
+    ov-y: overflow-y,
+  ),
+  values: (
+    h: hidden,
+    v: visible,
+    s: scroll,
+    a: auto,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$overflow-touch-utility: (
+  properties: (
+    ov: -webkit-overflow-scrolling,
+  ),
+  values: (
+    t: touch,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+$overscroll-behavior-utility: (
+  properties: (
+    ovb: overscroll-behavior,
+    ovb-y: overscroll-behavior-y,
+    ovb-x: overscroll-behavior-x,
+  ),
+  values: (
+    a: auto,
+    cn: contain,
+    n: none,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($overflow-utility);
+@include apply-utility($overflow-touch-utility);
+@include apply-utility($overscroll-behavior-utility);

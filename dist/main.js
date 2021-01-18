@@ -9198,10 +9198,15 @@
 	  };
 
 	const _hoisted_1$1 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Rest Css Framework", -1 /* HOISTED */);
+	const _hoisted_2$1 = /*#__PURE__*/createVNode("div", { class: "p-3 bdr bdr-theme:h d-ib rds-3 pos-rel zi-2 group-hover bg-theme:h txt-dark:h trs-03 cur-p" }, [
+	  /*#__PURE__*/createVNode("div", null, "text"),
+	  /*#__PURE__*/createVNode("div", { class: "pos-abs pos-t-100 pos-l-50 trf trf-tr-x-50-neg bg-success txt-light  rds-4 wh-nw mt-1 p-4 trs-03 scale-start scale-end:gh" }, "tooltip text")
+	], -1 /* HOISTED */);
 
 	function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 	  return (openBlock(), createBlock("div", null, [
-	    _hoisted_1$1
+	    _hoisted_1$1,
+	    _hoisted_2$1
 	  ]))
 	}
 
@@ -9275,7 +9280,7 @@
 	  };
 
 	const _hoisted_1$3 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Colors", -1 /* HOISTED */);
-	const _hoisted_2$1 = /*#__PURE__*/createVNode("div", { class: "mb-8" }, [
+	const _hoisted_2$2 = /*#__PURE__*/createVNode("div", { class: "mb-8" }, [
 	  /*#__PURE__*/createVNode("p", null, [
 	    /*#__PURE__*/createTextVNode("Expand or replace colors list in file "),
 	    /*#__PURE__*/createVNode("strong", { class: "txt-info-2 font-we-700" }, "_vars.scss")
@@ -9297,7 +9302,7 @@
 
 	  return (openBlock(), createBlock(Fragment, null, [
 	    _hoisted_1$3,
-	    _hoisted_2$1,
+	    _hoisted_2$2,
 	    createVNode("div", _hoisted_3$1, [
 	      createVNode("div", _hoisted_4$1, [
 	        createVNode(_component_rs_select, {
@@ -9419,7 +9424,7 @@
 	  };
 
 	const _hoisted_1$5 = { class: "pb-9" };
-	const _hoisted_2$2 = { class: "container mx-a px-4 px-6:lg font-sz-16" };
+	const _hoisted_2$3 = { class: "container mx-a px-4 px-6:lg font-sz-16" };
 	const _hoisted_3$2 = { class: "case ml-8-neg:lg" };
 	const _hoisted_4$2 = { class: "cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg" };
 	const _hoisted_5$1 = { class: "cell cell-12 cell-9:lg pl-8:lg" };
@@ -9431,7 +9436,7 @@
 
 	  return (openBlock(), createBlock("div", _hoisted_1$5, [
 	    createVNode(_component_Header),
-	    createVNode("section", _hoisted_2$2, [
+	    createVNode("section", _hoisted_2$3, [
 	      createVNode("div", _hoisted_3$2, [
 	        createVNode("aside", _hoisted_4$2, [
 	          createVNode(_component_Aside)
@@ -9491,7 +9496,7 @@
 	  };
 
 	const _hoisted_1$6 = { class: "d-f fw-wr mb-3" };
-	const _hoisted_2$3 = { key: 0 };
+	const _hoisted_2$4 = { key: 0 };
 
 	function render$7(_ctx, _cache, $props, $setup, $data, $options) {
 	  const _component_router_link = resolveComponent("router-link");
@@ -9502,7 +9507,7 @@
 	        class: ["mr-4", `txt-${$props.titleColor}`]
 	      }, toDisplayString($props.title), 3 /* TEXT, CLASS */),
 	      ($props.link)
-	        ? (openBlock(), createBlock("span", _hoisted_2$3, [
+	        ? (openBlock(), createBlock("span", _hoisted_2$4, [
 	            createVNode(_component_router_link, {
 	              to: $props.link,
 	              class: "td-n td-u:h txt-theme-1"

@@ -1,0 +1,10 @@
+$opacity-utility: (
+  properties: (
+    op: opacity,
+  ),
+  values: $opacity-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($opacity-utility);

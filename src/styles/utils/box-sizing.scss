@@ -1,0 +1,13 @@
+$box-sizing-utility: (
+  properties: (
+    bx: box-sizing,
+  ),
+  values: (
+    bb: border-box,
+    cb: content-box,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+@include apply-utility($box-sizing-utility);

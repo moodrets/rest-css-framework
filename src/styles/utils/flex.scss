@@ -1,0 +1,244 @@
+$flex-wrap-utility: (
+  properties: (
+    fw: flex-wrap,
+  ),
+  values: (
+    wr: wrap,
+    nw: nowrap,
+    wrr: wrap-reverse,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-direction-utility: (
+  properties: (
+    fd: flex-direction,
+  ),
+  values: (
+    r: row,
+    rr: row-reverse,
+    c: column,
+    cr: column-reverse,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-item-utility: (
+  properties: (
+    fl: flex,
+  ),
+  values: (
+    fill: 1 1 0,
+    n: none,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-item-child-utility: (
+  properties: (
+    fl-ch: flex,
+  ),
+  values: (
+    fill: 1 1 0,
+    n: none,
+  ),
+  child: unquote('> *'),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-shrink-utility: (
+  properties: (
+    fl-sh: flex-shrink,
+  ),
+  values: (
+    1: 1,
+    0: 0,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$flex-grow-utility: (
+  properties: (
+    fl-gr: flex-grow,
+  ),
+  values: (
+    1: 1,
+    0: 0,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+
+$justify-content-utility: (
+  properties: (
+    jc: justify-content,
+  ),
+  values: (
+    st: stretch,
+    s: start,
+    e: end,
+    l: left,
+    r: right,
+    c: center,
+    fs: flex-start,
+    fe: flex-end,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sb: space-between,
+    sa: space-around,
+    se: space-evenly,
+    sc: safe center,
+    uc: unsafe center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$justify-items-utility: (
+  properties: (
+    ji: justify-items,
+  ),
+  values: (
+    a: auto,
+    n: normal,
+    st: stretch,
+    c: center,
+    s: start,
+    e: end,
+    fs: flex-start,
+    fe: flex-end,
+    ss: self-start,
+    se: self-end,
+    l: left,
+    r: right,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sc: safe center,
+    uc: unsafe center,
+    ll: legacy right,
+    lr: legacy right,
+    lc: legacy center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$justify-self-utility: (
+  properties: (
+    js: justify-self,
+  ),
+  values: (
+    a: auto,
+    n: normal,
+    st: stretch,
+    c: center,
+    s: start,
+    e: end,
+    fs: flex-start,
+    fe: flex-end,
+    ss: self-start,
+    se: self-end,
+    l: left,
+    r: right,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sc: safe center,
+    uc: unsafe center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$align-items-utility: (
+  properties: (
+    ai: align-items,
+  ),
+  values: (
+    nl: normal,
+    st: stretch,
+    c: center,
+    s: start,
+    e: end,
+    fs: flex-start,
+    fe: flex-end,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sc: safe center,
+    uc: unsafe center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$align-content-utility: (
+  properties: (
+    ac: align-content,
+  ),
+  values: (
+    nl: normal,
+    st: stretch,
+    c: center,
+    s: start,
+    e: end,
+    fs: flex-start,
+    fe: flex-end,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sb: space-between,
+    sa: space-around,
+    se: space-evenly,
+    sc: safe center,
+    uc: unsafe center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$align-self-utility: (
+  properties: (
+    as: align-self,
+  ),
+  values: (
+    a: auto,
+    st: stretch,
+    nl: normal,
+    c: center,
+    s: start,
+    e: end,
+    ss: self-start,
+    se: self-end,
+    fs: flex-start,
+    fe: flex-end,
+    bs: baseline,
+    fbs: first baseline,
+    lbs: last baseline,
+    sc: safe center,
+    uc: unsafe center,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($flex-item-utility);
+@include apply-utility($flex-item-child-utility);
+@include apply-utility($flex-shrink-utility);
+@include apply-utility($flex-grow-utility);
+@include apply-utility($flex-wrap-utility);
+@include apply-utility($flex-direction-utility);
+@include apply-utility($justify-content-utility);
+@include apply-utility($justify-items-utility);
+@include apply-utility($justify-self-utility);
+@include apply-utility($align-items-utility);
+@include apply-utility($align-content-utility);
+@include apply-utility($align-self-utility);

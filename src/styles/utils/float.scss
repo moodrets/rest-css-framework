@@ -1,0 +1,29 @@
+$float-utility: (
+  properties: (
+    flt: float,
+  ),
+  values: (
+    l: left,
+    r: right,
+    n: none,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$clear-utility: (
+  properties: (
+    cl: clear,
+  ),
+  values: (
+    l: left,
+    r: right,
+    bt: both,
+    n: none,
+  ),
+  responsive: true,
+  inherit: false,
+);
+
+@include apply-utility($float-utility);
+@include apply-utility($clear-utility);

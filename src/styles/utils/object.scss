@@ -1,0 +1,36 @@
+$object-fit-utility: (
+  properties: (
+    ob-f: object-fit,
+  ),
+  values: (
+    c: cover,
+    f: fill,
+    cn: contain,
+    sd: scale-down,
+    n: none,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$object-position-utility: (
+  properties: (
+    ob-p: object-position,
+  ),
+  values: (
+    l: left,
+    r: right,
+    t: top,
+    b: bottom,
+    c: center,
+    lt: left top,
+    lb: left bottom,
+    rt: right bottom,
+    rb: right bottom,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($object-fit-utility);
+@include apply-utility($object-position-utility);

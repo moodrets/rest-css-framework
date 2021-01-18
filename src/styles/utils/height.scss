@@ -1,0 +1,30 @@
+$height-utility: (
+  properties: (
+    he: height,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+$max-height-utility: (
+  properties: (
+    max-he: max-height,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+$min-height-utility: (
+  properties: (
+    min-he: min-height,
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($height-utility);
+@include apply-utility($max-height-utility);
+@include apply-utility($min-height-utility);

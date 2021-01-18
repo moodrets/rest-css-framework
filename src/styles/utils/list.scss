@@ -1,0 +1,38 @@
+$list-types-utility: (
+  properties: (
+    list: color,
+  ),
+  values: $text-color-list,
+  child: unquote('> li::marker'),
+  responsive: false,
+  inherit: false,
+);
+
+$list-style-type-utility: (
+  properties: (
+    list: list-style-type,
+  ),
+  values: (
+    ds: disc,
+    dc: decimal,
+    n: none,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+$list-style-position-utility: (
+  properties: (
+    list: list-style-position,
+  ),
+  values: (
+    in: inside,
+    out: outside,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($list-types-utility);
+@include apply-utility($list-style-type-utility);
+@include apply-utility($list-style-position-utility);

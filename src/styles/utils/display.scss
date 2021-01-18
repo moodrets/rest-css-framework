@@ -1,0 +1,25 @@
+$display-utility: (
+  properties: (
+    d: display,
+  ),
+  values: (
+    b: block,
+    i: inline,
+    ib: inline-block,
+    g: grid,
+    ig: inline-grid,
+    f: flex,
+    if: inline-flex,
+    t: table,
+    tr: table-row,
+    tc: table-cell,
+    tp: table-caption,
+    c: contents,
+    n: none,
+  ),
+  responsive: true,
+  important: true,
+  inherit: false,
+);
+
+@include apply-utility($display-utility);

@@ -1,0 +1,73 @@
+$case-utility: (
+  properties: (
+    case: (
+      display: flex,
+      flex-wrap: wrap,
+    )
+  ),
+);
+
+$case-cells-utility: (
+  properties: (
+    case-cells: (
+      flex-basis,
+      max-width,
+    )
+  ),
+  values: (
+    1: calc(100% / 1),
+    2: calc(100% / 2),
+    3: calc(100% / 3),
+    4: calc(100% / 4),
+    5: calc(100% / 5),
+    6: calc(100% / 6),
+    7: calc(100% / 7),
+    8: calc(100% / 8),
+    9: calc(100% / 9),
+    10: calc(100% / 10),
+    11: calc(100% / 11),
+    12: calc(100% / 12),
+  ),
+  child: unquote('> [class*="cell"]:not([class*="cell-"])'),
+  responsive: true,
+);
+
+$cell-utility: (
+  properties: (
+    cell : (
+      flex-basis: 0,
+      flex-grow: 1,
+      max-width: 100%,
+    )
+  ),
+  responsive: false,
+);
+
+$cell-width-utility: (
+  properties: (
+    cell: (
+      flex-basis,
+      max-width,
+    )
+  ),
+  values: (
+    1: unquote('calc(100% * 1 / 12)'),
+    2: unquote('calc(100% * 2 / 12)'),
+    3: unquote('calc(100% * 3 / 12)'),
+    4: unquote('calc(100% * 4 / 12)'),
+    5: unquote('calc(100% * 5 / 12)'),
+    6: unquote('calc(100% * 6 / 12)'),
+    7: unquote('calc(100% * 7 / 12)'),
+    8: unquote('calc(100% * 8 / 12)'),
+    9: unquote('calc(100% * 9 / 12)'),
+    10: unquote('calc(100% * 10 / 12)'),
+    11: unquote('calc(100% * 11 / 12)'),
+    12: unquote('calc(100% * 12 / 12)'),
+  ),
+  responsive: true,
+);
+
+@include apply-utility($case-utility);
+@include apply-utility($case-cells-utility);
+@include apply-utility($cell-utility);
+@include apply-utility($cell-width-utility);

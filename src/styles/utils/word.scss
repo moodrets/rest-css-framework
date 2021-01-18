@@ -1,0 +1,45 @@
+$word-wrap-utility: (
+  properties: (
+    ww: word-wrap,
+  ),
+  values: (
+    nl: normal,
+    bw: break-word,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$word-break-utility: (
+  properties: (
+    wb: word-break,
+  ),
+  values: (
+    nl: normal,
+    br: break-all,
+    kp: keep-all,
+    bw: break-word,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+$white-space-utility: (
+  properties: (
+    wh: white-space,
+  ),
+  values: (
+    nl: normal,
+    nw: nowrap,
+    pr: pre,
+    prw: pre-wrap,
+    prl: pre-line,
+    bs: break-spaces,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($word-wrap-utility);
+@include apply-utility($word-break-utility);
+@include apply-utility($white-space-utility);

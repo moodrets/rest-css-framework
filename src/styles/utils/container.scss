@@ -1,0 +1,15 @@
+$container-utility: (
+  properties: (
+    container: (
+      max-width
+    ),
+  ),
+  values: (
+    '': 1320px,
+    sm: 820px,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($container-utility);

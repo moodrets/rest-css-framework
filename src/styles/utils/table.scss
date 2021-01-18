@@ -1,0 +1,13 @@
+$table-layout-utility: (
+  properties: (
+    tl: table-layout,
+  ),
+  values: (
+    f: fixed,
+    a: auto,
+  ),
+  responsive: false,
+  inherit: false,
+);
+
+@include apply-utility($table-layout-utility);

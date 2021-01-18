@@ -1,0 +1,14 @@
+$all-utility: (
+  properties: (
+    all: all,
+  ),
+  values: (
+    un: unset,
+    rev: revert,
+    int: initial,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($all-utility);

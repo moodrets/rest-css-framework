@@ -1,0 +1,12 @@
+$outline-utility: (
+  properties: (
+    out: outline,
+  ),
+  values: (
+    n: none,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+@include apply-utility($outline-utility);

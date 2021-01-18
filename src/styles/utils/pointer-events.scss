@@ -1,0 +1,13 @@
+$pointer-events-utility: (
+  properties: (
+    pe: pointer-events,
+  ),
+  values: (
+    n: none,
+    a: auto,
+  ),
+  responsive: true,
+  inherit: true,
+);
+
+@include apply-utility($pointer-events-utility);
