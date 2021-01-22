@@ -9213,21 +9213,6 @@
 	script$1.render = render$1;
 	script$1.__file = "src/js/pages/Home.vue";
 
-	var script$2 = {
-
-	  };
-
-	const _hoisted_1$2 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Borders", -1 /* HOISTED */);
-
-	function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-	  return (openBlock(), createBlock("div", null, [
-	    _hoisted_1$2
-	  ]))
-	}
-
-	script$2.render = render$2;
-	script$2.__file = "src/js/pages/Borders.vue";
-
 	const cssVars = [...document.styleSheets]
 	  .filter(sheet => sheet.href === null || sheet.href.includes('main'))
 	  .reduce((acc, sheet) => (acc = [
@@ -9236,6 +9221,331 @@
 	  ]),[]);
 
 	const cssColorVars = cssVars.filter(variable => variable.includes('--color'));
+
+	const colorsArrayBuilder = (classNames, firstItemProps) => {
+	  const colorsArray = [];
+
+	  cssColorVars.map((color, idx) => {
+	    let colorObject = {value: `${classNames}${color.replace('--color-', '')}`};
+	    if (firstItemProps && idx === 0) {
+	      colorObject = {
+	        ...colorObject,
+	        ...firstItemProps
+	      };
+	    }
+	    colorsArray.push(colorObject);
+	  });
+
+	  colorsArray.push(
+	    {value: `${classNames}current`},
+	    {value: `${classNames}trsp`},
+	  );
+
+	  return colorsArray
+	};
+
+	var script$2 = {
+	    setup(){
+
+	      const changeSelect = (e, model) => {
+	        console.log(e, model);
+	        border[model] = e[0];
+	      };
+
+	      const border = reactive({
+	        width: '',
+	        direction: 'bdr',
+	        breakpoint: ''
+	      });
+
+	      const breakpoints = reactive([
+	        {value: '', text: 'Default'},
+	        {value: ':sm', text: 'Small - 420px'},
+	        {value: ':md', text: 'Medium - 768px'},
+	        {value: ':lg', text: 'Large - 1024px'},
+	        {value: ':xl', text: 'Extra Large - 1280px'},
+	      ]);
+
+	      const borderWidth = reactive([
+	        {value: '', text: 'Default'},
+	        {value: 'bdr-wd-1', text: 'Border width 1px'},
+	        {value: 'bdr-wd-2', text: 'Border width 2px'},
+	        {value: 'bdr-wd-3', text: 'Border width 3px'},
+	        {value: 'bdr-wd-4', text: 'Border width 4px'},
+	        {value: 'bdr-wd-5', text: 'Border width 5px'},
+	        {value: 'bdr-wd-5', text: 'Border width 5px'},
+	        {value: 'bdr-wd-6', text: 'Border width 6px'},
+	        {value: 'bdr-wd-7', text: 'Border width 7px'},
+	        {value: 'bdr-wd-8', text: 'Border width 8px'},
+	        {value: 'bdr-wd-9', text: 'Border width 8px'},
+	        {value: 'bdr-wd-10', text: 'Border width 10px'},
+	        {value: 'bdr-wd-11', text: 'Border width 11px'},
+	        {value: 'bdr-wd-12', text: 'Border width 12px'},
+	        {value: 'bdr-wd-0', text: 'Border width 0'},
+	      ]);
+
+	      const borderDirection = reactive([
+	        {value: 'bdr', text: 'Default'},
+	        {value: 'bdr-t', text: 'Border top'},
+	        {value: 'bdr-l', text: 'Border left'},
+	        {value: 'bdr-r', text: 'Border right'},
+	        {value: 'bdr-b', text: 'Border bottom'},
+	        {value: 'bdr-y', text: 'Border vertical'},
+	        {value: 'bdr-x', text: 'Border horizontal'},
+	      ]);
+
+	      const borderAllClassList = reactive([
+	        {value: 'bdr'},
+	        {value: 'bdr-l'},
+	        {value: 'bdr-r'},
+	        {value: 'bdr-t'},
+	        {value: 'bdr-b'},
+	        {value: 'bdr-x'},
+	        {value: 'bdr-y'},
+
+	        {value: 'bdr bdr-wd-1', sectionName: 'Border width', sectionColor: 'success'},
+	        {value: 'bdr bdr-wd-2'},
+	        {value: 'bdr bdr-wd-3'},
+	        {value: 'bdr bdr-wd-4'},
+	        {value: 'bdr bdr-wd-5'},
+	        {value: 'bdr bdr-wd-6'},
+	        {value: 'bdr bdr-wd-7'},
+	        {value: 'bdr bdr-wd-8'},
+	        {value: 'bdr bdr-wd-9'},
+	        {value: 'bdr bdr-wd-10'},
+	        {value: 'bdr bdr-wd-11'},
+	        {value: 'bdr bdr-wd-12'},
+	        {value: 'bdr bdr-wd-0'},
+
+	        {value: 'bdr bdr-t-wd-1'},
+	        {value: 'bdr bdr-t-wd-2'},
+	        {value: 'bdr bdr-t-wd-3'},
+	        {value: 'bdr bdr-t-wd-4'},
+	        {value: 'bdr bdr-t-wd-5'},
+	        {value: 'bdr bdr-t-wd-6'},
+	        {value: 'bdr bdr-t-wd-7'},
+	        {value: 'bdr bdr-t-wd-8'},
+	        {value: 'bdr bdr-t-wd-9'},
+	        {value: 'bdr bdr-t-wd-10'},
+	        {value: 'bdr bdr-t-wd-11'},
+	        {value: 'bdr bdr-t-wd-12'},
+	        {value: 'bdr bdr-t-wd-0'},
+
+	        {value: 'bdr bdr-r-wd-1'},
+	        {value: 'bdr bdr-r-wd-2'},
+	        {value: 'bdr bdr-r-wd-3'},
+	        {value: 'bdr bdr-r-wd-4'},
+	        {value: 'bdr bdr-r-wd-5'},
+	        {value: 'bdr bdr-r-wd-6'},
+	        {value: 'bdr bdr-r-wd-7'},
+	        {value: 'bdr bdr-r-wd-8'},
+	        {value: 'bdr bdr-r-wd-9'},
+	        {value: 'bdr bdr-r-wd-10'},
+	        {value: 'bdr bdr-r-wd-11'},
+	        {value: 'bdr bdr-r-wd-12'},
+	        {value: 'bdr bdr-r-wd-0'},
+
+	        {value: 'bdr bdr-b-wd-1'},
+	        {value: 'bdr bdr-b-wd-2'},
+	        {value: 'bdr bdr-b-wd-3'},
+	        {value: 'bdr bdr-b-wd-4'},
+	        {value: 'bdr bdr-b-wd-5'},
+	        {value: 'bdr bdr-b-wd-6'},
+	        {value: 'bdr bdr-b-wd-7'},
+	        {value: 'bdr bdr-b-wd-8'},
+	        {value: 'bdr bdr-b-wd-9'},
+	        {value: 'bdr bdr-b-wd-10'},
+	        {value: 'bdr bdr-b-wd-11'},
+	        {value: 'bdr bdr-b-wd-12'},
+	        {value: 'bdr bdr-b-wd-0'},
+
+	        {value: 'bdr bdr-l-wd-1'},
+	        {value: 'bdr bdr-l-wd-2'},
+	        {value: 'bdr bdr-l-wd-3'},
+	        {value: 'bdr bdr-l-wd-4'},
+	        {value: 'bdr bdr-l-wd-5'},
+	        {value: 'bdr bdr-l-wd-6'},
+	        {value: 'bdr bdr-l-wd-7'},
+	        {value: 'bdr bdr-l-wd-8'},
+	        {value: 'bdr bdr-l-wd-9'},
+	        {value: 'bdr bdr-l-wd-10'},
+	        {value: 'bdr bdr-l-wd-11'},
+	        {value: 'bdr bdr-l-wd-12'},
+	        {value: 'bdr bdr-l-wd-0'},
+
+	        {value: 'bdr bdr-x-wd-1'},
+	        {value: 'bdr bdr-x-wd-2'},
+	        {value: 'bdr bdr-x-wd-3'},
+	        {value: 'bdr bdr-x-wd-4'},
+	        {value: 'bdr bdr-x-wd-5'},
+	        {value: 'bdr bdr-x-wd-6'},
+	        {value: 'bdr bdr-x-wd-7'},
+	        {value: 'bdr bdr-x-wd-8'},
+	        {value: 'bdr bdr-x-wd-9'},
+	        {value: 'bdr bdr-x-wd-10'},
+	        {value: 'bdr bdr-x-wd-11'},
+	        {value: 'bdr bdr-x-wd-12'},
+	        {value: 'bdr bdr-x-wd-0'},
+
+	        {value: 'bdr bdr-y-wd-1'},
+	        {value: 'bdr bdr-y-wd-2'},
+	        {value: 'bdr bdr-y-wd-3'},
+	        {value: 'bdr bdr-y-wd-4'},
+	        {value: 'bdr bdr-y-wd-5'},
+	        {value: 'bdr bdr-y-wd-6'},
+	        {value: 'bdr bdr-y-wd-7'},
+	        {value: 'bdr bdr-y-wd-8'},
+	        {value: 'bdr bdr-y-wd-9'},
+	        {value: 'bdr bdr-y-wd-10'},
+	        {value: 'bdr bdr-y-wd-11'},
+	        {value: 'bdr bdr-y-wd-12'},
+	        {value: 'bdr bdr-y-wd-0'},
+
+	        {value: 'bdr bdr-dsh', sectionName: 'Border style', sectionColor: 'warning'},
+	        {value: 'bdr bdr-dt'},
+	        {value: 'bdr bdr-sl'},
+	        {value: 'bdr bdr-t-dsh'},
+	        {value: 'bdr bdr-t-dt'},
+	        {value: 'bdr bdr-t-sl'},
+	        {value: 'bdr bdr-r-dsh'},
+	        {value: 'bdr bdr-r-dt'},
+	        {value: 'bdr bdr-r-sl'},
+	        {value: 'bdr bdr-b-dsh'},
+	        {value: 'bdr bdr-b-dt'},
+	        {value: 'bdr bdr-b-sl'},
+	        {value: 'bdr bdr-l-dsh'},
+	        {value: 'bdr bdr-l-dt'},
+	        {value: 'bdr bdr-l-sl'},
+	        {value: 'bdr bdr-x-dsh'},
+	        {value: 'bdr bdr-x-dt'},
+	        {value: 'bdr bdr-x-sl'},
+	        {value: 'bdr bdr-y-dsh'},
+	        {value: 'bdr bdr-y-dt'},
+	        {value: 'bdr bdr-y-sl'},
+
+	        {value: 'bdr bdr-op-100', sectionName: 'Border opacity', sectionColor: 'info'},
+	        {value: 'bdr bdr-op-90'},
+	        {value: 'bdr bdr-op-80'},
+	        {value: 'bdr bdr-op-70'},
+	        {value: 'bdr bdr-op-60'},
+	        {value: 'bdr bdr-op-50'},
+	        {value: 'bdr bdr-op-40'},
+	        {value: 'bdr bdr-op-30'},
+	        {value: 'bdr bdr-op-20'},
+	        {value: 'bdr bdr-op-10'},
+	        {value: 'bdr bdr-op-0'},
+	      ]);
+
+	      borderAllClassList.push(
+	        ...colorsArrayBuilder(
+	          'bdr bdr-',
+	          {sectionName: 'Border colors', sectionColor: 'warning'}
+	        )
+	      );
+
+	      return {
+	        border,
+	        borderAllClassList,
+	        borderWidth,
+	        borderDirection,
+	        breakpoints,
+	        changeSelect
+	      }
+	    },
+	  };
+
+	const _hoisted_1$2 = { class: "rs-borders" };
+	const _hoisted_2$2 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Borders", -1 /* HOISTED */);
+	const _hoisted_3$1 = /*#__PURE__*/createVNode("p", null, [
+	  /*#__PURE__*/createTextVNode("Change classnames and values in file "),
+	  /*#__PURE__*/createVNode("strong", { class: "txt-warning-1 font-we-700" }, "utils/border.scss")
+	], -1 /* HOISTED */);
+	const _hoisted_4$1 = { class: "case case-cells-1 case-cells-2:md mb-8 ml-5-neg" };
+	const _hoisted_5 = { class: "cell pl-5 pb-5" };
+	const _hoisted_6 = { class: "cell pl-5 pb-5" };
+	const _hoisted_7 = { class: "cell pl-5 pb-5" };
+	const _hoisted_8 = { class: "txt-primary" };
+	const _hoisted_9 = /*#__PURE__*/createTextVNode();
+	const _hoisted_10 = { class: "txt-success" };
+	const _hoisted_11 = /*#__PURE__*/createVNode("div", { class: "font-sz-21 font-we-700 my-8" }, "Border utility class names", -1 /* HOISTED */);
+	const _hoisted_12 = { class: "sh-1 p-2 mb-3" };
+	const _hoisted_13 = { class: "case case-cells-1 case-cells-2:md ai-c" };
+	const _hoisted_14 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_15 = { class: "font-we-500 txt-dark txt-op-60" };
+	const _hoisted_16 = { class: "cell pb-3 pb-0:md" };
+
+	function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+	  const _component_rs_select = resolveComponent("rs-select");
+
+	  return (openBlock(), createBlock("div", _hoisted_1$2, [
+	    _hoisted_2$2,
+	    _hoisted_3$1,
+	    createVNode("div", _hoisted_4$1, [
+	      createVNode("div", _hoisted_5, [
+	        createVNode(_component_rs_select, {
+	          title: "Border direction",
+	          items: $setup.borderDirection,
+	          onSelectValueChange: _cache[1] || (_cache[1] = $event => ($setup.changeSelect($event, 'direction')))
+	        }, null, 8 /* PROPS */, ["items"])
+	      ]),
+	      createVNode("div", _hoisted_6, [
+	        createVNode(_component_rs_select, {
+	          title: "Breakpoints",
+	          titleColor: "primary",
+	          items: $setup.breakpoints,
+	          onSelectValueChange: _cache[2] || (_cache[2] = $event => ($setup.changeSelect($event, 'breakpoint')))
+	        }, null, 8 /* PROPS */, ["items"])
+	      ]),
+	      createVNode("div", _hoisted_7, [
+	        createVNode(_component_rs_select, {
+	          title: "Border width",
+	          titleColor: "success",
+	          items: $setup.borderWidth,
+	          onSelectValueChange: _cache[3] || (_cache[3] = $event => ($setup.changeSelect($event, 'width')))
+	        }, null, 8 /* PROPS */, ["items"])
+	      ])
+	    ]),
+	    createVNode("div", {
+	      class: ["p-4 ov-x-a font-sz-18 mb-8", [
+	        $setup.border.direction+$setup.border.breakpoint,
+	        $setup.border.width
+	      ]]
+	    }, [
+	      createTextVNode(toDisplayString($setup.border.direction), 1 /* TEXT */),
+	      createVNode("span", _hoisted_8, toDisplayString($setup.border.breakpoint), 1 /* TEXT */),
+	      _hoisted_9,
+	      createVNode("span", _hoisted_10, toDisplayString($setup.border.width), 1 /* TEXT */)
+	    ], 2 /* CLASS */),
+	    _hoisted_11,
+	    (openBlock(true), createBlock(Fragment, null, renderList($setup.borderAllClassList, (item) => {
+	      return (openBlock(), createBlock("div", {
+	        key: item.value
+	      }, [
+	        (item.sectionName)
+	          ? (openBlock(), createBlock("div", {
+	              key: 0,
+	              class: ["font-sz-18 font-we-700 my-8", `txt-${item.sectionColor}`]
+	            }, toDisplayString(item.sectionName), 3 /* TEXT, CLASS */))
+	          : createCommentVNode("v-if", true),
+	        createVNode("div", _hoisted_12, [
+	          createVNode("div", _hoisted_13, [
+	            createVNode("div", _hoisted_14, [
+	              createVNode("div", _hoisted_15, toDisplayString(item.value), 1 /* TEXT */)
+	            ]),
+	            createVNode("div", _hoisted_16, [
+	              createVNode("div", {
+	                class: ["p-5", [item.value]]
+	              }, null, 2 /* CLASS */)
+	            ])
+	          ])
+	        ])
+	      ]))
+	    }), 128 /* KEYED_FRAGMENT */))
+	  ]))
+	}
+
+	script$2.render = render$2;
+	script$2.__file = "src/js/pages/Borders.vue";
 
 	var script$3 = {
 	    setup(){
@@ -9280,31 +9590,31 @@
 	  };
 
 	const _hoisted_1$3 = /*#__PURE__*/createVNode("h1", { class: "mt-0" }, "Colors", -1 /* HOISTED */);
-	const _hoisted_2$2 = /*#__PURE__*/createVNode("div", { class: "mb-8" }, [
+	const _hoisted_2$3 = /*#__PURE__*/createVNode("div", { class: "mb-8" }, [
 	  /*#__PURE__*/createVNode("p", null, [
-	    /*#__PURE__*/createTextVNode("Expand or replace colors list in file "),
-	    /*#__PURE__*/createVNode("strong", { class: "txt-info-2 font-we-700" }, "_vars.scss")
+	    /*#__PURE__*/createTextVNode("Extend or replace colors list in file "),
+	    /*#__PURE__*/createVNode("strong", { class: "txt-warning-1 font-we-700" }, "_vars.scss")
 	  ])
 	], -1 /* HOISTED */);
-	const _hoisted_3$1 = { class: "case case-cells-1 case-cells-2:md mb-8 ml-5-neg" };
-	const _hoisted_4$1 = { class: "cell pl-5 pb-5" };
-	const _hoisted_5 = { class: "cell pl-5 pb-5" };
-	const _hoisted_6 = { class: "case case-cells-1 case-cells-3:md ai-c" };
-	const _hoisted_7 = { class: "cell pb-3 pb-0:md" };
-	const _hoisted_8 = { class: "font-we-500" };
-	const _hoisted_9 = { class: "txt-success" };
-	const _hoisted_10 = { class: "txt-primary" };
-	const _hoisted_11 = { class: "cell pb-3 pb-0:md" };
-	const _hoisted_12 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_3$2 = { class: "case case-cells-1 case-cells-2:md mb-8 ml-5-neg" };
+	const _hoisted_4$2 = { class: "cell pl-5 pb-5" };
+	const _hoisted_5$1 = { class: "cell pl-5 pb-5" };
+	const _hoisted_6$1 = { class: "case case-cells-1 case-cells-3:md ai-c" };
+	const _hoisted_7$1 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_8$1 = { class: "font-we-500" };
+	const _hoisted_9$1 = { class: "txt-success" };
+	const _hoisted_10$1 = { class: "txt-primary" };
+	const _hoisted_11$1 = { class: "cell pb-3 pb-0:md" };
+	const _hoisted_12$1 = { class: "cell pb-3 pb-0:md" };
 
 	function render$3(_ctx, _cache, $props, $setup, $data, $options) {
 	  const _component_rs_select = resolveComponent("rs-select");
 
 	  return (openBlock(), createBlock(Fragment, null, [
 	    _hoisted_1$3,
-	    _hoisted_2$2,
-	    createVNode("div", _hoisted_3$1, [
-	      createVNode("div", _hoisted_4$1, [
+	    _hoisted_2$3,
+	    createVNode("div", _hoisted_3$2, [
+	      createVNode("div", _hoisted_4$2, [
 	        createVNode(_component_rs_select, {
 	          title: "Color utility",
 	          titleColor: "success",
@@ -9312,7 +9622,7 @@
 	          onSelectValueChange: $setup.changeUtilies
 	        }, null, 8 /* PROPS */, ["items", "onSelectValueChange"])
 	      ]),
-	      createVNode("div", _hoisted_5, [
+	      createVNode("div", _hoisted_5$1, [
 	        createVNode(_component_rs_select, {
 	          title: "Color states",
 	          titleColor: "primary",
@@ -9328,20 +9638,20 @@
 	        class: "sh-1 p-2 mb-3",
 	        key: color
 	      }, [
-	        createVNode("div", _hoisted_6, [
-	          createVNode("div", _hoisted_7, [
-	            createVNode("div", _hoisted_8, [
-	              createVNode("span", _hoisted_9, "." + toDisplayString($setup.statesValue[0] !== ':pl' ? $setup.colorValue[0] : 'txt'), 1 /* TEXT */),
+	        createVNode("div", _hoisted_6$1, [
+	          createVNode("div", _hoisted_7$1, [
+	            createVNode("div", _hoisted_8$1, [
+	              createVNode("span", _hoisted_9$1, "." + toDisplayString($setup.statesValue[0] !== ':pl' ? $setup.colorValue[0] : 'txt'), 1 /* TEXT */),
 	              createTextVNode("-" + toDisplayString(_ctx.$filters.cssVarName(color, '--color-')), 1 /* TEXT */),
-	              createVNode("span", _hoisted_10, toDisplayString($setup.statesValue[0]), 1 /* TEXT */)
+	              createVNode("span", _hoisted_10$1, toDisplayString($setup.statesValue[0]), 1 /* TEXT */)
 	            ])
 	          ]),
-	          createVNode("div", _hoisted_11, [
+	          createVNode("div", _hoisted_11$1, [
 	            createVNode("div", {
 	              class: ["sz-4 sh-1 rds-round mr-4", 'bg-'+_ctx.$filters.cssVarName(color, '--color-')]
 	            }, null, 2 /* CLASS */)
 	          ]),
-	          createVNode("div", _hoisted_12, [
+	          createVNode("div", _hoisted_12$1, [
 	            createVNode("div", {
 	              class: 'txt-'+_ctx.$filters.cssVarName(color, '--color-')
 	            }, toDisplayString(_ctx.$filters.cssVarName(color, '--color-')), 3 /* TEXT, CLASS */)
@@ -9400,9 +9710,10 @@
 	  return (openBlock(), createBlock("div", _hoisted_1$4, [
 	    (openBlock(true), createBlock(Fragment, null, renderList($setup.routesMenu, (route) => {
 	      return (openBlock(), createBlock(_component_router_link, {
-	        class: "font-we-500 txt-r font-sz-15 mb-4 py-2 bdr-b bdr-b-wd-2 bdr-primary bdr-dark:h d-b txt-primary txt-primary:v td-n",
+	        class: "font-we-500 txt-r font-sz-15 mb-4 py-2 bdr-b bdr-b-wd-2 bdr-primary d-b txt-primary td-n",
 	        key: route.name,
-	        to: route.path
+	        to: route.path,
+	        "active-class": "txt-success bdr-success bdr-success:h"
 	      }, {
 	        default: withCtx(() => [
 	          createTextVNode(toDisplayString(route.name), 1 /* TEXT */)
@@ -9424,10 +9735,10 @@
 	  };
 
 	const _hoisted_1$5 = { class: "pb-9" };
-	const _hoisted_2$3 = { class: "container mx-a px-4 px-6:lg font-sz-16" };
-	const _hoisted_3$2 = { class: "case ml-8-neg:lg" };
-	const _hoisted_4$2 = { class: "cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg" };
-	const _hoisted_5$1 = { class: "cell cell-12 cell-9:lg pl-8:lg" };
+	const _hoisted_2$4 = { class: "container mx-a px-4 px-6:lg font-sz-16" };
+	const _hoisted_3$3 = { class: "case ml-8-neg:lg" };
+	const _hoisted_4$3 = { class: "cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg" };
+	const _hoisted_5$2 = { class: "cell cell-12 cell-9:lg pl-8:lg" };
 
 	function render$5(_ctx, _cache, $props, $setup, $data, $options) {
 	  const _component_Header = resolveComponent("Header");
@@ -9436,12 +9747,12 @@
 
 	  return (openBlock(), createBlock("div", _hoisted_1$5, [
 	    createVNode(_component_Header),
-	    createVNode("section", _hoisted_2$3, [
-	      createVNode("div", _hoisted_3$2, [
-	        createVNode("aside", _hoisted_4$2, [
+	    createVNode("section", _hoisted_2$4, [
+	      createVNode("div", _hoisted_3$3, [
+	        createVNode("aside", _hoisted_4$3, [
 	          createVNode(_component_Aside)
 	        ]),
-	        createVNode("main", _hoisted_5$1, [
+	        createVNode("main", _hoisted_5$2, [
 	          createVNode(_component_router_view)
 	        ])
 	      ])
@@ -9496,7 +9807,7 @@
 	  };
 
 	const _hoisted_1$6 = { class: "d-f fw-wr mb-3" };
-	const _hoisted_2$4 = { key: 0 };
+	const _hoisted_2$5 = { key: 0 };
 
 	function render$7(_ctx, _cache, $props, $setup, $data, $options) {
 	  const _component_router_link = resolveComponent("router-link");
@@ -9507,7 +9818,7 @@
 	        class: ["mr-4", `txt-${$props.titleColor}`]
 	      }, toDisplayString($props.title), 3 /* TEXT, CLASS */),
 	      ($props.link)
-	        ? (openBlock(), createBlock("span", _hoisted_2$4, [
+	        ? (openBlock(), createBlock("span", _hoisted_2$5, [
 	            createVNode(_component_router_link, {
 	              to: $props.link,
 	              class: "td-n td-u:h txt-theme-1"
@@ -9526,9 +9837,10 @@
 	    }, [
 	      (openBlock(true), createBlock(Fragment, null, renderList($setup.selectOptions, (item) => {
 	        return (openBlock(), createBlock("option", {
+	          class: item.optionClass,
 	          value: item.value,
 	          key: item.value
-	        }, toDisplayString(item.text), 9 /* TEXT, PROPS */, ["value"]))
+	        }, toDisplayString(item.text), 11 /* TEXT, CLASS, PROPS */, ["value"]))
 	      }), 128 /* KEYED_FRAGMENT */))
 	    ], 32 /* HYDRATE_EVENTS */)
 	  ], 64 /* STABLE_FRAGMENT */))

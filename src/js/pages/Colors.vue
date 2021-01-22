@@ -1,7 +1,7 @@
 <template>
   <h1 class="mt-0">Colors</h1>
   <div class="mb-8">
-    <p>Expand or replace colors list in file <strong class="txt-info-2 font-we-700">_vars.scss</strong></p>
+    <p>Extend or replace colors list in file <strong class="txt-warning-1 font-we-700">_vars.scss</strong></p>
   </div>
   <div class="case case-cells-1 case-cells-2:md mb-8 ml-5-neg">
     <div class="cell pl-5 pb-5">

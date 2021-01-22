@@ -6,7 +6,7 @@
     </span>
   </div>
   <select class="p-4 bdr bdr-wd-2 bdr-secondary bdr-primary:f rds-5 out-n wd-full" @change="changeSelect">
-    <option v-for="item in selectOptions" :value="item.value" :key="item.value">{{item.text}}</option>
+    <option :class="item.optionClass" v-for="item in selectOptions" :value="item.value" :key="item.value">{{item.text}}</option>
   </select>
 </template>
 
