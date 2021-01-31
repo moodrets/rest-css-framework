@@ -1,0 +1,15 @@
+$resize-utility: (
+  properties: (
+    rsz: resize,
+  ),
+  values: (
+    n: none,
+    b: both,
+    x: horizontal,
+    y: vertical,
+  ),
+  responsive: false,
+  inherit: true,
+);
+
+@include apply-utility($resize-utility);
