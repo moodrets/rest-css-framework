@@ -10,7 +10,7 @@ const Header = () => {
           <Link to="/" className="txt-dark">
             <SvgIcon name="rs-logo" addClass="sz-5"></SvgIcon>
           </Link>
-          <a className="txt-dark" href="https://github.com/moodrets/rest-css-framework">
+          <a className="txt-dark" target="_blank" href="https://github.com/moodrets/rest-css-framework">
             <SvgIcon name="rs-github"></SvgIcon>
           </a>
         </div>

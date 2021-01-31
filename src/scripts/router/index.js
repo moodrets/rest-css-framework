@@ -4,7 +4,9 @@ import {Switch, Route} from 'react-router-dom'
 // pages
 import Home from '@pages/Home'
 import Colors from '@pages/Colors'
-import Borders from '@pages/Borders'
+import Border from '@pages/Border'
+import BorderRadius from '@pages/BorderRadius'
+import Playground from '@pages/Playground/Playground'
 
 export const routes = [
   {
@@ -13,14 +15,24 @@ export const routes = [
     name: 'Home',
   },
   {
+    path: '/playground',
+    component: Playground,
+    name: 'Playground',
+  },
+  {
     path: '/colors',
     component: Colors,
     name: 'Colors',
   },
   {
-    path: '/borders',
-    component: Borders,
-    name: 'Borders',
+    path: '/border',
+    component: Border,
+    name: 'Border',
+  },
+  {
+    path: '/border-radius',
+    component: BorderRadius,
+    name: 'Border radius',
   }
 ]
 

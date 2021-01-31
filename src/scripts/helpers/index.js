@@ -13,3 +13,11 @@ export const cssColorVars = cssVars
 
 cssColorVars.push('current')
 cssColorVars.push('trsp')
+
+export const breakpoints = [
+  {value: '', text: 'Default'},
+  {value: ':sm', text: 'Small - 420px'},
+  {value: ':md', text: 'Small - 768px'},
+  {value: ':lg', text: 'Small - 1024px'},
+  {value: ':xl', text: 'Small - 1280px'},
+]
