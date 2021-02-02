@@ -11,7 +11,7 @@ const Header = () => {
             <SvgIcon name="rs-logo" addClass="sz-5"></SvgIcon>
           </Link>
           <a className="txt-dark" target="_blank" href="https://github.com/moodrets/rest-css-framework">
-            <SvgIcon name="rs-github"></SvgIcon>
+            <SvgIcon name="rs-github" addClass="sz-5"></SvgIcon>
           </a>
         </div>
       </div>

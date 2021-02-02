@@ -1,0 +1,15 @@
+$content-visibility-utility: (
+  properties: (
+    cnt-v: content-visibility,
+  ),
+  values: (
+    h: hidden,
+    v: visibility,
+    a: auto,
+  ),
+  responsive: false,
+  important: false,
+  inherit: false,
+);
+
+@include apply-utility($content-visibility-utility);

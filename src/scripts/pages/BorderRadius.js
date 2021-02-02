@@ -110,11 +110,11 @@ const BorderRadius = () => {
             <div className="case case-cells-1 case-cells-2:md ai-c">
               <div className="cell pb-3 pb-0:md">
                 <div className="font-we-500 txt-dark txt-op-60">
-                  {item.value}<span class="txt-success-1 txt-op-100">{breakpoint}</span>
+                  {item.value}<span className="txt-success-1 txt-op-100">{breakpoint}</span>
                 </div>
               </div>
               <div className="cell pb-3 pb-0:md">
-                <div className={`wd-10 he-5 bdr bdr-wd-3 d-ib ${item.value}`}></div>
+                <div className={`wd-10 he-5 bdr bdr-wd-2 d-ib ${item.value}`}></div>
               </div>
             </div>
           </div>
