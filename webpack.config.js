@@ -14,6 +14,7 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src/scripts/'),
+      '@img': path.resolve(__dirname, 'src/img/'),
       '@helpers': path.resolve(__dirname, 'src/scripts/helpers'),
       '@pages': path.resolve(__dirname, 'src/scripts/Pages/'),
       '@components': path.resolve(__dirname, 'src/scripts/Components/')
@@ -48,6 +49,10 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: 'asset/inline'
       },
     ]
   },

@@ -1,5 +1,5 @@
 $border-color-list: ();
-@each $color, $value in $color-list {
+@each $color, $value in $color-list { // from base/_vars.scss
   $border-color-list: map-merge($border-color-list, (
     #{$color}: rgba(var(--color-#{$color}), var(--border-opacity)),
     current: currentColor,

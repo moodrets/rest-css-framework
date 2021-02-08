@@ -7,7 +7,7 @@ const App = () => {
   return(
     <div className="pb-9">
       <Header />
-      <div className="container mx-a px-4 px-6:lg font-sz-16">
+      <div className="container mx-a px-4 px-6:lg font-sz-15 font-we-500">
         <div className="case ml-8-neg:lg">
           <aside className="cell cell-12 cell-3:lg pl-8:lg d-n d-b:lg">
             <Aside></Aside>

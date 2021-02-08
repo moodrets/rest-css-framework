@@ -1,5 +1,5 @@
 $shadow-color-list: ();
-@each $color, $value in $color-list {
+@each $color, $value in $color-list { // from base/_vars.scss
   $shadow-color-list: map-merge($shadow-color-list, (
     #{$color}: rgba(var(--color-#{$color}), var(--shadow-opacity)),
     current: currentColor,

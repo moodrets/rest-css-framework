@@ -1,5 +1,5 @@
 $background-color-list: ();
-@each $color, $value in $color-list {
+@each $color, $value in $color-list { // from base/_vars.scss
   $background-color-list: map-merge($background-color-list, (
     #{$color}: rgba(var(--color-#{$color}), var(--background-opacity)),
     current: currentColor,
@@ -74,7 +74,7 @@ $background-position-utility: (
     r: right,
     c: center,
     lt: left top,
-    lb: left right,
+    lb: left bottom,
     rt: right top,
     rb: right bottom,
   ),

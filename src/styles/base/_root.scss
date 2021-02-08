@@ -1,0 +1,10 @@
+:root {
+  --text-opacity: 1;
+  --placeholder-opacity: 1;
+  --border-opacity: 1;
+  --background-opacity: 1;
+  --shadow-opacity: 1;
+  --border-color: #000;
+  @each $color, $value in $color-list {--color-#{$color}: #{hex-to-rgb($value)};}
+  @each $var, $value in $global {--#{$var}: #{$value};}
+}

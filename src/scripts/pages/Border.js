@@ -160,7 +160,8 @@ const Borders = () => {
   return (
     <div className="rs-borders">
       <h1 className="mt-0">Border</h1>
-      <p className="mb-9">Change border utilities in file <strong className="txt-warning-1 font-we-700">utils/border.scss</strong></p>
+      <p className="mb-3">Change border utilities in file <strong className="txt-warning-1 font-we-700">utils/border.scss</strong></p>
+      <p className="mb-9">Border colors values copied from file <strong className="txt-warning-1 font-we-700">base/_vars.scss</strong></p>
       <div className="case case-cells-1 case-cells-2:md ml-5-neg mb-6">
         <div className="cell pl-5 pb-5">
           <RsSelect
@@ -183,7 +184,7 @@ const Borders = () => {
       </div>
       {bordersClassList.map((item, i) => (<div key={i}>
         {item.sectionName ? (<div className={`font-sz-18 font-we-700 my-8 txt-${item.sectionColor}`}>{item.sectionName}</div>) : ''}
-        <div className="sh-1 p-2 mb-3">
+        <div className="sh-1 p-3 mb-3">
           <div className="case case-cells-1 case-cells-2:md ai-c">
             <div className="cell pb-3 pb-0:md">
               <div className="font-we-500 txt-dark txt-op-60">

@@ -123,9 +123,6 @@ $justify-items-utility: (
     lbs: last baseline,
     sc: safe center,
     uc: unsafe center,
-    ll: legacy right,
-    lr: legacy right,
-    lc: legacy center,
   ),
   responsive: true,
   inherit: true,
@@ -133,7 +130,7 @@ $justify-items-utility: (
 
 $justify-self-utility: (
   properties: (
-    js: justify-self,
+    jsl: justify-self,
   ),
   values: (
     a: auto,

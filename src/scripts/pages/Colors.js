@@ -19,7 +19,6 @@ const Colors = () => {
     {value: ':f', text: 'focus'},
     {value: ':fw', text: 'focus-within'},
     {value: ':fv', text: 'focus-visible'},
-    {value: ':pl', text: 'placeholder'},
     {value: ':gh', text: 'group-hover'},
     {value: ':gf', text: 'group-focus'},
     {value: ':ga', text: 'group-active'},
@@ -28,7 +27,7 @@ const Colors = () => {
   return (
     <div className="rs-colors">
       <h1 className="mt-0">Colors</h1>
-      <p className="mb-9">Extend or replace colors list in file <strong className="txt-warning-1 font-we-700">_vars.scss</strong></p>
+      <p className="mb-9">Extend or replace colors list in file <strong className="txt-warning-1 font-we-700">base/_vars.scss</strong></p>
       <div className="case case-cells-1 case-cells-2:md ml-5-neg">
         <div className="cell pl-5 pb-5">
           <RsSelect
@@ -49,7 +48,7 @@ const Colors = () => {
         <div className="cell pl-5 pb-5"></div>
       </div>
       {cssColorVars.map((color, index) => (
-        <div className="sh-1 p-2 mb-3" key={index}>
+        <div className="sh-1 p-3 mb-3" key={index}>
           <div className="case case-cells-1 case-cells-3:md ai-c">
             <div className="cell pb-3 pb-0:md">
               .<span className="txt-primary-1">{utilType}-</span>{color}<span className="txt-success">{colorState}</span>

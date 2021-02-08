@@ -2,7 +2,7 @@
   "name": "rest-frontend-framework",
   "version": "1.0.0",
   "description": "Low-level css framework",
-  "main": "rollup.config.js",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "webpack serve --mode development",
     "dev": "webpack --watch --mode development",

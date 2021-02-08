@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 const PlaygroundItem = () => {
 
-  const [classList, setClassList] = useState('bdr p-3')
+  const [classList, setClassList] = useState('parent-element bdr p-3')
   const [childs, setChilds] = useState([])
 
   const childsChange = (value = '', id) => {
@@ -43,7 +43,7 @@ const PlaygroundItem = () => {
             <div className="cell d-f ai-c pb-4 pl-4" key={childIndex}>
               <span className="mr-4 font-we-500 txt-primary f-n">{childIndex+1}</span>
               <input onInput={e=>childsChange(e.target.value, child.id)} type="text" className="out-n rds-4 bdr bdr-wd-2 bdr-secondary d-b wd-full p-3" placeholder="Child element classList" />
-              <span className="f-n button bg-danger d-f ai-c jc-c rds-3 ml-4 sz-4 txt-c txt-light font-sz-18 lh-18" onClick={e=>childsChange('remove', child.id)}>x</span>
+              <span className="f-n button bg-danger d-f ai-c jc-c rds-pill ml-4 sz-4 txt-c txt-light font-sz-18 lh-18" onClick={e=>childsChange('remove', child.id)}>&times;</span>
             </div>
           ))}
          </div>

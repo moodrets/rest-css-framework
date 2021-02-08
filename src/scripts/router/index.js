@@ -7,6 +7,9 @@ import Colors from '@pages/Colors'
 import Border from '@pages/Border'
 import BorderRadius from '@pages/BorderRadius'
 import Playground from '@pages/Playground/Playground'
+import Flex from '@pages/Flex'
+import Order from '@pages/Order'
+import Background from '@pages/Background'
 
 export const routes = [
   {
@@ -33,6 +36,21 @@ export const routes = [
     path: '/border-radius',
     component: BorderRadius,
     name: 'Border radius',
+  },
+  {
+    path: '/background',
+    component: Background,
+    name: 'Background',
+  },
+  {
+    path: '/flex',
+    component: Flex,
+    name: 'Flexbox',
+  },
+  {
+    path: '/order',
+    component: Order,
+    name: 'Order',
   }
 ]
 

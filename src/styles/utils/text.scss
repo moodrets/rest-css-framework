@@ -1,5 +1,5 @@
 $text-color-list: ();
-@each $color, $value in $color-list {
+@each $color, $value in $color-list { // from base/_vars.scss
   $text-color-list: map-merge($text-color-list, (
     #{$color}: rgba(var(--color-#{$color}), var(--text-opacity)),
     current: currentColor,

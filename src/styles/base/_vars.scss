@@ -1,7 +1,7 @@
 $global: (
   important: false,
   prefix: '',
-  font-family-base: 'Roboto, Arial, Helvetica, sans-serif',
+  font-family-base: 'Poppins, Arial, Helvetica, sans-serif',
   font-family-secondary: 'Montserrat, Tahoma, sans-serif',
   font-size-base: 14px,
   base-color: #000,
@@ -140,14 +140,3 @@ $sm: '#{$media-width}-width: (#{map-get($breakpoint-list, sm)})';
 $md: '#{$media-width}-width: (#{map-get($breakpoint-list, md)})';
 $lg: '#{$media-width}-width: (#{map-get($breakpoint-list, lg)})';
 $xl: '#{$media-width}-width: (#{map-get($breakpoint-list, xl)})';
-
-:root {
-  --text-opacity: 1;
-  --placeholder-opacity: 1;
-  --border-opacity: 1;
-  --background-opacity: 1;
-  --shadow-opacity: 1;
-  --border-color: #000;
-  @each $color, $value in $color-list {--color-#{$color}: #{hex-to-rgb($value)};}
-  @each $var, $value in $global {--#{$var}: #{$value};}
-}
