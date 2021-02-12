@@ -12,12 +12,12 @@ $cursor-utility: (
   responsive: false,
   inherit: false,
   pseudo: (
-    h: hover,
-    f: focus,
-    fw: focus-within,
-    fv: focus-visible,
-    a: active,
-    is-active: is-active,
+    h: ':hover',
+    f: ':focus',
+    fw: ':focus-within',
+    fv: ':focus-visible',
+    a: ':active',
+    dynamic: '.is-active',
   ),
 );
 

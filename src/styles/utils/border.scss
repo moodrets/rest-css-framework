@@ -25,6 +25,7 @@ $border-utility: (
   ),
   values: (
     '': 1px solid rgba(0,0,0, var(--border-opacity)),
+    n: none
   ),
   responsive: true,
   inherit: true,
@@ -88,12 +89,12 @@ $border-style-utility: (
   ),
   responsive: true,
   pseudo: (
-    h: hover,
-    f: focus,
-    fw: focus-within,
-    fv: focus-visible,
-    a: active,
-    is-active: is-active,
+    h: ':hover',
+    f: ':focus',
+    fw: ':focus-within',
+    fv: ':focus-visible',
+    a: ':active',
+    dynamic: '.is-active',
   ),
   inherit: false,
 );
@@ -105,9 +106,9 @@ $border-colored-utility: (
   values: $border-color-list,
   responsive: true,
   pseudo: (
-    h: hover,
-    f: focus,
-    fw: focus-within,
+    h: ':hover',
+    f: ':focus',
+    fw: ':focus-within',
   ),
   inherit: false,
 );
@@ -119,8 +120,8 @@ $border-opacity-utility: (
   values: $opacity-list, // from _vars.scss
   responsive: false,
   pseudo: (
-    h: hover,
-    f: focus,
+    h: ':hover',
+    f: ':focus',
   ),
   inherit: false,
 );

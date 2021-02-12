@@ -41,11 +41,11 @@ $background-colored-utility: (
   values: $background-color-list, // from _vars.scs
   responsive: false,
   pseudo: (
-    h: hover,
-    f: focus,
-    a: active,
-    fw: focus-within,
-    fs: focus-visible,
+    h: ':hover',
+    f: ':focus',
+    a: ':active',
+    fw: ':focus-within',
+    fs: ':focus-visible',
   ),
   inherit: false,
 );
@@ -57,8 +57,8 @@ $background-opacity-utility: (
   values: $opacity-list, // from _vars.scss
   responsive: false,
   pseudo: (
-    h: hover,
-    f: focus,
+    h: ':hover',
+    f: ':focus',
   ),
   inherit: false,
 );

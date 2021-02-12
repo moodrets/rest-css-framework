@@ -10,4 +10,18 @@ $box-sizing-utility: (
   inherit: true,
 );
 
+$box-sizing-all-utility: (
+  properties: (
+    bx: box-sizing,
+  ),
+  values: (
+    bb-all: border-box,
+    cb-all: content-box,
+  ),
+  child: '*',
+  responsive: false,
+  inherit: true,
+);
+
 @include apply-utility($box-sizing-utility);
+@include apply-utility($box-sizing-all-utility);

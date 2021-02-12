@@ -37,7 +37,7 @@ $transform-scale-utility: (
   ),
   responsive: true,
   pseudo: (
-    h: hover,
+    h: ':hover',
   )
 );
 
@@ -210,9 +210,10 @@ $transform-toggle-active-utility: (
     )
   ),
   pseudo: (
-    gh: group-hover,
-    gf: group-focus,
-    ga: group-active,
+    'group-hover:hover': 'group-hover',
+    'group-focus:focus': 'group-focus',
+    'group-active:active': 'group-active',
+    'group-dynamic.is-active': 'group-dynamic',
   ),
 );
 

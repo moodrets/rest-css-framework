@@ -27,6 +27,8 @@ const Background = () => {
 
   const backgroundClassList = []
 
+  backgroundClassList.push({value: 'bg-n', text: 'background: none;', sectionName: 'Background classlist'})
+
   cssColorVars.map((item, i) => {
     let colorItem = null
     if (i === 0) {
@@ -49,7 +51,18 @@ const Background = () => {
   })
 
   backgroundClassList.push(...[
-    {value: 'bg-n', text: 'background: none;', sectionName: 'Background classlist'},
+
+    {value: 'bg-op-100', addClass: 'bg-success', demonstrate: true, sectionName: 'Background color opacity', sectionColor: 'success-2'},
+    {value: 'bg-op-90', addClass: 'bg-success-1', demonstrate: true},
+    {value: 'bg-op-80', addClass: 'bg-success-2', demonstrate: true},
+    {value: 'bg-op-70', addClass: 'bg-info', demonstrate: true},
+    {value: 'bg-op-60', addClass: 'bg-info-1', demonstrate: true},
+    {value: 'bg-op-50', addClass: 'bg-info-2', demonstrate: true},
+    {value: 'bg-op-40', addClass: 'bg-warning', demonstrate: true},
+    {value: 'bg-op-30', addClass: 'bg-warning-1', demonstrate: true},
+    {value: 'bg-op-20', addClass: 'bg-warning-2', demonstrate: true},
+    {value: 'bg-op-10', addClass: 'bg-primary', demonstrate: true},
+    {value: 'bg-op-0', addClass: 'bg-primary-1', demonstrate: true},
 
     {value: 'bg-gr-primary', demonstrate: true, sectionName: 'Background gradient', sectionColor: 'success'},
     {value: 'bg-gr-secondary', demonstrate: true},
@@ -86,18 +99,6 @@ const Background = () => {
     {value: 'bg-cl-pb', addClass: 'bg-rep-nr bg-pos-l-t', pic: true, text: 'background-clip: padding-box;'},
     {value: 'bg-cl-cb', addClass: 'bg-rep-nr bg-pos-l-t', pic: true, text: 'background-clip: content-box;'},
     {value: 'bg-cl-txt', addClass: 'bg-rep-nr bg-pos-l-t', pic: true, text: 'background-clip: text;'},
-
-    {value: 'bg-op-100', addClass: 'bg-success', demonstrate: true, sectionName: 'Background color opacity', sectionColor: 'success-2'},
-    {value: 'bg-op-90', addClass: 'bg-success-1', demonstrate: true},
-    {value: 'bg-op-80', addClass: 'bg-success-2', demonstrate: true},
-    {value: 'bg-op-70', addClass: 'bg-info', demonstrate: true},
-    {value: 'bg-op-60', addClass: 'bg-info-1', demonstrate: true},
-    {value: 'bg-op-50', addClass: 'bg-info-2', demonstrate: true},
-    {value: 'bg-op-40', addClass: 'bg-warning', demonstrate: true},
-    {value: 'bg-op-30', addClass: 'bg-warning-1', demonstrate: true},
-    {value: 'bg-op-20', addClass: 'bg-warning-2', demonstrate: true},
-    {value: 'bg-op-10', addClass: 'bg-primary', demonstrate: true},
-    {value: 'bg-op-0', addClass: 'bg-primary-1', demonstrate: true},
   ])
 
   return (

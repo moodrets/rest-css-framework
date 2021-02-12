@@ -10,4 +10,17 @@ $size-utility: (
   inherit: true,
 );
 
+$min-size-utility: (
+  properties: (
+    min-sz: (
+      min-width,
+      min-height
+    ),
+  ),
+  values: $size-list, // from _vars.scss
+  responsive: true,
+  inherit: true,
+);
+
 @include apply-utility($size-utility);
+@include apply-utility($min-size-utility);

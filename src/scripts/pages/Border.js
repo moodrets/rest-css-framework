@@ -23,6 +23,7 @@ const Borders = () => {
     {value: 'bdr-b'},
     {value: 'bdr-x'},
     {value: 'bdr-y'},
+    {value: 'bdr-n'},
 
     {value: 'bdr bdr-wd-1', sectionName: 'Border width', sectionColor: 'success'},
     {value: 'bdr bdr-wd-2'},

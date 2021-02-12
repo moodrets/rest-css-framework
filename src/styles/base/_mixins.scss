@@ -37,14 +37,10 @@
       }
       @if (map-get($utility, pseudo)) {
         @each $state, $pseudo in map-get($utility, pseudo) {
-          $pseudo-type: if($pseudo == 'is-active', '.#{$pseudo}', ':#{$pseudo}');
-          $group-hover: if($pseudo == 'group-hover', '.#{$pseudo}:hover', '');
-          $group-focus: if($pseudo == 'group-focus', '.#{$pseudo}:focus', '');
-          $group-active: if($pseudo == 'group-active', '.#{$pseudo}.is-active', '');
-          @if ($state == 'gh') {$state: ''; $pseudo-type: 'gh'}
-          @if ($state == 'gf') {$state: ''; $pseudo-type: 'gf'}
-          @if ($state == 'ga') {$state: ''; $pseudo-type: 'ga'}
-          #{$group-active} #{$group-hover} #{$group-focus} .#{$prefix}#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$br-name} #{$child-selector} {
+          $group-selector: if(str-index($state, 'group'), '.#{$state}', '');
+          $pseudo-type: if(str-index($state, 'group'), '', $pseudo);
+          $state: if(str-index($state, 'group'), $pseudo, $state);
+          #{$group-selector} .#{$prefix}#{$prop}#{$key-type}\:#{$state}#{$pseudo-type}#{$br-name} #{$child-selector} {
             @each $item, $subvalue in $iterable-object {
               $css-prop: if($subvalue, $subvalue, $value);
               #{$item}: $css-prop #{$important}

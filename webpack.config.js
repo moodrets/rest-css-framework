@@ -47,6 +47,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          'group-css-media-queries-loader',
           'sass-loader',
         ],
       },

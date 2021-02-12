@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Home = () => {
+const About = () => {
   return (
-    <div className="rs-home">
+    <div className="rs-about">
       <h1 className="mt-0">Rest Css Framework</h1>
       <p className="mb-9">Low-level css framework for almost all occasions.</p>
     </div>
   )
 }
 
-export default Home
+export default About
