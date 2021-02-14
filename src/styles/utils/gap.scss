@@ -1,0 +1,13 @@
+$gap-utility: (
+  properties: (
+    gap: gap,
+    gap-x: column-gap,
+    gap-y: row-gap,
+  ),
+  values: map-merge($spacing-list, (
+    nl: normal,
+  )),
+  responsive: true,
+);
+
+@include apply-utility($gap-utility);

@@ -21,8 +21,8 @@ const Flex = () => {
     {value: 'fd-cr', text: 'flex-direction: column-reverse;'},
     {value: 'fd-inh', text: 'flex-direction: inherit;'},
 
-    {value: 'fl-ch-n', text: '> * {flex: none;}', sectionName: 'Flex parent class for childs', sectionColor: 'success-1'},
-    {value: 'fl-ch-fill', text: '> * {flex: 1 1 0;}'},
+    {value: 'fl-n-ch', text: '> * {flex: none;}', sectionName: 'Flex parent class for childs', sectionColor: 'success-1'},
+    {value: 'fl-fill-ch', text: '> * {flex: 1 1 0;}'},
 
     {value: 'fl-n', text: 'flex: none;', sectionName: 'Flex item (child)', sectionColor: 'success'},
     {value: 'fl-fill', text: 'flex: 1 1 0;'},

@@ -18,7 +18,7 @@ $box-sizing-all-utility: (
     bb-all: border-box,
     cb-all: content-box,
   ),
-  child: '*',
+  child: unquote('*'),
   responsive: false,
   inherit: true,
 );

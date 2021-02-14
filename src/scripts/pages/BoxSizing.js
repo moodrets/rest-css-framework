@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 const BoxSizing = () => {
 
-  const [breakpoint, setBreakpoint] = useState('')
   const boxSizingClassList = [
     {value: 'bx-bb', text: 'box-sizing: border-box'},
     {value: 'bx-cb', text: 'box-sizing: content-box'},
@@ -21,7 +20,7 @@ const BoxSizing = () => {
             <div className="case case-cells-1 case-cells-2:md ai-c">
               <div className="cell pb-3 pb-0:md">
                 <div className="font-we-500 txt-dark txt-op-60">
-                  {item.value}<span className="txt-success-1 txt-op-100">{breakpoint}</span>
+                  {item.value}
                 </div>
               </div>
               <div className="cell pb-3 pb-0:md">

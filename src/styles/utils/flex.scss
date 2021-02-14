@@ -39,11 +39,11 @@ $flex-item-utility: (
 
 $flex-item-child-utility: (
   properties: (
-    fl-ch: flex,
+    fl: flex,
   ),
   values: (
-    fill: 1 1 0,
-    n: none,
+    fill-ch: 1 1 0,
+    n-ch: none,
   ),
   child: unquote('> *'),
   responsive: true,

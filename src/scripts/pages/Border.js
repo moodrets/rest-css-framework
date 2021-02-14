@@ -5,7 +5,7 @@ import RsSelect from '@components/Select'
 
 const Borders = () => {
 
-  const [borderBreakpoint, setBorderBreakpoint] = useState('')
+  const [breakpoint, setBreakpoint] = useState('')
   const [borderColor, setBorderColor] = useState('')
   const borderColors = cssColorVars.map(item => {
     return {
@@ -169,7 +169,7 @@ const Borders = () => {
             title="Breakpoints"
             titleColor="txt-success-1"
             items={breakpoints}
-            selectEmit={e=>setBorderBreakpoint(e.target.value)}
+            selectEmit={e=>setBreakpoint(e.target.value)}
           ></RsSelect>
         </div>
         <div className="cell pl-5 pb-5">
@@ -189,7 +189,7 @@ const Borders = () => {
           <div className="case case-cells-1 case-cells-2:md ai-c">
             <div className="cell pb-3 pb-0:md">
               <div className="font-we-500 txt-dark txt-op-60">
-                {item.value}<span className="txt-success-1 txt-op-100">{borderBreakpoint}</span> <span className="txt-info-1 txt-op-100">{borderColor}</span>
+                {item.value}<span className="txt-success-1 txt-op-100">{breakpoint}</span> <span className="txt-info-1 txt-op-100">{borderColor}</span>
               </div>
             </div>
             <div className="cell pb-3 pb-0:md">

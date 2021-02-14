@@ -97,21 +97,8 @@ $grid-auto-columns-utility: (
   responsive: true,
 );
 
-$grid-gap-utility: (
-  properties: (
-    gap: gap,
-    gap-x: column-gap,
-    gap-y: row-gap,
-  ),
-  values: map-merge($spacing-list, (
-    nl: normal,
-  )),
-  responsive: true,
-);
-
 @include apply-utility($grid-utility);
 @include apply-utility($grid-span-utility);
 @include apply-utility($grid-start-end-utility);
 @include apply-utility($grid-flow-utility);
 @include apply-utility($grid-auto-columns-utility);
-@include apply-utility($grid-gap-utility);
