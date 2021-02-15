@@ -27,7 +27,7 @@ export const routes = [
   {path: '/flex', component: Flex, name: 'Flexbox'},
   {path: '/order', component: Order, name: 'Order'},
   {path: '/margin', component: Margin, name: 'Margin'},
-  // {path: '/padding', component: Padding, name: 'Padding'},
+  {path: '/padding', component: Padding, name: 'Padding'},
 ]
 
 const RouterView = () => {
